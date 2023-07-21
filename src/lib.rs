@@ -16,7 +16,7 @@ pub mod public_parameters;
 pub mod requests;
 
 #[cfg(feature = "pmc-native-tls")]
-pub mod pmc_client;
+pub mod pmc;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
@@ -38,7 +38,7 @@ impl Config {
     /// - `$env:PDD_URL = "https://gw-api.pinduoduo.com/api/router"`
     /// - `$env:PDD_ACCESS_TOKEN = "pdd_access_tokenabaabaaba"`
     ///
-    /// ## Bash
+    /// ## Bash:
     /// - `export PDD_CLIENT_ID="clientidabaaba"`
     /// - `export PDD_CLIENT_SECRET="clientsecretabaaba"`
     /// - `export PDD_URL="https://gw-api.pinduoduo.com/api/router"`
