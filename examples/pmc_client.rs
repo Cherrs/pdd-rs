@@ -1,5 +1,5 @@
 use futures_util::StreamExt;
-use pdd::{pmc_client::PmcClient, Config};
+use pdd::{pmc::PmcClient, Config};
 use tracing::Level;
 use tracing_subscriber::FmtSubscriber;
 
