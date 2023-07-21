@@ -1,0 +1,4 @@
+{{ for value in mods }}
+mod {value.file_name};
+pub use {value.file_name}::{value.struct_name};
+{{ endfor }}

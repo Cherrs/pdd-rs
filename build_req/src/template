@@ -1,0 +1,25 @@
+use crate::Request;
+use crate::PddFile;
+use serde::\{Deserialize, Serialize};
+
+{{ for value in structs }}
+/// {value.struct_desc}
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct {value.struct_name} \{
+    {{ for f in value.fields }}
+    /// {f.param_desc}
+    #[serde(rename = "{f.param_raw_name}")]
+    pub {f.param_name}: Option<{f.param_type}>,
+    {{ endfor }}
+}
+{{ endfor }}
+
+impl Request for {name} \{
+    fn get_type() -> String \{
+        "{scope_name}".to_string()
+    }
+
+    fn get_response_name() -> String \{
+        "{response_name}".to_string()
+    }
+}

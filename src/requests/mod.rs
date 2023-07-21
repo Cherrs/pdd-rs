@@ -1,0 +1,1029 @@
+
+mod pdd_erp_order_sync;
+pub use pdd_erp_order_sync::PddErpOrderSync;
+
+mod pdd_fulfillment_information_get;
+pub use pdd_fulfillment_information_get::PddFulfillmentInformationGet;
+
+mod pdd_fulfillment_list_get;
+pub use pdd_fulfillment_list_get::PddFulfillmentListGet;
+
+mod pdd_fulfillment_list_increment_get;
+pub use pdd_fulfillment_list_increment_get::PddFulfillmentListIncrementGet;
+
+mod pdd_order_basic_list_get;
+pub use pdd_order_basic_list_get::PddOrderBasicListGet;
+
+mod pdd_order_information_get;
+pub use pdd_order_information_get::PddOrderInformationGet;
+
+mod pdd_order_list_get;
+pub use pdd_order_list_get::PddOrderListGet;
+
+mod pdd_order_note_update;
+pub use pdd_order_note_update::PddOrderNoteUpdate;
+
+mod pdd_order_number_list_increment_get;
+pub use pdd_order_number_list_increment_get::PddOrderNumberListIncrementGet;
+
+mod pdd_order_promise_info_get;
+pub use pdd_order_promise_info_get::PddOrderPromiseInfoGet;
+
+mod pdd_order_status_get;
+pub use pdd_order_status_get::PddOrderStatusGet;
+
+mod pdd_order_update_address;
+pub use pdd_order_update_address::PddOrderUpdateAddress;
+
+mod pdd_order_upload_extra_logistics;
+pub use pdd_order_upload_extra_logistics::PddOrderUploadExtraLogistics;
+
+mod pdd_order_upload_relation_logistics;
+pub use pdd_order_upload_relation_logistics::PddOrderUploadRelationLogistics;
+
+mod pdd_order_virtual_information_get;
+pub use pdd_order_virtual_information_get::PddOrderVirtualInformationGet;
+
+mod pdd_nextone_logistics_warehouse_update;
+pub use pdd_nextone_logistics_warehouse_update::PddNextoneLogisticsWarehouseUpdate;
+
+mod pdd_rdc_pddgenius_sendgoods_cancel;
+pub use pdd_rdc_pddgenius_sendgoods_cancel::PddRdcPddgeniusSendgoodsCancel;
+
+mod pdd_refund_address_list_get;
+pub use pdd_refund_address_list_get::PddRefundAddressListGet;
+
+mod pdd_refund_agree;
+pub use pdd_refund_agree::PddRefundAgree;
+
+mod pdd_refund_exchange_shipping;
+pub use pdd_refund_exchange_shipping::PddRefundExchangeShipping;
+
+mod pdd_refund_information_get;
+pub use pdd_refund_information_get::PddRefundInformationGet;
+
+mod pdd_refund_list_increment_get;
+pub use pdd_refund_list_increment_get::PddRefundListIncrementGet;
+
+mod pdd_refund_returngoods_agree;
+pub use pdd_refund_returngoods_agree::PddRefundReturngoodsAgree;
+
+mod pdd_refund_status_check;
+pub use pdd_refund_status_check::PddRefundStatusCheck;
+
+mod pdd_logistics_address_get;
+pub use pdd_logistics_address_get::PddLogisticsAddressGet;
+
+mod pdd_logistics_available_company_recommend;
+pub use pdd_logistics_available_company_recommend::PddLogisticsAvailableCompanyRecommend;
+
+mod pdd_logistics_companies_get;
+pub use pdd_logistics_companies_get::PddLogisticsCompaniesGet;
+
+mod pdd_logistics_fulfillment_send;
+pub use pdd_logistics_fulfillment_send::PddLogisticsFulfillmentSend;
+
+mod pdd_logistics_isv_trace_notify_sub;
+pub use pdd_logistics_isv_trace_notify_sub::PddLogisticsIsvTraceNotifySub;
+
+mod pdd_logistics_online_send;
+pub use pdd_logistics_online_send::PddLogisticsOnlineSend;
+
+mod pdd_logistics_ordertrace_get;
+pub use pdd_logistics_ordertrace_get::PddLogisticsOrdertraceGet;
+
+mod pdd_virtual_game_server_query;
+pub use pdd_virtual_game_server_query::PddVirtualGameServerQuery;
+
+mod pdd_virtual_mobile_charge_notify;
+pub use pdd_virtual_mobile_charge_notify::PddVirtualMobileChargeNotify;
+
+mod pdd_delete_draft_commit;
+pub use pdd_delete_draft_commit::PddDeleteDraftCommit;
+
+mod pdd_delete_goods_commit;
+pub use pdd_delete_goods_commit::PddDeleteGoodsCommit;
+
+mod pdd_goods_add;
+pub use pdd_goods_add::PddGoodsAdd;
+
+mod pdd_goods_advice_price_get;
+pub use pdd_goods_advice_price_get::PddGoodsAdvicePriceGet;
+
+mod pdd_goods_authorization_cats;
+pub use pdd_goods_authorization_cats::PddGoodsAuthorizationCats;
+
+mod pdd_goods_cat_rule_get;
+pub use pdd_goods_cat_rule_get::PddGoodsCatRuleGet;
+
+mod pdd_goods_cat_template_get;
+pub use pdd_goods_cat_template_get::PddGoodsCatTemplateGet;
+
+mod pdd_goods_cats_get;
+pub use pdd_goods_cats_get::PddGoodsCatsGet;
+
+mod pdd_goods_child_sku_edit;
+pub use pdd_goods_child_sku_edit::PddGoodsChildSkuEdit;
+
+mod pdd_goods_commit_detail_get;
+pub use pdd_goods_commit_detail_get::PddGoodsCommitDetailGet;
+
+mod pdd_goods_commit_list_get;
+pub use pdd_goods_commit_list_get::PddGoodsCommitListGet;
+
+mod pdd_goods_commit_status_get;
+pub use pdd_goods_commit_status_get::PddGoodsCommitStatusGet;
+
+mod pdd_goods_country_get;
+pub use pdd_goods_country_get::PddGoodsCountryGet;
+
+mod pdd_goods_cps_mall_unit_change;
+pub use pdd_goods_cps_mall_unit_change::PddGoodsCpsMallUnitChange;
+
+mod pdd_goods_cps_mall_unit_create;
+pub use pdd_goods_cps_mall_unit_create::PddGoodsCpsMallUnitCreate;
+
+mod pdd_goods_cps_mall_unit_pause;
+pub use pdd_goods_cps_mall_unit_pause::PddGoodsCpsMallUnitPause;
+
+mod pdd_goods_cps_mall_unit_query;
+pub use pdd_goods_cps_mall_unit_query::PddGoodsCpsMallUnitQuery;
+
+mod pdd_goods_cps_mall_unit_resume;
+pub use pdd_goods_cps_mall_unit_resume::PddGoodsCpsMallUnitResume;
+
+mod pdd_goods_cps_unit_change;
+pub use pdd_goods_cps_unit_change::PddGoodsCpsUnitChange;
+
+mod pdd_goods_cps_unit_create;
+pub use pdd_goods_cps_unit_create::PddGoodsCpsUnitCreate;
+
+mod pdd_goods_cps_unit_delete;
+pub use pdd_goods_cps_unit_delete::PddGoodsCpsUnitDelete;
+
+mod pdd_goods_cps_unit_query;
+pub use pdd_goods_cps_unit_query::PddGoodsCpsUnitQuery;
+
+mod pdd_goods_detail_get;
+pub use pdd_goods_detail_get::PddGoodsDetailGet;
+
+mod pdd_goods_edit_goods_commit;
+pub use pdd_goods_edit_goods_commit::PddGoodsEditGoodsCommit;
+
+mod pdd_goods_file_info_get;
+pub use pdd_goods_file_info_get::PddGoodsFileInfoGet;
+
+mod pdd_goods_filespace_image_upload;
+pub use pdd_goods_filespace_image_upload::PddGoodsFilespaceImageUpload;
+
+mod pdd_goods_get_relation;
+pub use pdd_goods_get_relation::PddGoodsGetRelation;
+
+mod pdd_goods_image_upload;
+pub use pdd_goods_image_upload::PddGoodsImageUpload;
+
+mod pdd_goods_img_upload;
+pub use pdd_goods_img_upload::PddGoodsImgUpload;
+
+mod pdd_goods_information_get;
+pub use pdd_goods_information_get::PddGoodsInformationGet;
+
+mod pdd_goods_information_update;
+pub use pdd_goods_information_update::PddGoodsInformationUpdate;
+
+mod pdd_goods_latest_commit_status_get;
+pub use pdd_goods_latest_commit_status_get::PddGoodsLatestCommitStatusGet;
+
+mod pdd_goods_list_get;
+pub use pdd_goods_list_get::PddGoodsListGet;
+
+mod pdd_goods_logistics_ser_template_create;
+pub use pdd_goods_logistics_ser_template_create::PddGoodsLogisticsSerTemplateCreate;
+
+mod pdd_goods_logistics_ser_template_delete;
+pub use pdd_goods_logistics_ser_template_delete::PddGoodsLogisticsSerTemplateDelete;
+
+mod pdd_goods_logistics_ser_template_detail;
+pub use pdd_goods_logistics_ser_template_detail::PddGoodsLogisticsSerTemplateDetail;
+
+mod pdd_goods_logistics_ser_template_list;
+pub use pdd_goods_logistics_ser_template_list::PddGoodsLogisticsSerTemplateList;
+
+mod pdd_goods_logistics_ser_template_update;
+pub use pdd_goods_logistics_ser_template_update::PddGoodsLogisticsSerTemplateUpdate;
+
+mod pdd_goods_logistics_template_create;
+pub use pdd_goods_logistics_template_create::PddGoodsLogisticsTemplateCreate;
+
+mod pdd_goods_logistics_template_get;
+pub use pdd_goods_logistics_template_get::PddGoodsLogisticsTemplateGet;
+
+mod pdd_goods_material_create;
+pub use pdd_goods_material_create::PddGoodsMaterialCreate;
+
+mod pdd_goods_material_delete;
+pub use pdd_goods_material_delete::PddGoodsMaterialDelete;
+
+mod pdd_goods_material_query;
+pub use pdd_goods_material_query::PddGoodsMaterialQuery;
+
+mod pdd_goods_opt_get;
+pub use pdd_goods_opt_get::PddGoodsOptGet;
+
+mod pdd_goods_out_property_mapping_get;
+pub use pdd_goods_out_property_mapping_get::PddGoodsOutPropertyMappingGet;
+
+mod pdd_goods_outer_cat_mapping_get;
+pub use pdd_goods_outer_cat_mapping_get::PddGoodsOuterCatMappingGet;
+
+mod pdd_goods_price_check;
+pub use pdd_goods_price_check::PddGoodsPriceCheck;
+
+mod pdd_goods_quantity_update;
+pub use pdd_goods_quantity_update::PddGoodsQuantityUpdate;
+
+mod pdd_goods_relation_set;
+pub use pdd_goods_relation_set::PddGoodsRelationSet;
+
+mod pdd_goods_sale_status_set;
+pub use pdd_goods_sale_status_set::PddGoodsSaleStatusSet;
+
+mod pdd_goods_sizespec_class_get;
+pub use pdd_goods_sizespec_class_get::PddGoodsSizespecClassGet;
+
+mod pdd_goods_sizespec_meta_get;
+pub use pdd_goods_sizespec_meta_get::PddGoodsSizespecMetaGet;
+
+mod pdd_goods_sizespec_template_add;
+pub use pdd_goods_sizespec_template_add::PddGoodsSizespecTemplateAdd;
+
+mod pdd_goods_sizespec_template_delete;
+pub use pdd_goods_sizespec_template_delete::PddGoodsSizespecTemplateDelete;
+
+mod pdd_goods_sizespec_template_get;
+pub use pdd_goods_sizespec_template_get::PddGoodsSizespecTemplateGet;
+
+mod pdd_goods_sizespec_template_update;
+pub use pdd_goods_sizespec_template_update::PddGoodsSizespecTemplateUpdate;
+
+mod pdd_goods_sizespec_templates_get;
+pub use pdd_goods_sizespec_templates_get::PddGoodsSizespecTemplatesGet;
+
+mod pdd_goods_sku_price_update;
+pub use pdd_goods_sku_price_update::PddGoodsSkuPriceUpdate;
+
+mod pdd_goods_skus_get;
+pub use pdd_goods_skus_get::PddGoodsSkusGet;
+
+mod pdd_goods_spec_get;
+pub use pdd_goods_spec_get::PddGoodsSpecGet;
+
+mod pdd_goods_spec_id_get;
+pub use pdd_goods_spec_id_get::PddGoodsSpecIdGet;
+
+mod pdd_goods_spu_get;
+pub use pdd_goods_spu_get::PddGoodsSpuGet;
+
+mod pdd_goods_spu_search;
+pub use pdd_goods_spu_search::PddGoodsSpuSearch;
+
+mod pdd_goods_submit_goods_commit;
+pub use pdd_goods_submit_goods_commit::PddGoodsSubmitGoodsCommit;
+
+mod pdd_goods_template_property_value_search;
+pub use pdd_goods_template_property_value_search::PddGoodsTemplatePropertyValueSearch;
+
+mod pdd_gooods_sku_measurement_list;
+pub use pdd_gooods_sku_measurement_list::PddGooodsSkuMeasurementList;
+
+mod pdd_one_express_cost_template;
+pub use pdd_one_express_cost_template::PddOneExpressCostTemplate;
+
+mod pdd_select_goods_label_code;
+pub use pdd_select_goods_label_code::PddSelectGoodsLabelCode;
+
+mod pdd_ddk_goods_pid_generate;
+pub use pdd_ddk_goods_pid_generate::PddDdkGoodsPidGenerate;
+
+mod pdd_ddk_weapp_qrcode_url_gen;
+pub use pdd_ddk_weapp_qrcode_url_gen::PddDdkWeappQrcodeUrlGen;
+
+mod pdd_ddk_cashgift_status_update;
+pub use pdd_ddk_cashgift_status_update::PddDdkCashgiftStatusUpdate;
+
+mod pdd_ddk_goods_pid_query;
+pub use pdd_ddk_goods_pid_query::PddDdkGoodsPidQuery;
+
+mod pdd_ddk_pid_mediaid_bind;
+pub use pdd_ddk_pid_mediaid_bind::PddDdkPidMediaidBind;
+
+mod pdd_ddk_member_authority_query;
+pub use pdd_ddk_member_authority_query::PddDdkMemberAuthorityQuery;
+
+mod pdd_ddk_cashgift_data_query;
+pub use pdd_ddk_cashgift_data_query::PddDdkCashgiftDataQuery;
+
+mod pdd_ddk_statistics_data_query;
+pub use pdd_ddk_statistics_data_query::PddDdkStatisticsDataQuery;
+
+mod pdd_ddk_resource_url_gen;
+pub use pdd_ddk_resource_url_gen::PddDdkResourceUrlGen;
+
+mod pdd_ddk_cashgift_create;
+pub use pdd_ddk_cashgift_create::PddDdkCashgiftCreate;
+
+mod pdd_ddk_tmc_activity_list;
+pub use pdd_ddk_tmc_activity_list::PddDdkTmcActivityList;
+
+mod pdd_ddk_cms_prom_url_generate;
+pub use pdd_ddk_cms_prom_url_generate::PddDdkCmsPromUrlGenerate;
+
+mod pdd_ddk_order_list_range_get;
+pub use pdd_ddk_order_list_range_get::PddDdkOrderListRangeGet;
+
+mod pdd_ddk_order_detail_get;
+pub use pdd_ddk_order_detail_get::PddDdkOrderDetailGet;
+
+mod pdd_ddk_order_list_increment_get;
+pub use pdd_ddk_order_list_increment_get::PddDdkOrderListIncrementGet;
+
+mod pdd_ddk_report_video_upload_part_complete;
+pub use pdd_ddk_report_video_upload_part_complete::PddDdkReportVideoUploadPartComplete;
+
+mod pdd_ddk_report_video_upload_part;
+pub use pdd_ddk_report_video_upload_part::PddDdkReportVideoUploadPart;
+
+mod pdd_ddk_report_video_upload_part_init;
+pub use pdd_ddk_report_video_upload_part_init::PddDdkReportVideoUploadPartInit;
+
+mod pdd_ddk_report_video_upload;
+pub use pdd_ddk_report_video_upload::PddDdkReportVideoUpload;
+
+mod pdd_ddk_report_img_upload;
+pub use pdd_ddk_report_img_upload::PddDdkReportImgUpload;
+
+mod pdd_ddk_goods_promotion_right_auth;
+pub use pdd_ddk_goods_promotion_right_auth::PddDdkGoodsPromotionRightAuth;
+
+mod pdd_ddk_promotion_goods_query;
+pub use pdd_ddk_promotion_goods_query::PddDdkPromotionGoodsQuery;
+
+mod pdd_ddk_goods_recommend_get;
+pub use pdd_ddk_goods_recommend_get::PddDdkGoodsRecommendGet;
+
+mod pdd_ddk_goods_search;
+pub use pdd_ddk_goods_search::PddDdkGoodsSearch;
+
+mod pdd_ddk_goods_detail;
+pub use pdd_ddk_goods_detail::PddDdkGoodsDetail;
+
+mod pdd_ddk_goods_promotion_url_generate;
+pub use pdd_ddk_goods_promotion_url_generate::PddDdkGoodsPromotionUrlGenerate;
+
+mod pdd_ddk_goods_zs_unit_url_gen;
+pub use pdd_ddk_goods_zs_unit_url_gen::PddDdkGoodsZsUnitUrlGen;
+
+mod pdd_ddk_url_short_parse;
+pub use pdd_ddk_url_short_parse::PddDdkUrlShortParse;
+
+mod pdd_ddk_rp_prom_url_generate;
+pub use pdd_ddk_rp_prom_url_generate::PddDdkRpPromUrlGenerate;
+
+mod pdd_ddk_all_order_list_increment_get;
+pub use pdd_ddk_all_order_list_increment_get::PddDdkAllOrderListIncrementGet;
+
+mod pdd_ddk_oauth_cashgift_create;
+pub use pdd_ddk_oauth_cashgift_create::PddDdkOauthCashgiftCreate;
+
+mod pdd_ddk_oauth_cashgift_status_update;
+pub use pdd_ddk_oauth_cashgift_status_update::PddDdkOauthCashgiftStatusUpdate;
+
+mod pdd_ddk_oauth_cms_prom_url_generate;
+pub use pdd_ddk_oauth_cms_prom_url_generate::PddDdkOauthCmsPromUrlGenerate;
+
+mod pdd_ddk_oauth_goods_detail;
+pub use pdd_ddk_oauth_goods_detail::PddDdkOauthGoodsDetail;
+
+mod pdd_ddk_oauth_goods_pid_generate;
+pub use pdd_ddk_oauth_goods_pid_generate::PddDdkOauthGoodsPidGenerate;
+
+mod pdd_ddk_oauth_goods_pid_query;
+pub use pdd_ddk_oauth_goods_pid_query::PddDdkOauthGoodsPidQuery;
+
+mod pdd_ddk_oauth_goods_prom_url_generate;
+pub use pdd_ddk_oauth_goods_prom_url_generate::PddDdkOauthGoodsPromUrlGenerate;
+
+mod pdd_ddk_oauth_goods_recommend_get;
+pub use pdd_ddk_oauth_goods_recommend_get::PddDdkOauthGoodsRecommendGet;
+
+mod pdd_ddk_oauth_goods_search;
+pub use pdd_ddk_oauth_goods_search::PddDdkOauthGoodsSearch;
+
+mod pdd_ddk_oauth_goods_zs_unit_url_gen;
+pub use pdd_ddk_oauth_goods_zs_unit_url_gen::PddDdkOauthGoodsZsUnitUrlGen;
+
+mod pdd_ddk_oauth_member_authority_query;
+pub use pdd_ddk_oauth_member_authority_query::PddDdkOauthMemberAuthorityQuery;
+
+mod pdd_ddk_oauth_order_detail_get;
+pub use pdd_ddk_oauth_order_detail_get::PddDdkOauthOrderDetailGet;
+
+mod pdd_ddk_oauth_pid_mediaid_bind;
+pub use pdd_ddk_oauth_pid_mediaid_bind::PddDdkOauthPidMediaidBind;
+
+mod pdd_ddk_oauth_resource_url_gen;
+pub use pdd_ddk_oauth_resource_url_gen::PddDdkOauthResourceUrlGen;
+
+mod pdd_ddk_oauth_rp_prom_url_generate;
+pub use pdd_ddk_oauth_rp_prom_url_generate::PddDdkOauthRpPromUrlGenerate;
+
+mod pdd_ddk_oauth_weapp_qrcode_url_gen;
+pub use pdd_ddk_oauth_weapp_qrcode_url_gen::PddDdkOauthWeappQrcodeUrlGen;
+
+mod pdd_logistics_cs_history_message_get;
+pub use pdd_logistics_cs_history_message_get::PddLogisticsCsHistoryMessageGet;
+
+mod pdd_logistics_cs_message_send;
+pub use pdd_logistics_cs_message_send::PddLogisticsCsMessageSend;
+
+mod pdd_logistics_cs_session_close;
+pub use pdd_logistics_cs_session_close::PddLogisticsCsSessionClose;
+
+mod pdd_logistics_cs_session_start;
+pub use pdd_logistics_cs_session_start::PddLogisticsCsSessionStart;
+
+mod pdd_logistics_ticket_get;
+pub use pdd_logistics_ticket_get::PddLogisticsTicketGet;
+
+mod pdd_logistics_ticket_image_upload;
+pub use pdd_logistics_ticket_image_upload::PddLogisticsTicketImageUpload;
+
+mod pdd_logistics_ticket_notify;
+pub use pdd_logistics_ticket_notify::PddLogisticsTicketNotify;
+
+mod pdd_logistics_ticket_problem_type_get;
+pub use pdd_logistics_ticket_problem_type_get::PddLogisticsTicketProblemTypeGet;
+
+mod pdd_service_mail_bizaction_notify;
+pub use pdd_service_mail_bizaction_notify::PddServiceMailBizactionNotify;
+
+mod pdd_logistics_co_track_sub;
+pub use pdd_logistics_co_track_sub::PddLogisticsCoTrackSub;
+
+mod pdd_service_mail_order_fc_auth;
+pub use pdd_service_mail_order_fc_auth::PddServiceMailOrderFcAuth;
+
+mod pdd_service_mail_service_time_query;
+pub use pdd_service_mail_service_time_query::PddServiceMailServiceTimeQuery;
+
+mod pdd_promotion_coupon_close;
+pub use pdd_promotion_coupon_close::PddPromotionCouponClose;
+
+mod pdd_promotion_coupon_quantity_add;
+pub use pdd_promotion_coupon_quantity_add::PddPromotionCouponQuantityAdd;
+
+mod pdd_promotion_goods_coupon_create;
+pub use pdd_promotion_goods_coupon_create::PddPromotionGoodsCouponCreate;
+
+mod pdd_promotion_goods_coupon_list_get;
+pub use pdd_promotion_goods_coupon_list_get::PddPromotionGoodsCouponListGet;
+
+mod pdd_promotion_home_coupon_create;
+pub use pdd_promotion_home_coupon_create::PddPromotionHomeCouponCreate;
+
+mod pdd_promotion_limited_activity_cancel;
+pub use pdd_promotion_limited_activity_cancel::PddPromotionLimitedActivityCancel;
+
+mod pdd_promotion_limited_activity_create;
+pub use pdd_promotion_limited_activity_create::PddPromotionLimitedActivityCreate;
+
+mod pdd_promotion_limited_discount_list_get;
+pub use pdd_promotion_limited_discount_list_get::PddPromotionLimitedDiscountListGet;
+
+mod pdd_promotion_limited_qualified_goods_get;
+pub use pdd_promotion_limited_qualified_goods_get::PddPromotionLimitedQualifiedGoodsGet;
+
+mod pdd_promotion_limited_qualified_sku_get;
+pub use pdd_promotion_limited_qualified_sku_get::PddPromotionLimitedQualifiedSkuGet;
+
+mod pdd_promotion_merchant_coupon_list_get;
+pub use pdd_promotion_merchant_coupon_list_get::PddPromotionMerchantCouponListGet;
+
+mod pdd_voucher_appointment_info_send;
+pub use pdd_voucher_appointment_info_send::PddVoucherAppointmentInfoSend;
+
+mod pdd_voucher_ota_card_prepare_verification;
+pub use pdd_voucher_ota_card_prepare_verification::PddVoucherOtaCardPrepareVerification;
+
+mod pdd_voucher_ota_card_verification;
+pub use pdd_voucher_ota_card_verification::PddVoucherOtaCardVerification;
+
+mod pdd_voucher_physical_goods_send;
+pub use pdd_voucher_physical_goods_send::PddVoucherPhysicalGoodsSend;
+
+mod pdd_voucher_realtime_verify_sync;
+pub use pdd_voucher_realtime_verify_sync::PddVoucherRealtimeVerifySync;
+
+mod pdd_voucher_virtual_card_batch_add;
+pub use pdd_voucher_virtual_card_batch_add::PddVoucherVirtualCardBatchAdd;
+
+mod pdd_voucher_virtual_card_verification;
+pub use pdd_voucher_virtual_card_verification::PddVoucherVirtualCardVerification;
+
+mod pdd_voucher_voucher_complain;
+pub use pdd_voucher_voucher_complain::PddVoucherVoucherComplain;
+
+mod pdd_voucher_voucher_info_send;
+pub use pdd_voucher_voucher_info_send::PddVoucherVoucherInfoSend;
+
+mod pdd_einvoice_info_query;
+pub use pdd_einvoice_info_query::PddEinvoiceInfoQuery;
+
+mod pdd_invoice_application_query;
+pub use pdd_invoice_application_query::PddInvoiceApplicationQuery;
+
+mod pdd_invoice_detail_invalid;
+pub use pdd_invoice_detail_invalid::PddInvoiceDetailInvalid;
+
+mod pdd_invoice_detail_upload;
+pub use pdd_invoice_detail_upload::PddInvoiceDetailUpload;
+
+mod pdd_mall_cps_protocol_status_query;
+pub use pdd_mall_cps_protocol_status_query::PddMallCpsProtocolStatusQuery;
+
+mod pdd_mall_info_get;
+pub use pdd_mall_info_get::PddMallInfoGet;
+
+mod pdd_mall_notification_type_show_check;
+pub use pdd_mall_notification_type_show_check::PddMallNotificationTypeShowCheck;
+
+mod pdd_trace_source_upload_code_info;
+pub use pdd_trace_source_upload_code_info::PddTraceSourceUploadCodeInfo;
+
+mod pdd_trace_source_upload_plan_info;
+pub use pdd_trace_source_upload_plan_info::PddTraceSourceUploadPlanInfo;
+
+mod pdd_trace_source_query_goods_info;
+pub use pdd_trace_source_query_goods_info::PddTraceSourceQueryGoodsInfo;
+
+mod pdd_open_decrypt_batch;
+pub use pdd_open_decrypt_batch::PddOpenDecryptBatch;
+
+mod pdd_open_decrypt_mask_batch;
+pub use pdd_open_decrypt_mask_batch::PddOpenDecryptMaskBatch;
+
+mod pdd_open_kms_encrypt_batch;
+pub use pdd_open_kms_encrypt_batch::PddOpenKmsEncryptBatch;
+
+mod pdd_open_kms_search_batch;
+pub use pdd_open_kms_search_batch::PddOpenKmsSearchBatch;
+
+mod pdd_open_virtual_number_check;
+pub use pdd_open_virtual_number_check::PddOpenVirtualNumberCheck;
+
+mod pdd_pop_auth_token_create;
+pub use pdd_pop_auth_token_create::PddPopAuthTokenCreate;
+
+mod pdd_pop_auth_token_refresh;
+pub use pdd_pop_auth_token_refresh::PddPopAuthTokenRefresh;
+
+mod pdd_pop_mall_bind_relation_report;
+pub use pdd_pop_mall_bind_relation_report::PddPopMallBindRelationReport;
+
+mod pdd_pop_mall_bind_ticket_get;
+pub use pdd_pop_mall_bind_ticket_get::PddPopMallBindTicketGet;
+
+mod pdd_pop_mall_bind_token_get;
+pub use pdd_pop_mall_bind_token_get::PddPopMallBindTokenGet;
+
+mod pdd_time_get;
+pub use pdd_time_get::PddTimeGet;
+
+mod pdd_express_add_depot;
+pub use pdd_express_add_depot::PddExpressAddDepot;
+
+mod pdd_express_change_depot_info;
+pub use pdd_express_change_depot_info::PddExpressChangeDepotInfo;
+
+mod pdd_express_depot_info_get;
+pub use pdd_express_depot_info_get::PddExpressDepotInfoGet;
+
+mod pdd_express_depot_list_get;
+pub use pdd_express_depot_list_get::PddExpressDepotListGet;
+
+mod pdd_express_mall_depot_simple_get;
+pub use pdd_express_mall_depot_simple_get::PddExpressMallDepotSimpleGet;
+
+mod pdd_express_search_depot;
+pub use pdd_express_search_depot::PddExpressSearchDepot;
+
+mod pdd_stock_depot_priority_list;
+pub use pdd_stock_depot_priority_list::PddStockDepotPriorityList;
+
+mod pdd_stock_depot_priority_update;
+pub use pdd_stock_depot_priority_update::PddStockDepotPriorityUpdate;
+
+mod pdd_stock_goods_id_to_sku_query;
+pub use pdd_stock_goods_id_to_sku_query::PddStockGoodsIdToSkuQuery;
+
+mod pdd_stock_ware_create;
+pub use pdd_stock_ware_create::PddStockWareCreate;
+
+mod pdd_stock_ware_delete;
+pub use pdd_stock_ware_delete::PddStockWareDelete;
+
+mod pdd_stock_ware_detail_query;
+pub use pdd_stock_ware_detail_query::PddStockWareDetailQuery;
+
+mod pdd_stock_ware_info_list;
+pub use pdd_stock_ware_info_list::PddStockWareInfoList;
+
+mod pdd_stock_ware_list;
+pub use pdd_stock_ware_list::PddStockWareList;
+
+mod pdd_stock_ware_move;
+pub use pdd_stock_ware_move::PddStockWareMove;
+
+mod pdd_stock_ware_sku_update;
+pub use pdd_stock_ware_sku_update::PddStockWareSkuUpdate;
+
+mod pdd_stock_ware_update;
+pub use pdd_stock_ware_update::PddStockWareUpdate;
+
+mod pdd_stock_ware_warehouse_query;
+pub use pdd_stock_ware_warehouse_query::PddStockWareWarehouseQuery;
+
+mod pdd_pmc_accrue_query;
+pub use pdd_pmc_accrue_query::PddPmcAccrueQuery;
+
+mod pdd_pmc_user_cancel;
+pub use pdd_pmc_user_cancel::PddPmcUserCancel;
+
+mod pdd_pmc_user_get;
+pub use pdd_pmc_user_get::PddPmcUserGet;
+
+mod pdd_pmc_user_permit;
+pub use pdd_pmc_user_permit::PddPmcUserPermit;
+
+mod pdd_cloud_print;
+pub use pdd_cloud_print::PddCloudPrint;
+
+mod pdd_cloud_print_task_query;
+pub use pdd_cloud_print_task_query::PddCloudPrintTaskQuery;
+
+mod pdd_cloud_print_verify_code;
+pub use pdd_cloud_print_verify_code::PddCloudPrintVerifyCode;
+
+mod pdd_cloud_printer_bind;
+pub use pdd_cloud_printer_bind::PddCloudPrinterBind;
+
+mod pdd_cloud_printer_setting;
+pub use pdd_cloud_printer_setting::PddCloudPrinterSetting;
+
+mod pdd_cloud_printer_status_query;
+pub use pdd_cloud_printer_status_query::PddCloudPrinterStatusQuery;
+
+mod pdd_cloudprint_customares_get;
+pub use pdd_cloudprint_customares_get::PddCloudprintCustomaresGet;
+
+mod pdd_cloudprint_stdtemplates_get;
+pub use pdd_cloudprint_stdtemplates_get::PddCloudprintStdtemplatesGet;
+
+mod pdd_waybill_cancel;
+pub use pdd_waybill_cancel::PddWaybillCancel;
+
+mod pdd_waybill_get;
+pub use pdd_waybill_get::PddWaybillGet;
+
+mod pdd_waybill_query_by_waybillcode;
+pub use pdd_waybill_query_by_waybillcode::PddWaybillQueryByWaybillcode;
+
+mod pdd_waybill_search;
+pub use pdd_waybill_search::PddWaybillSearch;
+
+mod pdd_waybill_update;
+pub use pdd_waybill_update::PddWaybillUpdate;
+
+mod pdd_finance_balance_daily_bill_url_get;
+pub use pdd_finance_balance_daily_bill_url_get::PddFinanceBalanceDailyBillUrlGet;
+
+mod pdd_open_msg_service_query_msg_record;
+pub use pdd_open_msg_service_query_msg_record::PddOpenMsgServiceQueryMsgRecord;
+
+mod pdd_open_msg_service_send_batch_msg;
+pub use pdd_open_msg_service_send_batch_msg::PddOpenMsgServiceSendBatchMsg;
+
+mod pdd_open_msg_service_send_express_msg;
+pub use pdd_open_msg_service_send_express_msg::PddOpenMsgServiceSendExpressMsg;
+
+mod pdd_open_msg_service_send_msg;
+pub use pdd_open_msg_service_send_msg::PddOpenMsgServiceSendMsg;
+
+mod pdd_servicemarket_contract_search;
+pub use pdd_servicemarket_contract_search::PddServicemarketContractSearch;
+
+mod pdd_servicemarket_settlementbill_get;
+pub use pdd_servicemarket_settlementbill_get::PddServicemarketSettlementbillGet;
+
+mod pdd_servicemarket_tradelist_get;
+pub use pdd_servicemarket_tradelist_get::PddServicemarketTradelistGet;
+
+mod pdd_vas_order_search;
+pub use pdd_vas_order_search::PddVasOrderSearch;
+
+mod pdd_sms_detailbill_push;
+pub use pdd_sms_detailbill_push::PddSmsDetailbillPush;
+
+mod pdd_sms_vendor_complaint_create;
+pub use pdd_sms_vendor_complaint_create::PddSmsVendorComplaintCreate;
+
+mod pdd_ad_api_advertiser_open_account;
+pub use pdd_ad_api_advertiser_open_account::PddAdApiAdvertiserOpenAccount;
+
+mod pdd_ad_api_advertiser_query_account_balance;
+pub use pdd_ad_api_advertiser_query_account_balance::PddAdApiAdvertiserQueryAccountBalance;
+
+mod pdd_ad_api_advertiser_query_account_info;
+pub use pdd_ad_api_advertiser_query_account_info::PddAdApiAdvertiserQueryAccountInfo;
+
+mod pdd_ad_api_advertiser_query_detail;
+pub use pdd_ad_api_advertiser_query_detail::PddAdApiAdvertiserQueryDetail;
+
+mod pdd_ad_api_goods_query_gallery_images;
+pub use pdd_ad_api_goods_query_gallery_images::PddAdApiGoodsQueryGalleryImages;
+
+mod pdd_ad_api_goods_query_long_images;
+pub use pdd_ad_api_goods_query_long_images::PddAdApiGoodsQueryLongImages;
+
+mod pdd_ad_api_goods_query_page;
+pub use pdd_ad_api_goods_query_page::PddAdApiGoodsQueryPage;
+
+mod pdd_ad_api_keyword_create;
+pub use pdd_ad_api_keyword_create::PddAdApiKeywordCreate;
+
+mod pdd_ad_api_keyword_delete;
+pub use pdd_ad_api_keyword_delete::PddAdApiKeywordDelete;
+
+mod pdd_ad_api_keyword_query_list;
+pub use pdd_ad_api_keyword_query_list::PddAdApiKeywordQueryList;
+
+mod pdd_ad_api_keyword_recommend_get;
+pub use pdd_ad_api_keyword_recommend_get::PddAdApiKeywordRecommendGet;
+
+mod pdd_ad_api_keyword_relevance_get;
+pub use pdd_ad_api_keyword_relevance_get::PddAdApiKeywordRelevanceGet;
+
+mod pdd_ad_api_keyword_update;
+pub use pdd_ad_api_keyword_update::PddAdApiKeywordUpdate;
+
+mod pdd_ad_api_plan_create;
+pub use pdd_ad_api_plan_create::PddAdApiPlanCreate;
+
+mod pdd_ad_api_plan_delete;
+pub use pdd_ad_api_plan_delete::PddAdApiPlanDelete;
+
+mod pdd_ad_api_plan_query_can_create_ad_plan;
+pub use pdd_ad_api_plan_query_can_create_ad_plan::PddAdApiPlanQueryCanCreateAdPlan;
+
+mod pdd_ad_api_plan_query_can_update_max_cost;
+pub use pdd_ad_api_plan_query_can_update_max_cost::PddAdApiPlanQueryCanUpdateMaxCost;
+
+mod pdd_ad_api_plan_query_list;
+pub use pdd_ad_api_plan_query_list::PddAdApiPlanQueryList;
+
+mod pdd_ad_api_plan_update_data_operate_status;
+pub use pdd_ad_api_plan_update_data_operate_status::PddAdApiPlanUpdateDataOperateStatus;
+
+mod pdd_ad_api_plan_update_max_cost;
+pub use pdd_ad_api_plan_update_max_cost::PddAdApiPlanUpdateMaxCost;
+
+mod pdd_ad_api_plan_update_plan_discount;
+pub use pdd_ad_api_plan_update_plan_discount::PddAdApiPlanUpdatePlanDiscount;
+
+mod pdd_ad_api_plan_update_plan_name;
+pub use pdd_ad_api_plan_update_plan_name::PddAdApiPlanUpdatePlanName;
+
+mod pdd_ad_api_plan_update_plan_to_ocpc;
+pub use pdd_ad_api_plan_update_plan_to_ocpc::PddAdApiPlanUpdatePlanToOcpc;
+
+mod pdd_ad_api_report_activity_report_query;
+pub use pdd_ad_api_report_activity_report_query::PddAdApiReportActivityReportQuery;
+
+mod pdd_ad_api_report_daily_report_query;
+pub use pdd_ad_api_report_daily_report_query::PddAdApiReportDailyReportQuery;
+
+mod pdd_ad_api_report_entity_report_query;
+pub use pdd_ad_api_report_entity_report_query::PddAdApiReportEntityReportQuery;
+
+mod pdd_ad_api_report_hourly_report_query;
+pub use pdd_ad_api_report_hourly_report_query::PddAdApiReportHourlyReportQuery;
+
+mod pdd_ad_api_report_tr_daily_report_query;
+pub use pdd_ad_api_report_tr_daily_report_query::PddAdApiReportTrDailyReportQuery;
+
+mod pdd_ad_api_report_tr_hourly_report_query;
+pub use pdd_ad_api_report_tr_hourly_report_query::PddAdApiReportTrHourlyReportQuery;
+
+mod pdd_ad_api_unit_bid_delete;
+pub use pdd_ad_api_unit_bid_delete::PddAdApiUnitBidDelete;
+
+mod pdd_ad_api_unit_bid_query_base_location_profile;
+pub use pdd_ad_api_unit_bid_query_base_location_profile::PddAdApiUnitBidQueryBaseLocationProfile;
+
+mod pdd_ad_api_unit_bid_query_base_target_profile;
+pub use pdd_ad_api_unit_bid_query_base_target_profile::PddAdApiUnitBidQueryBaseTargetProfile;
+
+mod pdd_ad_api_unit_bid_query_list;
+pub use pdd_ad_api_unit_bid_query_list::PddAdApiUnitBidQueryList;
+
+mod pdd_ad_api_unit_bid_query_targeting_tag_list;
+pub use pdd_ad_api_unit_bid_query_targeting_tag_list::PddAdApiUnitBidQueryTargetingTagList;
+
+mod pdd_ad_api_unit_bid_sync;
+pub use pdd_ad_api_unit_bid_sync::PddAdApiUnitBidSync;
+
+mod pdd_ad_api_unit_bid_update;
+pub use pdd_ad_api_unit_bid_update::PddAdApiUnitBidUpdate;
+
+mod pdd_ad_api_unit_create;
+pub use pdd_ad_api_unit_create::PddAdApiUnitCreate;
+
+mod pdd_ad_api_unit_creative_check_title;
+pub use pdd_ad_api_unit_creative_check_title::PddAdApiUnitCreativeCheckTitle;
+
+mod pdd_ad_api_unit_creative_create;
+pub use pdd_ad_api_unit_creative_create::PddAdApiUnitCreativeCreate;
+
+mod pdd_ad_api_unit_creative_delete;
+pub use pdd_ad_api_unit_creative_delete::PddAdApiUnitCreativeDelete;
+
+mod pdd_ad_api_unit_creative_distribute_flow_rate;
+pub use pdd_ad_api_unit_creative_distribute_flow_rate::PddAdApiUnitCreativeDistributeFlowRate;
+
+mod pdd_ad_api_unit_creative_query_flow_rate;
+pub use pdd_ad_api_unit_creative_query_flow_rate::PddAdApiUnitCreativeQueryFlowRate;
+
+mod pdd_ad_api_unit_creative_query_list;
+pub use pdd_ad_api_unit_creative_query_list::PddAdApiUnitCreativeQueryList;
+
+mod pdd_ad_api_unit_creative_update_content;
+pub use pdd_ad_api_unit_creative_update_content::PddAdApiUnitCreativeUpdateContent;
+
+mod pdd_ad_api_unit_creative_update_data_operate_status;
+pub use pdd_ad_api_unit_creative_update_data_operate_status::PddAdApiUnitCreativeUpdateDataOperateStatus;
+
+mod pdd_ad_api_unit_creative_update_smart_creative;
+pub use pdd_ad_api_unit_creative_update_smart_creative::PddAdApiUnitCreativeUpdateSmartCreative;
+
+mod pdd_ad_api_unit_delete;
+pub use pdd_ad_api_unit_delete::PddAdApiUnitDelete;
+
+mod pdd_ad_api_unit_query_list;
+pub use pdd_ad_api_unit_query_list::PddAdApiUnitQueryList;
+
+mod pdd_ad_api_unit_tr_create;
+pub use pdd_ad_api_unit_tr_create::PddAdApiUnitTrCreate;
+
+mod pdd_ad_api_unit_tr_delete;
+pub use pdd_ad_api_unit_tr_delete::PddAdApiUnitTrDelete;
+
+mod pdd_ad_api_unit_tr_list_ad_info;
+pub use pdd_ad_api_unit_tr_list_ad_info::PddAdApiUnitTrListAdInfo;
+
+mod pdd_ad_api_unit_tr_list_goods_bid_privilege;
+pub use pdd_ad_api_unit_tr_list_goods_bid_privilege::PddAdApiUnitTrListGoodsBidPrivilege;
+
+mod pdd_ad_api_unit_tr_list_goods_bid_suggest;
+pub use pdd_ad_api_unit_tr_list_goods_bid_suggest::PddAdApiUnitTrListGoodsBidSuggest;
+
+mod pdd_ad_api_unit_tr_update_ad_name;
+pub use pdd_ad_api_unit_tr_update_ad_name::PddAdApiUnitTrUpdateAdName;
+
+mod pdd_ad_api_unit_tr_update_data_operate_status;
+pub use pdd_ad_api_unit_tr_update_data_operate_status::PddAdApiUnitTrUpdateDataOperateStatus;
+
+mod pdd_ad_api_unit_tr_update_max_cost;
+pub use pdd_ad_api_unit_tr_update_max_cost::PddAdApiUnitTrUpdateMaxCost;
+
+mod pdd_ad_api_unit_tr_update_optimization_bid;
+pub use pdd_ad_api_unit_tr_update_optimization_bid::PddAdApiUnitTrUpdateOptimizationBid;
+
+mod pdd_ad_api_unit_tr_update_target_roi;
+pub use pdd_ad_api_unit_tr_update_target_roi::PddAdApiUnitTrUpdateTargetRoi;
+
+mod pdd_ad_api_unit_update_data_operate_status;
+pub use pdd_ad_api_unit_update_data_operate_status::PddAdApiUnitUpdateDataOperateStatus;
+
+mod pdd_ad_api_unit_update_optimization_message;
+pub use pdd_ad_api_unit_update_optimization_message::PddAdApiUnitUpdateOptimizationMessage;
+
+mod pdd_ad_api_unit_update_unit_bid;
+pub use pdd_ad_api_unit_update_unit_bid::PddAdApiUnitUpdateUnitBid;
+
+mod pdd_ad_api_unit_update_unit_name;
+pub use pdd_ad_api_unit_update_unit_name::PddAdApiUnitUpdateUnitName;
+
+mod pdd_fds_order_get;
+pub use pdd_fds_order_get::PddFdsOrderGet;
+
+mod pdd_fds_order_list_get;
+pub use pdd_fds_order_list_get::PddFdsOrderListGet;
+
+mod pdd_fds_role_get;
+pub use pdd_fds_role_get::PddFdsRoleGet;
+
+mod pdd_fds_waybill_cancel;
+pub use pdd_fds_waybill_cancel::PddFdsWaybillCancel;
+
+mod pdd_fds_waybill_get;
+pub use pdd_fds_waybill_get::PddFdsWaybillGet;
+
+mod pdd_fds_waybill_return;
+pub use pdd_fds_waybill_return::PddFdsWaybillReturn;
+
+mod pdd_fds_waybill_return_slave;
+pub use pdd_fds_waybill_return_slave::PddFdsWaybillReturnSlave;
+
+mod pdd_mall_info_group_add_post;
+pub use pdd_mall_info_group_add_post::PddMallInfoGroupAddPost;
+
+mod pdd_mall_info_group_add_store_post;
+pub use pdd_mall_info_group_add_store_post::PddMallInfoGroupAddStorePost;
+
+mod pdd_mall_info_group_delete_post;
+pub use pdd_mall_info_group_delete_post::PddMallInfoGroupDeletePost;
+
+mod pdd_mall_info_group_list_store_get;
+pub use pdd_mall_info_group_list_store_get::PddMallInfoGroupListStoreGet;
+
+mod pdd_mall_info_group_query_post;
+pub use pdd_mall_info_group_query_post::PddMallInfoGroupQueryPost;
+
+mod pdd_mall_info_group_remove_store_get;
+pub use pdd_mall_info_group_remove_store_get::PddMallInfoGroupRemoveStoreGet;
+
+mod pdd_mall_info_group_update_post;
+pub use pdd_mall_info_group_update_post::PddMallInfoGroupUpdatePost;
+
+mod pdd_mall_info_store_create_post;
+pub use pdd_mall_info_store_create_post::PddMallInfoStoreCreatePost;
+
+mod pdd_mall_info_store_create_post_nopoi;
+pub use pdd_mall_info_store_create_post_nopoi::PddMallInfoStoreCreatePostNopoi;
+
+mod pdd_mall_info_store_delete_post;
+pub use pdd_mall_info_store_delete_post::PddMallInfoStoreDeletePost;
+
+mod pdd_mall_info_store_get;
+pub use pdd_mall_info_store_get::PddMallInfoStoreGet;
+
+mod pdd_mall_info_store_update_post;
+pub use pdd_mall_info_store_update_post::PddMallInfoStoreUpdatePost;
+
+mod pdd_mall_info_store_update_post_nopoi;
+pub use pdd_mall_info_store_update_post_nopoi::PddMallInfoStoreUpdatePostNopoi;
+
+mod pdd_qrpay_payee_register;
+pub use pdd_qrpay_payee_register::PddQrpayPayeeRegister;
+
+mod pdd_customs_send_goods_record;
+pub use pdd_customs_send_goods_record::PddCustomsSendGoodsRecord;
+
+mod pdd_mall_info_bonded_warehouse_get;
+pub use pdd_mall_info_bonded_warehouse_get::PddMallInfoBondedWarehouseGet;
+
+mod pdd_oversea_clearance_get;
+pub use pdd_oversea_clearance_get::PddOverseaClearanceGet;
+
+mod pdd_oversea_declaration_fail_notify;
+pub use pdd_oversea_declaration_fail_notify::PddOverseaDeclarationFailNotify;
+
+mod pdd_ticket_areacode_get;
+pub use pdd_ticket_areacode_get::PddTicketAreacodeGet;
+
+mod pdd_ticket_goods_query;
+pub use pdd_ticket_goods_query::PddTicketGoodsQuery;
+
+mod pdd_ticket_goods_upload;
+pub use pdd_ticket_goods_upload::PddTicketGoodsUpload;
+
+mod pdd_ticket_order_create_notifycation;
+pub use pdd_ticket_order_create_notifycation::PddTicketOrderCreateNotifycation;
+
+mod pdd_ticket_order_refund_notifycation;
+pub use pdd_ticket_order_refund_notifycation::PddTicketOrderRefundNotifycation;
+
+mod pdd_ticket_scenic_get;
+pub use pdd_ticket_scenic_get::PddTicketScenicGet;
+
+mod pdd_ticket_sku_rule_add;
+pub use pdd_ticket_sku_rule_add::PddTicketSkuRuleAdd;
+
+mod pdd_ticket_sku_rule_edit;
+pub use pdd_ticket_sku_rule_edit::PddTicketSkuRuleEdit;
+
+mod pdd_ticket_sku_rule_get;
+pub use pdd_ticket_sku_rule_get::PddTicketSkuRuleGet;
+
+mod pdd_ticket_verification_notifycation;
+pub use pdd_ticket_verification_notifycation::PddTicketVerificationNotifycation;
