@@ -12,15 +12,15 @@ serde = { version = "1.0.166", features = ["derive"] }
 serde_json = "1.0.100"
 md-5 = "0.10.5"
 reqwest = { version = "0.11", features = ["json"] }
-tokio = { version = "1", default-features = false, features = ["macros"] }
+tokio = { version = "1", default-features = false, features = ["macros", "fs"] }
 time = { version = "0.3", features = ["macros"] }
 tracing = "0.1"
 thiserror = "1"
+base64 = { version = "0.21.2" }
 
-tokio-tungstenite = { version = "0.19.0", features = [
+tokio-tungstenite = { version = "0.20.0", features = [
     "native-tls",
 ], optional = true }
-base64 = { version = "0.21.2", optional = true }
 futures-util = { version = "0.3.28", optional = true }
 serde_with = { version = "3.1.0", optional = true }
 
@@ -45,4 +45,5 @@ harness = false
 members = ["build_req"]
 
 [features]
-pmc-native-tls = ["tokio-tungstenite", "base64", "futures-util", "serde_with"]
+pmc-native-tls = ["tokio-tungstenite", "futures-util", "serde_with"]
+file = ["tokio/fs"]
