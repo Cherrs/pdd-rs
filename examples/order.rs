@@ -11,6 +11,6 @@ async fn main() -> anyhow::Result<()> {
         // refund_status: Some(5),
         ..Default::default()
     };
-    client.exec(req).await?;
+    client.send(req).await?;
     Ok(())
 }

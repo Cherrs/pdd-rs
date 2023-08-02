@@ -6,6 +6,6 @@ async fn main() -> anyhow::Result<()> {
     let req = PddPmcUserPermit {
         ..Default::default()
     };
-    client.exec(req).await?;
+    client.send(req).await?;
     Ok(())
 }

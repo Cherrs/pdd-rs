@@ -1,8 +1,12 @@
 use std::{borrow::Cow, env};
 
+use file::FileUploadRequest;
 use md5::{Digest, Md5};
 use public_parameters::PublicParameters;
-use reqwest::header::CONTENT_TYPE;
+use reqwest::{
+    header::CONTENT_TYPE,
+    multipart::{Form, Part},
+};
 use serde::Serialize;
 use serde_json::Value;
 use thiserror::Error;
@@ -26,6 +30,7 @@ pub struct Config {
     pub client_id: String,
     pub client_secret: String,
     pub url: String,
+    pub upload_url: String,
     pub access_token: Option<String>,
 }
 
@@ -60,11 +65,18 @@ impl Config {
         } else {
             "https://gw-api.pinduoduo.com/api/router".to_string()
         };
+
+        let upload_url = if let Ok(url) = env::var("PDD_UPLOAD_URL") {
+            url
+        } else {
+            "https://gw-upload.pinduoduo.com/api/upload".to_string()
+        };
         Ok(Config {
             client_id: env::var("PDD_CLIENT_ID")?,
             client_secret: env::var("PDD_CLIENT_SECRET")?,
             access_token,
             url,
+            upload_url,
         })
     }
 }
@@ -95,21 +107,80 @@ impl Client {
         })
     }
 
-    pub async fn exec<T: Request + Serialize>(self, req: T) -> Result<Value, Error> {
-        let pub_par = PublicParameters {
-            access_token: self.config.access_token,
-            client_id: self.config.client_id,
-            data_type: Some("JSON".to_string()),
-            timestamp: OffsetDateTime::now_utc().unix_timestamp(),
-            type_: T::get_type(),
-            version: None,
+    pub async fn file_upload<T>(self, req: T) -> Result<Value, Error>
+    where
+        T: Request + FileUploadRequest + Serialize,
+    {
+        let pub_par = init_public_parameters(
+            self.config.access_token,
+            self.config.client_id,
+            T::get_type(),
+        );
+
+        let pub_parameters = serde_json::to_value(pub_par)?;
+
+        let req_value = serde_json::to_value(&req)?;
+
+        // 获取文件数据
+        let Some((name, data)) = req.get_file()
+        else{
+            return Err(Error::FileNotFoundError);
         };
 
+        // 添加签名
+        let body = add_sign(&self.config.client_secret, pub_parameters, req_value);
+
+        let file_part = Part::bytes(data).file_name(name);
+
+        //获取body的参数
+        // TODO:unwrap
+        let bodya = body.as_object().unwrap();
+
+        let mut url = String::new();
+
+        for i in bodya {
+            let value = match i.1 {
+                Value::String(s) => s.as_str().to_string(),
+                Value::Null => continue,
+                _ => i.1.to_string(),
+            };
+            url.push_str(&format!("{}={}&", i.0, value));
+        }
+
+        let form = Form::new().part("file", file_part);
+
+        trace!("request body:{:?}", form);
+
+        // 拼接请求url
+        let request_url = format!("{}?{}", self.config.upload_url, url);
+        trace!("{}", request_url);
+
+        // 使用reqwest请求from-data
+        let rsp = self
+            .reqwest
+            .post(&request_url)
+            .multipart(form)
+            .send()
+            .await?;
+        let result = rsp.text().await?;
+
+        trace!("response body:{:?}", result);
+        Ok(serde_json::from_str(&result)?)
+    }
+
+    pub async fn send<T: Request + Serialize>(self, req: T) -> Result<Value, Error> {
+        let pub_par = init_public_parameters(
+            self.config.access_token,
+            self.config.client_id,
+            T::get_type(),
+        );
         let pub_parameters = serde_json::to_value(pub_par)?;
 
         let req_value = serde_json::to_value(req)?;
 
         let body = add_sign(&self.config.client_secret, pub_parameters, req_value);
+
+        trace!("request body:{:?}", body);
 
         let rsp = self
             .reqwest
@@ -120,8 +191,23 @@ impl Client {
             .await?;
         let result = rsp.json::<Value>().await?;
 
-        trace!("{:?}", result);
+        trace!("response body:{:?}", result);
         Ok(result)
+    }
+}
+
+fn init_public_parameters(
+    access_token: Option<String>,
+    client_id: String,
+    type_name: String,
+) -> PublicParameters {
+    PublicParameters {
+        access_token,
+        client_id,
+        data_type: Some("JSON".to_string()),
+        timestamp: OffsetDateTime::now_utc().unix_timestamp(),
+        type_: type_name,
+        version: None,
     }
 }
 
@@ -157,10 +243,14 @@ pub fn add_sign(client_secret: &str, mut pub_parameters: Value, mut parameters: 
 
 #[derive(Error, Debug)]
 pub enum Error {
+    #[error("没有文件")]
+    FileNotFoundError,
     #[error("使用环境变量初始化Client失败")]
     EnvVarNotFoundError(#[from] env::VarError),
     #[error("Json解析错误")]
     JsonParsingFailure(#[from] serde_json::Error),
+    #[error("文件读取错误")]
+    FileIOFailure(#[from] std::io::Error),
     #[error("请求失败")]
     RequestFailure(#[from] reqwest::Error),
     #[cfg(feature = "pmc-native-tls")]
@@ -186,7 +276,7 @@ mod tests {
         let req = PddOrderInformationGet {
             order_sn: Some("230626-434073824910838".to_string()),
         };
-        client.exec(req).await.unwrap();
+        client.send(req).await.unwrap();
     }
 
     #[test]
