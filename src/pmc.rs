@@ -1,16 +1,20 @@
 use std::{
     pin::Pin,
+    sync::Arc,
     task::{Context, Poll},
     time::Duration,
 };
 
 use base64::{engine::general_purpose, Engine};
-use futures_util::{SinkExt, Stream, StreamExt};
+use futures_util::{
+    stream::{SplitSink, SplitStream},
+    SinkExt, Stream, StreamExt,
+};
 use md5::{Digest, Md5};
 use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use serde_with::skip_serializing_none;
-use tokio::net::TcpStream;
+use tokio::{net::TcpStream, sync::Mutex};
 use tokio_tungstenite::{connect_async, MaybeTlsStream, WebSocketStream};
 use tracing::trace;
 
@@ -34,7 +38,7 @@ pub struct PmcMessage {
 
 impl From<tokio_tungstenite::tungstenite::Message> for PmcMessage {
     fn from(value: tokio_tungstenite::tungstenite::Message) -> Self {
-        let tokio_tungstenite::tungstenite::Message::Text(t) = value else{
+        let tokio_tungstenite::tungstenite::Message::Text(t) = value else {
             panic!("e");
         };
         serde_json::from_str(&t).unwrap()
@@ -72,13 +76,23 @@ enum CommandType {
     Common,
 }
 
-pub struct PmcConsumers(WebSocketStream<MaybeTlsStream<TcpStream>>);
+pub struct PmcConsumers(
+    SplitStream<WebSocketStream<MaybeTlsStream<TcpStream>>>,
+    Arc<
+        Mutex<
+            SplitSink<
+                WebSocketStream<MaybeTlsStream<TcpStream>>,
+                tokio_tungstenite::tungstenite::Message,
+            >,
+        >,
+    >,
+);
 
 impl PmcConsumers {
     pub async fn ack(&mut self, msg: &PmcMessage) {
         let ack_msg = msg.to_ack();
         trace!("ack:{:?}", ack_msg);
-        self.0.send(ack_msg).await.unwrap();
+        self.1.lock().await.send(ack_msg).await.unwrap();
     }
 }
 
@@ -115,7 +129,27 @@ impl PmcClient {
             self.config.client_id, time, sign
         );
         if let Ok(s) = connect_async(Url::parse(&wss_path).unwrap()).await {
-            Ok(PmcConsumers(s.0))
+            let (w, r) = s.0.split();
+
+            let send = Arc::new(Mutex::new(w));
+            let b_send = send.clone();
+            tokio::spawn(async move {
+                loop {
+                    let heat = format!(
+                        r##"{{"commandType":"HeartBeat","time":{}}}"##,
+                        unix_timestamp_millis()
+                    );
+                    trace!("发送心跳:{}", heat);
+                    b_send
+                        .lock()
+                        .await
+                        .send(tokio_tungstenite::tungstenite::Message::Text(heat))
+                        .await
+                        .unwrap();
+                    tokio::time::sleep(Duration::from_secs(5)).await;
+                }
+            });
+            Ok(PmcConsumers(r, send))
         } else {
             Err(Error::PmcConnectionFailure)
         }
