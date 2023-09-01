@@ -27,13 +27,13 @@ pub struct PmcClient {
 #[skip_serializing_none]
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct PmcMessage {
-    id: Option<i128>,
+    pub id: Option<i128>,
     #[serde(rename = "commandType")]
-    command_type: CommandType,
-    time: u128,
-    message: Option<Message>,
+    pub command_type: CommandType,
+    pub time: u128,
+    pub message: Option<Message>,
     #[serde(rename = "sendTime")]
-    send_time: Option<u128>,
+    pub send_time: Option<u128>,
 }
 
 impl From<tokio_tungstenite::tungstenite::Message> for PmcMessage {
@@ -60,16 +60,16 @@ impl PmcMessage {
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-struct Message {
+pub struct Message {
     #[serde(rename = "type")]
-    msg_type: String,
+    pub msg_type: String,
     #[serde(rename = "mallID")]
-    mall_id: i128,
-    content: String,
+    pub mall_id: i128,
+    pub content: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-enum CommandType {
+pub enum CommandType {
     HeartBeat,
     Ack,
     Fail,
@@ -106,9 +106,6 @@ impl Stream for PmcConsumers {
             Poll::Ready(Some(m)) => match m {
                 Ok(msg) => {
                     let msg_value: PmcMessage = msg.into();
-                    if let CommandType::HeartBeat = msg_value.command_type {
-                        return Poll::Pending;
-                    }
                     Poll::Ready(Some(Ok(msg_value)))
                 }
                 Err(_) => Poll::Ready(Some(Err(Error::PmcFailure))),

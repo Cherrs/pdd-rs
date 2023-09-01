@@ -1,6 +1,9 @@
 use futures_util::StreamExt;
-use pdd::{pmc::PmcClient, Config};
-use tracing::Level;
+use pdd::{
+    pmc::{CommandType, PmcClient},
+    Config,
+};
+use tracing::{trace, Level};
 use tracing_subscriber::FmtSubscriber;
 
 #[tokio::main]
@@ -16,6 +19,10 @@ async fn main() -> anyhow::Result<()> {
 
     while let Some(msg) = s.next().await {
         let msg = msg.unwrap();
+        if let CommandType::HeartBeat = msg.command_type {
+            trace!("收到心跳");
+            continue;
+        }
         println!("{:?}", msg);
         s.ack(&msg).await;
     }
