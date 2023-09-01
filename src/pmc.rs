@@ -106,6 +106,9 @@ impl Stream for PmcConsumers {
             Poll::Ready(Some(m)) => match m {
                 Ok(msg) => {
                     let msg_value: PmcMessage = msg.into();
+                    if let CommandType::HeartBeat = msg_value.command_type {
+                        return Poll::Pending;
+                    }
                     Poll::Ready(Some(Ok(msg_value)))
                 }
                 Err(_) => Poll::Ready(Some(Err(Error::PmcFailure))),
