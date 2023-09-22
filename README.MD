@@ -1,10 +1,20 @@
 # 拼多多开发平台Rust SDK
 
-拼多多开发平台sdk，支持消息推送
+基于tokio开发的拼多多开发平台sdk，支持消息推送
 
 ## Examples
 
-### 设置环境变量
+1.添加依赖
+
+```toml
+[dependencies]
+pdd = { "0.1" }
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+serde_json = "1"
+```
+
+2.设置环境变量
 
 ```bash
 set PDD_CLIENT_ID=you_client_id
@@ -31,6 +41,14 @@ set PDD_ACCESS_TOKEN=you_access_token
 ### 消息推送
 
 需要开启`pmc-native-tls`feature
+
+```toml
+[dependencies]
+pdd = { "0.1" , features=["pmc-native-tls"] }
+tokio = { version = "1", features = ["full"] }
+futures-util = "0.3"
+serde_json = "1"
+```
 
 ```rust
     let client = PmcClient::new(Config::from_env()?);
