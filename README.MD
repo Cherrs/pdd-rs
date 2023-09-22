@@ -1,4 +1,4 @@
-# 拼多多开发平台Rust SDK
+# 拼多多开放平台Rust SDK
 
 基于tokio开发的拼多多开发平台sdk，支持消息推送
 
