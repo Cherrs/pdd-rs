@@ -106,6 +106,11 @@ impl Stream for PmcConsumers {
             Poll::Ready(Some(m)) => match m {
                 Ok(msg) => {
                     let msg_value: PmcMessage = msg.into();
+                    trace!("收到消息:{:?}", msg_value);
+                    if let CommandType::HeartBeat = msg_value.command_type {
+                        cx.waker().wake_by_ref();
+                        return Poll::Pending;
+                    }
                     Poll::Ready(Some(Ok(msg_value)))
                 }
                 Err(_) => Poll::Ready(Some(Err(Error::PmcFailure))),
@@ -134,6 +139,7 @@ impl PmcClient {
             let send = Arc::new(Mutex::new(w));
             let b_send = send.clone();
             tokio::spawn(async move {
+                let mut interval = tokio::time::interval(Duration::from_secs(5));
                 loop {
                     let heat = format!(
                         r##"{{"commandType":"HeartBeat","time":{}}}"##,
@@ -146,7 +152,7 @@ impl PmcClient {
                         .send(tokio_tungstenite::tungstenite::Message::Text(heat))
                         .await
                         .unwrap();
-                    tokio::time::sleep(Duration::from_secs(5)).await;
+                    interval.tick().await;
                 }
             });
             Ok(PmcConsumers(r, send))
