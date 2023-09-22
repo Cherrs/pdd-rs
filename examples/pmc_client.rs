@@ -19,10 +19,6 @@ async fn main() -> anyhow::Result<()> {
 
     while let Some(msg) = s.next().await {
         let msg = msg.unwrap();
-        if let CommandType::HeartBeat = msg.command_type {
-            trace!("收到心跳");
-            continue;
-        }
         println!("{:?}", msg);
         s.ack(&msg).await;
     }
