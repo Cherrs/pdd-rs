@@ -1,6 +1,6 @@
 [package]
 name = "pdd"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "拼多多开放平台sdk"
 readme = "README.MD"
@@ -15,7 +15,11 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 md-5 = "0.10"
 reqwest = { version = "0.11", features = ["json", "multipart"] }
-tokio = { version = "1", default-features = false, features = ["macros", "fs"] }
+tokio = { version = "1", default-features = false, features = [
+    "macros",
+    "fs",
+    "time",
+] }
 time = { version = "0.3", features = ["macros"] }
 tracing = "0.1"
 thiserror = "1"
