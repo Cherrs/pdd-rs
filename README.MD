@@ -8,7 +8,7 @@
 
 ```toml
 [dependencies]
-pdd = { "0.1" }
+pdd = "0.1"
 tokio = { version = "1", features = ["full"] }
 futures-util = "0.3"
 serde_json = "1"
