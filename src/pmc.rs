@@ -16,7 +16,7 @@ use serde::{Deserialize, Serialize};
 use serde_with::skip_serializing_none;
 use tokio::{net::TcpStream, sync::Mutex};
 use tokio_tungstenite::{connect_async, MaybeTlsStream, WebSocketStream};
-use tracing::trace;
+use tracing::{error, trace};
 
 use crate::{Config, Error};
 
@@ -105,6 +105,10 @@ impl Stream for PmcConsumers {
             Poll::Ready(None) => Poll::Ready(None),
             Poll::Ready(Some(m)) => match m {
                 Ok(msg) => {
+                    if let tokio_tungstenite::tungstenite::Message::Close(e) = msg {
+                        error!("连接断开,错误：{:?}", e);
+                        return Poll::Ready(Some(Err(Error::PmcConnectionFailure)));
+                    }
                     let msg_value: PmcMessage = msg.into();
                     trace!("收到消息:{:?}", msg_value);
                     if let CommandType::HeartBeat = msg_value.command_type {
