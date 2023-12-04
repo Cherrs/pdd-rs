@@ -1,5 +1,9 @@
 # 拼多多开放平台Rust SDK
 
+[![Crates.io](https://img.shields.io/crates/v/pdd?color=blue&logo=rust&style=flat-square)](https://crates.io/crates/pdd)
+[![Crates.io](https://img.shields.io/crates/d/pdd?logo=rust&style=flat-square)](https://crates.io/crates/pdd)
+[![Docs.rs](https://img.shields.io/docsrs/pdd/latest?logo=rust&style=flat-square)](https://docs.rs/pdd/latest/pdd/)
+
 基于tokio开发的拼多多开发平台sdk，支持消息推送
 
 ## Examples
