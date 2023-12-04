@@ -14,6 +14,7 @@ pub struct PddOneExpressCostTemplate {
 }
 
 
+/// 根据id获取拼多多商家的物流运费模板信息
 impl Request for PddOneExpressCostTemplate {
     fn get_type() -> String {
         "pdd.one.express.cost.template".to_string()

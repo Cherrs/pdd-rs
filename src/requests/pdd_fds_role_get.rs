@@ -10,6 +10,7 @@ pub struct PddFdsRoleGet {
 }
 
 
+/// 确认店铺的身份
 impl Request for PddFdsRoleGet {
     fn get_type() -> String {
         "pdd.fds.role.get".to_string()

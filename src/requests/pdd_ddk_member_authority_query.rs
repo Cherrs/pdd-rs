@@ -18,6 +18,7 @@ pub struct PddDdkMemberAuthorityQuery {
 }
 
 
+/// 通过pid和自定义参数来查询是否已经绑定备案
 impl Request for PddDdkMemberAuthorityQuery {
     fn get_type() -> String {
         "pdd.ddk.member.authority.query".to_string()

@@ -30,6 +30,7 @@ pub struct PddDdkStatisticsDataQuery {
 }
 
 
+/// 本接口用于查询特定活动数据，仅限特定渠道可用。
 impl Request for PddDdkStatisticsDataQuery {
     fn get_type() -> String {
         "pdd.ddk.statistics.data.query".to_string()

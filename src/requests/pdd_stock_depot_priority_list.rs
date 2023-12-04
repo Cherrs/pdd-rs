@@ -34,6 +34,7 @@ pub struct PddStockDepotPriorityList {
 }
 
 
+/// 获取仓库优先级列表
 impl Request for PddStockDepotPriorityList {
     fn get_type() -> String {
         "pdd.stock.depot.priority.list".to_string()

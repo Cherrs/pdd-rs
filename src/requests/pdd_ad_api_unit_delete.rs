@@ -18,6 +18,7 @@ pub struct PddAdApiUnitDelete {
 }
 
 
+/// 删除单元
 impl Request for PddAdApiUnitDelete {
     fn get_type() -> String {
         "pdd.ad.api.unit.delete".to_string()

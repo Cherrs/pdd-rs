@@ -5,6 +5,20 @@ use serde::{Deserialize, Serialize};
 
 /// 家电分仓库存-编辑货品
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct WareInfos {
+    
+    /// 子货品id
+    #[serde(rename = "ware_id")]
+    pub ware_id: Option<i64>,
+    
+    /// 子货品数量
+    #[serde(rename = "ware_quantity")]
+    pub ware_quantity: Option<i32>,
+    
+}
+
+/// 家电分仓库存-编辑货品
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddStockWareUpdate {
     
     /// 货品id
@@ -81,21 +95,8 @@ pub struct PddStockWareUpdate {
     
 }
 
+
 /// 家电分仓库存-编辑货品
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct WareInfos {
-    
-    /// 子货品id
-    #[serde(rename = "ware_id")]
-    pub ware_id: Option<i64>,
-    
-    /// 子货品数量
-    #[serde(rename = "ware_quantity")]
-    pub ware_quantity: Option<i32>,
-    
-}
-
-
 impl Request for PddStockWareUpdate {
     fn get_type() -> String {
         "pdd.stock.ware.update".to_string()

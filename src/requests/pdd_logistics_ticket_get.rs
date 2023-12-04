@@ -26,6 +26,7 @@ pub struct PddLogisticsTicketGet {
 }
 
 
+/// 快递公司工单查询
 impl Request for PddLogisticsTicketGet {
     fn get_type() -> String {
         "pdd.logistics.ticket.get".to_string()

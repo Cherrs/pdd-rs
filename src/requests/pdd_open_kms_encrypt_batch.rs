@@ -5,6 +5,16 @@ use serde::{Deserialize, Serialize};
 
 /// 批量加密
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddOpenKmsEncryptBatch {
+    
+    /// 要加密的数据列表, 列表大小不超过100
+    #[serde(rename = "data_list")]
+    pub data_list: Option<Vec<DataList>>,
+    
+}
+
+/// 批量加密
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct DataList {
     
     /// 明文数据
@@ -21,17 +31,8 @@ pub struct DataList {
     
 }
 
+
 /// 批量加密
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddOpenKmsEncryptBatch {
-    
-    /// 要加密的数据列表, 列表大小不超过100
-    #[serde(rename = "data_list")]
-    pub data_list: Option<Vec<DataList>>,
-    
-}
-
-
 impl Request for PddOpenKmsEncryptBatch {
     fn get_type() -> String {
         "pdd.open.kms.encrypt.batch".to_string()

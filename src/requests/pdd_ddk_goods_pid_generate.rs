@@ -22,6 +22,7 @@ pub struct PddDdkGoodsPidGenerate {
 }
 
 
+/// 创建多多进宝推广位
 impl Request for PddDdkGoodsPidGenerate {
     fn get_type() -> String {
         "pdd.ddk.goods.pid.generate".to_string()

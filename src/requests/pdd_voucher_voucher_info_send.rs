@@ -5,6 +5,20 @@ use serde::{Deserialize, Serialize};
 
 /// 第三方ISV将消费者购买的卡券信息同步给平台
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct VoucherList {
+    
+    /// 卡券ID
+    #[serde(rename = "voucher_id")]
+    pub voucher_id: Option<String>,
+    
+    /// 卡券号
+    #[serde(rename = "voucher_no")]
+    pub voucher_no: Option<String>,
+    
+}
+
+/// 第三方ISV将消费者购买的卡券信息同步给平台
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddVoucherVoucherInfoSend {
     
     /// 订单号
@@ -21,21 +35,8 @@ pub struct PddVoucherVoucherInfoSend {
     
 }
 
+
 /// 第三方ISV将消费者购买的卡券信息同步给平台
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct VoucherList {
-    
-    /// 卡券ID
-    #[serde(rename = "voucher_id")]
-    pub voucher_id: Option<String>,
-    
-    /// 卡券号
-    #[serde(rename = "voucher_no")]
-    pub voucher_no: Option<String>,
-    
-}
-
-
 impl Request for PddVoucherVoucherInfoSend {
     fn get_type() -> String {
         "pdd.voucher.voucher.info.send".to_string()

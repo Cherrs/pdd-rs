@@ -36,6 +36,7 @@ pub struct PddAdApiUnitBidUpdate {
 }
 
 
+/// 更新单个定向/资源位
 impl Request for PddAdApiUnitBidUpdate {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.update".to_string()

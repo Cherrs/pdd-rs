@@ -23,28 +23,6 @@ pub struct List {
 
 /// 商品送装服务模版更新
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ServiceAreaList {
-    
-    /// 市id，如果是全省选中，则市id为0
-    #[serde(rename = "city_id")]
-    pub city_id: Option<i32>,
-    
-    /// 区id，如果是全省或全市选中，则区id为0
-    #[serde(rename = "district_id")]
-    pub district_id: Option<i32>,
-    
-    /// 省id
-    #[serde(rename = "province_id")]
-    pub province_id: Option<i32>,
-    
-    /// 溢价值：按分溢价时，输入价格分的数字，表示value分；按百分比溢价时，输入0-500之间的数字，表示0%——500%备注：买家自提服务类型时，不用传该字段
-    #[serde(rename = "value")]
-    pub value: Option<i32>,
-    
-}
-
-/// 商品送装服务模版更新
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct CatList {
     
     /// 三级类目id
@@ -63,19 +41,23 @@ pub struct CatList {
 
 /// 商品送装服务模版更新
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Content {
+pub struct ServiceAreaList {
     
-    /// 属性区间大值，-1表示"其他"示例：要配置区间"100-200"的费用，则maxPro输入"200"要配置区间"其他"的费用，则maxPro输入"-1"备注：表示长度时单位为：mm
-    #[serde(rename = "max_pro")]
-    pub max_pro: Option<i64>,
+    /// 市id，如果是全省选中，则市id为0
+    #[serde(rename = "city_id")]
+    pub city_id: Option<i32>,
     
-    /// 属性区间小值，-1表示"其他"示例：要配置区间"100-200"的费用，则minPro输入"100"要配置区间"其他"的费用，则minPro输入"-1"备注：表示长度时单位为：mm
-    #[serde(rename = "min_pro")]
-    pub min_pro: Option<i64>,
+    /// 区id，如果是全省或全市选中，则区id为0
+    #[serde(rename = "district_id")]
+    pub district_id: Option<i32>,
     
-    /// 价格。单位：分
-    #[serde(rename = "price")]
-    pub price: Option<i64>,
+    /// 省id
+    #[serde(rename = "province_id")]
+    pub province_id: Option<i32>,
+    
+    /// 溢价值：按分溢价时，输入价格分的数字，表示value分；按百分比溢价时，输入0-500之间的数字，表示0%——500%备注：买家自提服务类型时，不用传该字段
+    #[serde(rename = "value")]
+    pub value: Option<i32>,
     
 }
 
@@ -109,7 +91,26 @@ pub struct PddGoodsLogisticsSerTemplateUpdate {
     
 }
 
+/// 商品送装服务模版更新
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Content {
+    
+    /// 属性区间大值，-1表示"其他"示例：要配置区间"100-200"的费用，则maxPro输入"200"要配置区间"其他"的费用，则maxPro输入"-1"备注：表示长度时单位为：mm
+    #[serde(rename = "max_pro")]
+    pub max_pro: Option<i64>,
+    
+    /// 属性区间小值，-1表示"其他"示例：要配置区间"100-200"的费用，则minPro输入"100"要配置区间"其他"的费用，则minPro输入"-1"备注：表示长度时单位为：mm
+    #[serde(rename = "min_pro")]
+    pub min_pro: Option<i64>,
+    
+    /// 价格。单位：分
+    #[serde(rename = "price")]
+    pub price: Option<i64>,
+    
+}
 
+
+/// 商品送装服务模版更新
 impl Request for PddGoodsLogisticsSerTemplateUpdate {
     fn get_type() -> String {
         "pdd.goods.logistics.ser.template.update".to_string()

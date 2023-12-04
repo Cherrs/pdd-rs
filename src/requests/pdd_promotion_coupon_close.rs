@@ -14,6 +14,7 @@ pub struct PddPromotionCouponClose {
 }
 
 
+/// 关闭批次接口
 impl Request for PddPromotionCouponClose {
     fn get_type() -> String {
         "pdd.promotion.coupon.close".to_string()

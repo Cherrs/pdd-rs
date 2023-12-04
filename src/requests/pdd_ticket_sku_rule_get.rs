@@ -18,6 +18,7 @@ pub struct PddTicketSkuRuleGet {
 }
 
 
+/// 商品履约生效规则查询
 impl Request for PddTicketSkuRuleGet {
     fn get_type() -> String {
         "pdd.ticket.sku.rule.get".to_string()

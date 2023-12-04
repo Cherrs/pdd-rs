@@ -14,6 +14,7 @@ pub struct PddGoodsLogisticsSerTemplateDetail {
 }
 
 
+/// 商品送装服务模版详情
 impl Request for PddGoodsLogisticsSerTemplateDetail {
     fn get_type() -> String {
         "pdd.goods.logistics.ser.template.detail".to_string()

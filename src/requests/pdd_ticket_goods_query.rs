@@ -18,6 +18,7 @@ pub struct PddTicketGoodsQuery {
 }
 
 
+/// 门票商品查询
 impl Request for PddTicketGoodsQuery {
     fn get_type() -> String {
         "pdd.ticket.goods.query".to_string()

@@ -26,6 +26,7 @@ pub struct PddDdkTmcActivityList {
 }
 
 
+/// 支持当前日期前6天到后7天的时间范围查询千万神券活动，日期超过范围将用最大边界时间替换
 impl Request for PddDdkTmcActivityList {
     fn get_type() -> String {
         "pdd.ddk.tmc.activity.list".to_string()

@@ -22,6 +22,7 @@ pub struct PddDdkReportVideoUploadPart {
 }
 
 
+/// 多多客信息流投放备案视频上传分片上传上传接口，每个分片建议不超过20M
 impl Request for PddDdkReportVideoUploadPart {
     fn get_type() -> String {
         "pdd.ddk.report.video.upload.part".to_string()

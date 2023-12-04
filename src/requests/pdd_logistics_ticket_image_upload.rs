@@ -14,6 +14,7 @@ pub struct PddLogisticsTicketImageUpload {
 }
 
 
+/// 快递公司处理结果回调接口 附件图片url生成
 impl Request for PddLogisticsTicketImageUpload {
     fn get_type() -> String {
         "pdd.logistics.ticket.image.upload".to_string()

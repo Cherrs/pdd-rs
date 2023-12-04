@@ -14,6 +14,7 @@ pub struct PddGoodsCpsMallUnitChange {
 }
 
 
+/// 修改全店推广计划
 impl Request for PddGoodsCpsMallUnitChange {
     fn get_type() -> String {
         "pdd.goods.cps.mall.unit.change".to_string()

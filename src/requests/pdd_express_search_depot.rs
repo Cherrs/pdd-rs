@@ -26,6 +26,7 @@ pub struct PddExpressSearchDepot {
 }
 
 
+/// 根据仓库名称和仓库编码查询仓库
 impl Request for PddExpressSearchDepot {
     fn get_type() -> String {
         "pdd.express.search.depot".to_string()

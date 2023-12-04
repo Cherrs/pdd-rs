@@ -19,6 +19,20 @@ pub struct Value {
 
 /// 增加仓库
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct DepotRegion {
+    
+    /// 省份id
+    #[serde(rename = "key")]
+    pub key: Option<String>,
+    
+    /// 市 -> 区id列表
+    #[serde(rename = "value")]
+    pub value: Option<Value>,
+    
+}
+
+/// 增加仓库
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddExpressAddDepot {
     
     /// 联系人姓名
@@ -67,21 +81,8 @@ pub struct PddExpressAddDepot {
     
 }
 
+
 /// 增加仓库
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct DepotRegion {
-    
-    /// 省份id
-    #[serde(rename = "key")]
-    pub key: Option<String>,
-    
-    /// 市 -> 区id列表
-    #[serde(rename = "value")]
-    pub value: Option<Value>,
-    
-}
-
-
 impl Request for PddExpressAddDepot {
     fn get_type() -> String {
         "pdd.express.add.depot".to_string()

@@ -26,6 +26,7 @@ pub struct PddErpOrderSync {
 }
 
 
+/// erp打单信息同步
 impl Request for PddErpOrderSync {
     fn get_type() -> String {
         "pdd.erp.order.sync".to_string()

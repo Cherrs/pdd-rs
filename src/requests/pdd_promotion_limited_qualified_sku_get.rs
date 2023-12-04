@@ -14,6 +14,7 @@ pub struct PddPromotionLimitedQualifiedSkuGet {
 }
 
 
+/// 查询可参加限时限量购活动的sku列表
 impl Request for PddPromotionLimitedQualifiedSkuGet {
     fn get_type() -> String {
         "pdd.promotion.limited.qualified.sku.get".to_string()

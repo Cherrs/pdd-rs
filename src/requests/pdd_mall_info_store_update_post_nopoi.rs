@@ -70,6 +70,7 @@ pub struct PddMallInfoStoreUpdatePostNopoi {
 }
 
 
+/// 开放平台途虎等头部商家使用无PoiId的方式编辑门店
 impl Request for PddMallInfoStoreUpdatePostNopoi {
     fn get_type() -> String {
         "pdd.mall.info.store.update.post.nopoi".to_string()

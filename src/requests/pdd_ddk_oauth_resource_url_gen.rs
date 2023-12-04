@@ -34,6 +34,7 @@ pub struct PddDdkOauthResourceUrlGen {
 }
 
 
+/// 生成拼多多主站频道推广
 impl Request for PddDdkOauthResourceUrlGen {
     fn get_type() -> String {
         "pdd.ddk.oauth.resource.url.gen".to_string()

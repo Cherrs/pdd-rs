@@ -44,6 +44,7 @@ pub struct PddGoodsSpuSearch {
 }
 
 
+/// 可以通过标品名称或者类目+关键属性的值两种模式进行搜索，搜索到的标品需要在标品详情接口获取详细信息。
 impl Request for PddGoodsSpuSearch {
     fn get_type() -> String {
         "pdd.goods.spu.search".to_string()

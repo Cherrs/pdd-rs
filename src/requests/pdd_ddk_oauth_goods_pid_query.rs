@@ -22,6 +22,7 @@ pub struct PddDdkOauthGoodsPidQuery {
 }
 
 
+/// 查询已经生成的推广位信息
 impl Request for PddDdkOauthGoodsPidQuery {
     fn get_type() -> String {
         "pdd.ddk.oauth.goods.pid.query".to_string()

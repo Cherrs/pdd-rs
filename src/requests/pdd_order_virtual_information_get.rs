@@ -14,6 +14,7 @@ pub struct PddOrderVirtualInformationGet {
 }
 
 
+/// 该接口用于查询虚拟业务订单的特有字段
 impl Request for PddOrderVirtualInformationGet {
     fn get_type() -> String {
         "pdd.order.virtual.information.get".to_string()

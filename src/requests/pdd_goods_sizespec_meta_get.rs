@@ -14,6 +14,7 @@ pub struct PddGoodsSizespecMetaGet {
 }
 
 
+/// 创建尺码表需要查询尺码表分类支持的尺码组和尺码参数（元数据）
 impl Request for PddGoodsSizespecMetaGet {
     fn get_type() -> String {
         "pdd.goods.sizespec.meta.get".to_string()

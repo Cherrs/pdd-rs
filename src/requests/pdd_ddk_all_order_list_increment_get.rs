@@ -30,6 +30,7 @@ pub struct PddDdkAllOrderListIncrementGet {
 }
 
 
+/// 按照时间段获取授权多多客下面所有多多客的推广订单信息
 impl Request for PddDdkAllOrderListIncrementGet {
     fn get_type() -> String {
         "pdd.ddk.all.order.list.increment.get".to_string()

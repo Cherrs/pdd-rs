@@ -18,6 +18,7 @@ pub struct PddAdApiUnitUpdateDataOperateStatus {
 }
 
 
+/// 批量启动或暂停单元
 impl Request for PddAdApiUnitUpdateDataOperateStatus {
     fn get_type() -> String {
         "pdd.ad.api.unit.update.data.operate.status".to_string()

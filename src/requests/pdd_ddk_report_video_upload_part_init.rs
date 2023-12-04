@@ -14,6 +14,7 @@ pub struct PddDdkReportVideoUploadPartInit {
 }
 
 
+/// 多多客信息流投放备案视频上传分片初始化
 impl Request for PddDdkReportVideoUploadPartInit {
     fn get_type() -> String {
         "pdd.ddk.report.video.upload.part.init".to_string()

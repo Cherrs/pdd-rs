@@ -5,6 +5,16 @@ use serde::{Deserialize, Serialize};
 
 /// 电子面单云打印更新接口
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddWaybillUpdate {
+    
+    /// param_waybill_cloud_print_update_request
+    #[serde(rename = "param_waybill_cloud_print_update_request")]
+    pub param_waybill_cloud_print_update_request: Option<ParamWaybillCloudPrintUpdateRequest>,
+    
+}
+
+/// 电子面单云打印更新接口
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PackageInfo {
     
     /// 商品
@@ -18,16 +28,6 @@ pub struct PackageInfo {
     /// 重量
     #[serde(rename = "weight")]
     pub weight: Option<i32>,
-    
-}
-
-/// 电子面单云打印更新接口
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddWaybillUpdate {
-    
-    /// param_waybill_cloud_print_update_request
-    #[serde(rename = "param_waybill_cloud_print_update_request")]
-    pub param_waybill_cloud_print_update_request: Option<ParamWaybillCloudPrintUpdateRequest>,
     
 }
 
@@ -50,54 +50,6 @@ pub struct Recipient {
     /// 固定电话
     #[serde(rename = "phone")]
     pub phone: Option<String>,
-    
-}
-
-/// 电子面单云打印更新接口
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Sender {
-    
-    /// 手机号码
-    #[serde(rename = "mobile")]
-    pub mobile: Option<String>,
-    
-    /// 姓名
-    #[serde(rename = "name")]
-    pub name: Option<String>,
-    
-    /// 固定电话
-    #[serde(rename = "phone")]
-    pub phone: Option<String>,
-    
-}
-
-/// 电子面单云打印更新接口
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Address {
-    
-    /// 城市
-    #[serde(rename = "city")]
-    pub city: Option<String>,
-    
-    /// 地区/国家
-    #[serde(rename = "country")]
-    pub country: Option<String>,
-    
-    /// 详细地址
-    #[serde(rename = "detail")]
-    pub detail: Option<String>,
-    
-    /// 区地址
-    #[serde(rename = "district")]
-    pub district: Option<String>,
-    
-    /// 省
-    #[serde(rename = "province")]
-    pub province: Option<String>,
-    
-    /// 街道
-    #[serde(rename = "town")]
-    pub town: Option<String>,
     
 }
 
@@ -137,6 +89,54 @@ pub struct ParamWaybillCloudPrintUpdateRequest {
 
 /// 电子面单云打印更新接口
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Address {
+    
+    /// 城市
+    #[serde(rename = "city")]
+    pub city: Option<String>,
+    
+    /// 地区/国家
+    #[serde(rename = "country")]
+    pub country: Option<String>,
+    
+    /// 详细地址
+    #[serde(rename = "detail")]
+    pub detail: Option<String>,
+    
+    /// 区地址
+    #[serde(rename = "district")]
+    pub district: Option<String>,
+    
+    /// 省
+    #[serde(rename = "province")]
+    pub province: Option<String>,
+    
+    /// 街道
+    #[serde(rename = "town")]
+    pub town: Option<String>,
+    
+}
+
+/// 电子面单云打印更新接口
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Sender {
+    
+    /// 手机号码
+    #[serde(rename = "mobile")]
+    pub mobile: Option<String>,
+    
+    /// 姓名
+    #[serde(rename = "name")]
+    pub name: Option<String>,
+    
+    /// 固定电话
+    #[serde(rename = "phone")]
+    pub phone: Option<String>,
+    
+}
+
+/// 电子面单云打印更新接口
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Items {
     
     /// 数量
@@ -150,6 +150,7 @@ pub struct Items {
 }
 
 
+/// 电子面单云打印更新接口
 impl Request for PddWaybillUpdate {
     fn get_type() -> String {
         "pdd.waybill.update".to_string()

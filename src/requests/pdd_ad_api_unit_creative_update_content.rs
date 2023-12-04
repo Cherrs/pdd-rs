@@ -23,16 +23,6 @@ pub struct AdCreativeUpdateMessage {
 
 /// 更新创意内容
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdTextVoList {
-    
-    /// 标题文字
-    #[serde(rename = "text")]
-    pub text: Option<String>,
-    
-}
-
-/// 更新创意内容
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddAdApiUnitCreativeUpdateContent {
     
     /// 创意更新输入
@@ -47,6 +37,16 @@ pub struct PddAdApiUnitCreativeUpdateContent {
 
 /// 更新创意内容
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdTextVoList {
+    
+    /// 标题文字
+    #[serde(rename = "text")]
+    pub text: Option<String>,
+    
+}
+
+/// 更新创意内容
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct AdImageVoList {
     
     /// 图片链接，可用图片参考以下接口返回：pdd.ad.api.goods.query.gallery.images（轮播图），pdd.ad.api.goods.query.long.images（长图）
@@ -56,6 +56,7 @@ pub struct AdImageVoList {
 }
 
 
+/// 更新创意内容
 impl Request for PddAdApiUnitCreativeUpdateContent {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.update.content".to_string()

@@ -18,6 +18,7 @@ pub struct PddAdApiKeywordDelete {
 }
 
 
+/// 批量删除关键词
 impl Request for PddAdApiKeywordDelete {
     fn get_type() -> String {
         "pdd.ad.api.keyword.delete".to_string()

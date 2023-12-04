@@ -64,6 +64,7 @@ pub struct PddTicketOrderCreateNotifycation {
 }
 
 
+/// 供应商向拼多多进行创单回调请求
 impl Request for PddTicketOrderCreateNotifycation {
     fn get_type() -> String {
         "pdd.ticket.order.create.notifycation".to_string()

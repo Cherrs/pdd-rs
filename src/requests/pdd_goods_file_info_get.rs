@@ -14,6 +14,7 @@ pub struct PddGoodsFileInfoGet {
 }
 
 
+/// 文件详情查询
 impl Request for PddGoodsFileInfoGet {
     fn get_type() -> String {
         "pdd.goods.file.info.get".to_string()

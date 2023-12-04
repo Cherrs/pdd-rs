@@ -14,6 +14,7 @@ pub struct PddMallInfoGroupDeletePost {
 }
 
 
+/// 删除门店组
 impl Request for PddMallInfoGroupDeletePost {
     fn get_type() -> String {
         "pdd.mall.info.group.delete.post".to_string()

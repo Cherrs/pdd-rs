@@ -32,6 +32,7 @@ pub struct WareSkus {
 }
 
 
+/// 家电分仓库存-货品关联sku
 impl Request for PddStockWareSkuUpdate {
     fn get_type() -> String {
         "pdd.stock.ware.sku.update".to_string()

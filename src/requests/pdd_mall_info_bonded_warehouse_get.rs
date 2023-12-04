@@ -10,6 +10,7 @@ pub struct PddMallInfoBondedWarehouseGet {
 }
 
 
+/// 查询商家的所有保税仓信息
 impl Request for PddMallInfoBondedWarehouseGet {
     fn get_type() -> String {
         "pdd.mall.info.bonded.warehouse.get".to_string()

@@ -22,6 +22,7 @@ pub struct PddPopMallBindTokenGet {
 }
 
 
+/// ISV多店铺关联时，被关联店铺同意关联后产生关联code，ISV应用使用此code换取被关联店铺Access Token
 impl Request for PddPopMallBindTokenGet {
     fn get_type() -> String {
         "pdd.pop.mall.bind.token.get".to_string()

@@ -92,6 +92,7 @@ pub struct WareInfos {
 }
 
 
+/// 家电分仓库存-创建货品
 impl Request for PddStockWareCreate {
     fn get_type() -> String {
         "pdd.stock.ware.create".to_string()

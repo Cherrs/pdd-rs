@@ -14,6 +14,7 @@ pub struct PddDdkUrlShortParse {
 }
 
 
+/// 多多进宝推广短链解析
 impl Request for PddDdkUrlShortParse {
     fn get_type() -> String {
         "pdd.ddk.url.short.parse".to_string()

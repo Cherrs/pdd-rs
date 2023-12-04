@@ -36,6 +36,7 @@ pub struct ExtraTrackList {
 }
 
 
+/// 针对一笔订单分多笔物流发货的场景（分包发货、补寄、发放赠品），将支持商家额外上传运单号，额外运单作为补充信息仅用作消费者查看。
 impl Request for PddOrderUploadExtraLogistics {
     fn get_type() -> String {
         "pdd.order.upload.extra.logistics".to_string()

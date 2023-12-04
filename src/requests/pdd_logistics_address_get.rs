@@ -10,6 +10,7 @@ pub struct PddLogisticsAddressGet {
 }
 
 
+/// 获取拼多多标准地址库
 impl Request for PddLogisticsAddressGet {
     fn get_type() -> String {
         "pdd.logistics.address.get".to_string()

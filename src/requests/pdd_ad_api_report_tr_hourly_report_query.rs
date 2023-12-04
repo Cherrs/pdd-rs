@@ -18,6 +18,7 @@ pub struct PddAdApiReportTrHourlyReportQuery {
 }
 
 
+/// 查询全站推广小时报表数据
 impl Request for PddAdApiReportTrHourlyReportQuery {
     fn get_type() -> String {
         "pdd.ad.api.report.tr.hourly.report.query".to_string()

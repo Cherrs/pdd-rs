@@ -54,6 +54,7 @@ pub struct PddVasOrderSearch {
 }
 
 
+/// 用于拉取回流完成的订单以及线上增量的订购订单
 impl Request for PddVasOrderSearch {
     fn get_type() -> String {
         "pdd.vas.order.search".to_string()

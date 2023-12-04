@@ -14,6 +14,7 @@ pub struct PddPmcUserCancel {
 }
 
 
+/// 取消用户的消息服务
 impl Request for PddPmcUserCancel {
     fn get_type() -> String {
         "pdd.pmc.user.cancel".to_string()

@@ -18,6 +18,7 @@ pub struct PddAdApiUnitCreativeDistributeFlowRate {
 }
 
 
+/// 智能创意流量比例分配
 impl Request for PddAdApiUnitCreativeDistributeFlowRate {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.distribute.flow.rate".to_string()

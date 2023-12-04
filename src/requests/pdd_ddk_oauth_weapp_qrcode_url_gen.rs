@@ -30,6 +30,7 @@ pub struct PddDdkOauthWeappQrcodeUrlGen {
 }
 
 
+/// 多多客工具生成单品推广小程序二维码url
 impl Request for PddDdkOauthWeappQrcodeUrlGen {
     fn get_type() -> String {
         "pdd.ddk.oauth.weapp.qrcode.url.gen".to_string()

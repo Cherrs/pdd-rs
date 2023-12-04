@@ -10,6 +10,7 @@ pub struct PddAdApiUnitBidQueryTargetingTagList {
 }
 
 
+/// 获取定向标签数据
 impl Request for PddAdApiUnitBidQueryTargetingTagList {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.query.targeting.tag.list".to_string()

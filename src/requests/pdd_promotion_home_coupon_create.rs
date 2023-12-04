@@ -38,6 +38,7 @@ pub struct PddPromotionHomeCouponCreate {
 }
 
 
+/// 创建店铺首页优惠券批次接口
 impl Request for PddPromotionHomeCouponCreate {
     fn get_type() -> String {
         "pdd.promotion.home.coupon.create".to_string()

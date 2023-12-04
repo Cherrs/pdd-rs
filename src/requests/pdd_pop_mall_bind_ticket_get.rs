@@ -18,6 +18,7 @@ pub struct PddPopMallBindTicketGet {
 }
 
 
+/// ISV多店铺关联时，获取发起方店铺身份ticket，用于生成店铺关联链接
 impl Request for PddPopMallBindTicketGet {
     fn get_type() -> String {
         "pdd.pop.mall.bind.ticket.get".to_string()

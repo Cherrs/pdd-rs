@@ -14,6 +14,7 @@ pub struct PddGoodsSizespecTemplateGet {
 }
 
 
+/// 管理尺码表模板时需要单独查询尺码表模板
 impl Request for PddGoodsSizespecTemplateGet {
     fn get_type() -> String {
         "pdd.goods.sizespec.template.get".to_string()

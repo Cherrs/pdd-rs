@@ -34,6 +34,7 @@ pub struct PddPromotionGoodsCouponListGet {
 }
 
 
+/// 商品优惠券批次列表查询
 impl Request for PddPromotionGoodsCouponListGet {
     fn get_type() -> String {
         "pdd.promotion.goods.coupon.list.get".to_string()

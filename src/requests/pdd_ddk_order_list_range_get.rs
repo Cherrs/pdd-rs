@@ -34,6 +34,7 @@ pub struct PddDdkOrderListRangeGet {
 }
 
 
+/// 用时间段查询推广订单接口
 impl Request for PddDdkOrderListRangeGet {
     fn get_type() -> String {
         "pdd.ddk.order.list.range.get".to_string()

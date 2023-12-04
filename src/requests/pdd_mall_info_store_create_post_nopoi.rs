@@ -66,6 +66,7 @@ pub struct PddMallInfoStoreCreatePostNopoi {
 }
 
 
+/// 开放平台无PoiId创建门店
 impl Request for PddMallInfoStoreCreatePostNopoi {
     fn get_type() -> String {
         "pdd.mall.info.store.create.post.nopoi".to_string()

@@ -18,6 +18,7 @@ pub struct PddAdApiUnitCreativeUpdateSmartCreative {
 }
 
 
+/// 更新智能创意
 impl Request for PddAdApiUnitCreativeUpdateSmartCreative {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.update.smart.creative".to_string()

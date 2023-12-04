@@ -18,6 +18,7 @@ pub struct PddAdApiUnitBidQueryBaseTargetProfile {
 }
 
 
+/// 获取可用基础定向
 impl Request for PddAdApiUnitBidQueryBaseTargetProfile {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.query.base.target.profile".to_string()

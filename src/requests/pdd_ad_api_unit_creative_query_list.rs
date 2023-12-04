@@ -30,6 +30,7 @@ pub struct PddAdApiUnitCreativeQueryList {
 }
 
 
+/// 查询创意列表
 impl Request for PddAdApiUnitCreativeQueryList {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.query.list".to_string()

@@ -18,6 +18,7 @@ pub struct PddGoodsMaterialQuery {
 }
 
 
+/// 查询商品素材列表
 impl Request for PddGoodsMaterialQuery {
     fn get_type() -> String {
         "pdd.goods.material.query".to_string()

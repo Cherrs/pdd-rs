@@ -10,6 +10,7 @@ pub struct PddMallInfoGet {
 }
 
 
+/// 通过此接口获取店铺信息
 impl Request for PddMallInfoGet {
     fn get_type() -> String {
         "pdd.mall.info.get".to_string()

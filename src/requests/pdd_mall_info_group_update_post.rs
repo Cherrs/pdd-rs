@@ -18,6 +18,7 @@ pub struct PddMallInfoGroupUpdatePost {
 }
 
 
+/// 编辑门店组
 impl Request for PddMallInfoGroupUpdatePost {
     fn get_type() -> String {
         "pdd.mall.info.group.update.post".to_string()

@@ -26,6 +26,7 @@ pub struct PddGoodsMaterialCreate {
 }
 
 
+/// 上传白底图长图等素材到商品
 impl Request for PddGoodsMaterialCreate {
     fn get_type() -> String {
         "pdd.goods.material.create".to_string()

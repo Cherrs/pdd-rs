@@ -10,6 +10,7 @@ pub struct PddTicketAreacodeGet {
 }
 
 
+/// 供应商获取pdd的区域编码
 impl Request for PddTicketAreacodeGet {
     fn get_type() -> String {
         "pdd.ticket.areacode.get".to_string()

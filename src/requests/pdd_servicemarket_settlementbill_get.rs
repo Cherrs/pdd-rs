@@ -26,6 +26,7 @@ pub struct PddServicemarketSettlementbillGet {
 }
 
 
+/// 用于ISV查询自己名下的服务的月度结算明细
 impl Request for PddServicemarketSettlementbillGet {
     fn get_type() -> String {
         "pdd.servicemarket.settlementbill.get".to_string()

@@ -30,6 +30,7 @@ pub struct PddTicketOrderRefundNotifycation {
 }
 
 
+/// 供应商向拼多多回调售后就结果
 impl Request for PddTicketOrderRefundNotifycation {
     fn get_type() -> String {
         "pdd.ticket.order.refund.notifycation".to_string()

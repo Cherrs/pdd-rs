@@ -5,6 +5,46 @@ use serde::{Deserialize, Serialize};
 
 /// 单个商品编辑
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct OverseaSku {
+    
+    /// 计量单位编码，从接口pdd.gooods.sku.measurement.list获取code
+    #[serde(rename = "measurement_code")]
+    pub measurement_code: Option<String>,
+    
+    /// 规格
+    #[serde(rename = "specifications")]
+    pub specifications: Option<String>,
+    
+    /// 税费
+    #[serde(rename = "taxation")]
+    pub taxation: Option<i32>,
+    
+}
+
+/// 单个商品编辑
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct SkuProperties {
+    
+    /// 属性单位
+    #[serde(rename = "punit")]
+    pub punit: Option<String>,
+    
+    /// 属性id
+    #[serde(rename = "ref_pid")]
+    pub ref_pid: Option<i64>,
+    
+    /// 属性值
+    #[serde(rename = "value")]
+    pub value: Option<String>,
+    
+    /// 属性值id
+    #[serde(rename = "vid")]
+    pub vid: Option<i64>,
+    
+}
+
+/// 单个商品编辑
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct OverseaGoods {
     
     /// 保税仓唯一标识
@@ -31,23 +71,25 @@ pub struct OverseaGoods {
 
 /// 单个商品编辑
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ElecGoodsAttributes {
+pub struct BookingNotes {
     
-    /// 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
-    #[serde(rename = "begin_time")]
-    pub begin_time: Option<i64>,
+    /// 预定须知图片地址
+    #[serde(rename = "url")]
+    pub url: Option<String>,
     
-    /// 天数内有效（timeType=3必填，表示发货后几天内核销）
-    #[serde(rename = "days_time")]
-    pub days_time: Option<i32>,
+}
+
+/// 单个商品编辑
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct GoodsTravelAttr {
     
-    /// 截止时间（timeType=1,2时必填，表示发货后核销的截止时间）（精确到毫秒）
-    #[serde(rename = "end_time")]
-    pub end_time: Option<i64>,
+    /// 出行人是否必填（默认是）
+    #[serde(rename = "need_tourist")]
+    pub need_tourist: Option<bool>,
     
-    /// 卡券核销类型（1：起始时间内有效，2：发货后后至截止时间内有效，3：发货后多少天内有效）
-    #[serde(rename = "time_type")]
-    pub time_type: Option<i32>,
+    /// 日历商品类型1:旅行类,2:住宿类,3:票务类
+    #[serde(rename = "type")]
+    pub type_: Option<i32>,
     
 }
 
@@ -313,57 +355,19 @@ pub struct PddGoodsInformationUpdate {
 
 /// 单个商品编辑
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct GoodsProperties {
+pub struct GoodsTradeAttr {
     
-    /// 组id，非销售属性不用传
-    #[serde(rename = "group_id")]
-    pub group_id: Option<i32>,
+    /// 提前预定天数，默认为0表示当天可预定
+    #[serde(rename = "advances_days")]
+    pub advances_days: Option<i32>,
     
-    /// 图片url，非销售属性不用传
-    #[serde(rename = "img_url")]
-    pub img_url: Option<String>,
+    /// 预订须知
+    #[serde(rename = "booking_notes")]
+    pub booking_notes: Option<BookingNotes>,
     
-    /// 备注，非销售属性不用传
-    #[serde(rename = "note")]
-    pub note: Option<String>,
-    
-    /// 父属性id，非销售属性不用传
-    #[serde(rename = "parent_spec_id")]
-    pub parent_spec_id: Option<i64>,
-    
-    /// 引用属性id
-    #[serde(rename = "ref_pid")]
-    pub ref_pid: Option<i64>,
-    
-    /// 属性id，非销售属性不用传
-    #[serde(rename = "spec_id")]
-    pub spec_id: Option<i64>,
-    
-    /// 模板属性id
-    #[serde(rename = "template_pid")]
-    pub template_pid: Option<i64>,
-    
-    /// 属性值
-    #[serde(rename = "value")]
-    pub value: Option<String>,
-    
-    /// 属性单位
-    #[serde(rename = "value_unit")]
-    pub value_unit: Option<String>,
-    
-    /// 属性值id
-    #[serde(rename = "vid")]
-    pub vid: Option<i64>,
-    
-}
-
-/// 单个商品编辑
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct BookingNotes {
-    
-    /// 预定须知图片地址
-    #[serde(rename = "url")]
-    pub url: Option<String>,
+    /// 卡券有效期，日历日期后多少天可用。默认值为0表示仅限日历日当天使用
+    #[serde(rename = "life_span")]
+    pub life_span: Option<i32>,
     
 }
 
@@ -435,51 +439,65 @@ pub struct SkuList {
 
 /// 单个商品编辑
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct OverseaSku {
+pub struct ElecGoodsAttributes {
     
-    /// 计量单位编码，从接口pdd.gooods.sku.measurement.list获取code
-    #[serde(rename = "measurement_code")]
-    pub measurement_code: Option<String>,
+    /// 开始时间（timeType=1时必填表示核销的开始时间）（精确到毫秒）
+    #[serde(rename = "begin_time")]
+    pub begin_time: Option<i64>,
     
-    /// 规格
-    #[serde(rename = "specifications")]
-    pub specifications: Option<String>,
+    /// 天数内有效（timeType=3必填，表示发货后几天内核销）
+    #[serde(rename = "days_time")]
+    pub days_time: Option<i32>,
     
-    /// 税费
-    #[serde(rename = "taxation")]
-    pub taxation: Option<i32>,
+    /// 截止时间（timeType=1,2时必填，表示发货后核销的截止时间）（精确到毫秒）
+    #[serde(rename = "end_time")]
+    pub end_time: Option<i64>,
     
-}
-
-/// 单个商品编辑
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct GoodsTravelAttr {
-    
-    /// 出行人是否必填（默认是）
-    #[serde(rename = "need_tourist")]
-    pub need_tourist: Option<bool>,
-    
-    /// 日历商品类型1:旅行类,2:住宿类,3:票务类
-    #[serde(rename = "type")]
-    pub type_: Option<i32>,
+    /// 卡券核销类型（1：起始时间内有效，2：发货后后至截止时间内有效，3：发货后多少天内有效）
+    #[serde(rename = "time_type")]
+    pub time_type: Option<i32>,
     
 }
 
 /// 单个商品编辑
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct SkuProperties {
+pub struct GoodsProperties {
     
-    /// 属性单位
-    #[serde(rename = "punit")]
-    pub punit: Option<String>,
+    /// 组id，非销售属性不用传
+    #[serde(rename = "group_id")]
+    pub group_id: Option<i32>,
     
-    /// 属性id
+    /// 图片url，非销售属性不用传
+    #[serde(rename = "img_url")]
+    pub img_url: Option<String>,
+    
+    /// 备注，非销售属性不用传
+    #[serde(rename = "note")]
+    pub note: Option<String>,
+    
+    /// 父属性id，非销售属性不用传
+    #[serde(rename = "parent_spec_id")]
+    pub parent_spec_id: Option<i64>,
+    
+    /// 引用属性id
     #[serde(rename = "ref_pid")]
     pub ref_pid: Option<i64>,
+    
+    /// 属性id，非销售属性不用传
+    #[serde(rename = "spec_id")]
+    pub spec_id: Option<i64>,
+    
+    /// 模板属性id
+    #[serde(rename = "template_pid")]
+    pub template_pid: Option<i64>,
     
     /// 属性值
     #[serde(rename = "value")]
     pub value: Option<String>,
+    
+    /// 属性单位
+    #[serde(rename = "value_unit")]
+    pub value_unit: Option<String>,
     
     /// 属性值id
     #[serde(rename = "vid")]
@@ -487,25 +505,8 @@ pub struct SkuProperties {
     
 }
 
+
 /// 单个商品编辑
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct GoodsTradeAttr {
-    
-    /// 提前预定天数，默认为0表示当天可预定
-    #[serde(rename = "advances_days")]
-    pub advances_days: Option<i32>,
-    
-    /// 预订须知
-    #[serde(rename = "booking_notes")]
-    pub booking_notes: Option<BookingNotes>,
-    
-    /// 卡券有效期，日历日期后多少天可用。默认值为0表示仅限日历日当天使用
-    #[serde(rename = "life_span")]
-    pub life_span: Option<i32>,
-    
-}
-
-
 impl Request for PddGoodsInformationUpdate {
     fn get_type() -> String {
         "pdd.goods.information.update".to_string()

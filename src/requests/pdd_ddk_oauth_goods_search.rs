@@ -5,6 +5,24 @@ use serde::{Deserialize, Serialize};
 
 /// 多多进宝商品查询
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct RangeList {
+    
+    /// 区间的开始值
+    #[serde(rename = "range_from")]
+    pub range_from: Option<i64>,
+    
+    /// 0，最小成团价 1，券后价 2，佣金比例 3，优惠券价格 4，广告创建时间 5，销量 6，佣金金额 7，店铺描述分 8，店铺物流分 9，店铺服务分 10， 店铺描述分击败同行业百分比 11， 店铺物流分击败同行业百分比 12，店铺服务分击败同行业百分比 13，商品分 17 ，优惠券/最小团购价 18，过去两小时pv 19，过去两小时销量
+    #[serde(rename = "range_id")]
+    pub range_id: Option<i32>,
+    
+    /// 区间的结束值
+    #[serde(rename = "range_to")]
+    pub range_to: Option<i64>,
+    
+}
+
+/// 多多进宝商品查询
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddDdkOauthGoodsSearch {
     
     /// 活动商品标记数组，例：[4,7]，4-秒杀，7-百亿补贴，10851-千万补贴，11879-千万神券，10913-招商礼金商品，31-品牌黑标，10564-精选爆品-官方直推爆款，10584-精选爆品-团长推荐，24-品牌高佣，其他的值请忽略
@@ -93,25 +111,8 @@ pub struct PddDdkOauthGoodsSearch {
     
 }
 
+
 /// 多多进宝商品查询
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct RangeList {
-    
-    /// 区间的开始值
-    #[serde(rename = "range_from")]
-    pub range_from: Option<i64>,
-    
-    /// 0，最小成团价 1，券后价 2，佣金比例 3，优惠券价格 4，广告创建时间 5，销量 6，佣金金额 7，店铺描述分 8，店铺物流分 9，店铺服务分 10， 店铺描述分击败同行业百分比 11， 店铺物流分击败同行业百分比 12，店铺服务分击败同行业百分比 13，商品分 17 ，优惠券/最小团购价 18，过去两小时pv 19，过去两小时销量
-    #[serde(rename = "range_id")]
-    pub range_id: Option<i32>,
-    
-    /// 区间的结束值
-    #[serde(rename = "range_to")]
-    pub range_to: Option<i64>,
-    
-}
-
-
 impl Request for PddDdkOauthGoodsSearch {
     fn get_type() -> String {
         "pdd.ddk.oauth.goods.search".to_string()

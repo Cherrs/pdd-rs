@@ -5,60 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 生成营销工具推广链接
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct DiyRedPacketParam {
-    
-    /// 红包金额列表，200、300、500、1000、2000，单位分。红包金额和红包抵后价设置只能二选一，默认设置了红包金额会忽略红包抵后价设置
-    #[serde(rename = "amount_probability")]
-    pub amount_probability: Option<Vec<i64>>,
-    
-    /// 设置玩法，false-现金红包, true-现金券
-    #[serde(rename = "dis_text")]
-    pub dis_text: Option<bool>,
-    
-    /// 推广页设置，false-红包开启页, true-红包领取页
-    #[serde(rename = "not_show_background")]
-    pub not_show_background: Option<bool>,
-    
-    /// 优先展示类目
-    #[serde(rename = "opt_id")]
-    pub opt_id: Option<i32>,
-    
-    /// 自定义红包抵后价和商品佣金区间对象数组
-    #[serde(rename = "range_items")]
-    pub range_items: Option<Vec<RangeItems>>,
-    
-}
-
-/// 生成营销工具推广链接
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct DiyOneYuanParam {
-    
-    /// 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
-    #[serde(rename = "goods_sign")]
-    pub goods_sign: Option<String>,
-    
-}
-
-/// 生成营销工具推广链接
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct RangeItems {
-    
-    /// 区间的开始值
-    #[serde(rename = "range_from")]
-    pub range_from: Option<i64>,
-    
-    /// range_id为1表示红包抵后价（单位分）， range_id为2表示佣金比例（单位千分之几)
-    #[serde(rename = "range_id")]
-    pub range_id: Option<i32>,
-    
-    /// 区间的结束值
-    #[serde(rename = "range_to")]
-    pub range_to: Option<i64>,
-    
-}
-
-/// 生成营销工具推广链接
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddDdkOauthRpPromUrlGenerate {
     
     /// 初始金额（单位分），有效金额枚举值：300、500、700、1100和1600，默认300
@@ -107,7 +53,62 @@ pub struct PddDdkOauthRpPromUrlGenerate {
     
 }
 
+/// 生成营销工具推广链接
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct DiyOneYuanParam {
+    
+    /// 商品goodsSign，支持通过goodsSign查询商品。goodsSign是加密后的goodsId, goodsId已下线，请使用goodsSign来替代。使用说明：https://jinbao.pinduoduo.com/qa-system?questionId=252
+    #[serde(rename = "goods_sign")]
+    pub goods_sign: Option<String>,
+    
+}
 
+/// 生成营销工具推广链接
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct DiyRedPacketParam {
+    
+    /// 红包金额列表，200、300、500、1000、2000，单位分。红包金额和红包抵后价设置只能二选一，默认设置了红包金额会忽略红包抵后价设置
+    #[serde(rename = "amount_probability")]
+    pub amount_probability: Option<Vec<i64>>,
+    
+    /// 设置玩法，false-现金红包, true-现金券
+    #[serde(rename = "dis_text")]
+    pub dis_text: Option<bool>,
+    
+    /// 推广页设置，false-红包开启页, true-红包领取页
+    #[serde(rename = "not_show_background")]
+    pub not_show_background: Option<bool>,
+    
+    /// 优先展示类目
+    #[serde(rename = "opt_id")]
+    pub opt_id: Option<i32>,
+    
+    /// 自定义红包抵后价和商品佣金区间对象数组
+    #[serde(rename = "range_items")]
+    pub range_items: Option<Vec<RangeItems>>,
+    
+}
+
+/// 生成营销工具推广链接
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct RangeItems {
+    
+    /// 区间的开始值
+    #[serde(rename = "range_from")]
+    pub range_from: Option<i64>,
+    
+    /// range_id为1表示红包抵后价（单位分）， range_id为2表示佣金比例（单位千分之几)
+    #[serde(rename = "range_id")]
+    pub range_id: Option<i32>,
+    
+    /// 区间的结束值
+    #[serde(rename = "range_to")]
+    pub range_to: Option<i64>,
+    
+}
+
+
+/// 生成营销工具推广链接
 impl Request for PddDdkOauthRpPromUrlGenerate {
     fn get_type() -> String {
         "pdd.ddk.oauth.rp.prom.url.generate".to_string()

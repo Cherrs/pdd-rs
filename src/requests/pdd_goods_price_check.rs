@@ -14,6 +14,7 @@ pub struct PddGoodsPriceCheck {
 }
 
 
+/// 提供商品价格核实功能
 impl Request for PddGoodsPriceCheck {
     fn get_type() -> String {
         "pdd.goods.price.check".to_string()

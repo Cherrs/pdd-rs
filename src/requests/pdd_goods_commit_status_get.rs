@@ -14,6 +14,7 @@ pub struct PddGoodsCommitStatusGet {
 }
 
 
+/// 查询店铺的商品草稿列表状态
 impl Request for PddGoodsCommitStatusGet {
     fn get_type() -> String {
         "pdd.goods.commit.status.get".to_string()

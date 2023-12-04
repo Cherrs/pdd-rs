@@ -22,6 +22,7 @@ pub struct PddGoodsOuterCatMappingGet {
 }
 
 
+/// 类目预测
 impl Request for PddGoodsOuterCatMappingGet {
     fn get_type() -> String {
         "pdd.goods.outer.cat.mapping.get".to_string()

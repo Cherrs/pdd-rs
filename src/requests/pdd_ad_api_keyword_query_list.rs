@@ -30,6 +30,7 @@ pub struct PddAdApiKeywordQueryList {
 }
 
 
+/// 查询关键词列表
 impl Request for PddAdApiKeywordQueryList {
     fn get_type() -> String {
         "pdd.ad.api.keyword.query.list".to_string()

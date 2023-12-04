@@ -36,6 +36,7 @@ pub struct ParamFdsWaybillReturnRequest {
 }
 
 
+/// 厂家回传电子面单到商家订单
 impl Request for PddFdsWaybillReturn {
     fn get_type() -> String {
         "pdd.fds.waybill.return".to_string()

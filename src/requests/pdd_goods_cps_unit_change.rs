@@ -50,6 +50,7 @@ pub struct PddGoodsCpsUnitChange {
 }
 
 
+/// 修改推广商品API
 impl Request for PddGoodsCpsUnitChange {
     fn get_type() -> String {
         "pdd.goods.cps.unit.change".to_string()

@@ -14,6 +14,7 @@ pub struct PddPopAuthTokenCreate {
 }
 
 
+/// 用户通过code换获取access_token
 impl Request for PddPopAuthTokenCreate {
     fn get_type() -> String {
         "pdd.pop.auth.token.create".to_string()

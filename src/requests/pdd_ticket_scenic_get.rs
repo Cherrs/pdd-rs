@@ -26,6 +26,7 @@ pub struct PddTicketScenicGet {
 }
 
 
+/// isv查询pdd景区
 impl Request for PddTicketScenicGet {
     fn get_type() -> String {
         "pdd.ticket.scenic.get".to_string()

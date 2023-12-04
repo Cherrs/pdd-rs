@@ -50,6 +50,7 @@ pub struct PddOrderUpdateAddress {
 }
 
 
+/// 修改订单收件地址 注：风险订单或订单已发货后不可修改
 impl Request for PddOrderUpdateAddress {
     fn get_type() -> String {
         "pdd.order.update.address".to_string()

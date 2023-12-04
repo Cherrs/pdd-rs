@@ -18,6 +18,7 @@ pub struct PddMallInfoGroupRemoveStoreGet {
 }
 
 
+/// 门店组删除门店
 impl Request for PddMallInfoGroupRemoveStoreGet {
     fn get_type() -> String {
         "pdd.mall.info.group.remove.store.get".to_string()

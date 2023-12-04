@@ -5,71 +5,27 @@ use serde::{Deserialize, Serialize};
 
 /// 创建计划
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct OptionalOptimizationBidMessageList {
+pub struct OptimizationMessage {
     
-    /// 可选优化出价价格
+    /// 数据积累期出价。当使用OCPX时对该字段赋值。
+    #[serde(rename = "accumulationBid")]
+    pub accumulation_bid: Option<i64>,
+    
+    /// 智能投放期出价。当使用OCPX时对该字段赋值。
     #[serde(rename = "optimizationBid")]
     pub optimization_bid: Option<i64>,
     
-    /// 可选优化出价目标。3表示优化店铺关注，4表示优化商品收藏，5表示优化询单
+    /// 优化目标。0表示不优化。1表示优化ROI，2表示优化转化成本.自定义单元时，该值必传0；当单元使用展示自动调价功能(ECPC)时，该值必须传1；当单元使用展示OCPC功能（plan_strategy=3）时，该值必须传2。
     #[serde(rename = "optimizationGoal")]
     pub optimization_goal: Option<i32>,
     
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct SmartCreativeCreateMessage {
+    /// 优化方式。0表示不优化，1表示ECPC，2表示OCPC。当单元使用ECPC时，该值必须传1；当使用OCPC时，该值必须传2。
+    #[serde(rename = "optimizationMethod")]
+    pub optimization_method: Option<i32>,
     
-    /// 智能创意流量分配比例
-    #[serde(rename = "creativeFlowRate")]
-    pub creative_flow_rate: Option<i32>,
-    
-    /// 是否启用智能创意标识
-    #[serde(rename = "enableSmartCreative")]
-    pub enable_smart_creative: Option<i32>,
-    
-    /// 智能创意标题
-    #[serde(rename = "smartCreativeTitle")]
-    pub smart_creative_title: Option<String>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdKeywordCreateMessageList {
-    
-    /// 关键词出价
-    #[serde(rename = "bid")]
-    pub bid: Option<i64>,
-    
-    /// 关键词溢价比例。万分比
-    #[serde(rename = "premiumRate")]
-    pub premium_rate: Option<i64>,
-    
-    /// 关键词
-    #[serde(rename = "word")]
-    pub word: Option<String>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PlanDiscount {
-    
-    /// 分时折扣配置
-    #[serde(rename = "discounts")]
-    pub discounts: Option<Vec<Discounts>>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdImageVoList {
-    
-    /// 图片链接，可用图片参考以下接口返回：pdd.ad.api.goods.query.gallery.images（轮播图），pdd.ad.api.goods.query.long.images（长图）
-    #[serde(rename = "imageUrl")]
-    pub image_url: Option<String>,
+    /// 可选优化出价列表。当使用OCPX时对该字段赋值。
+    #[serde(rename = "optionalOptimizationBidMessageList")]
+    pub optional_optimization_bid_message_list: Option<Vec<OptionalOptimizationBidMessageList>>,
     
 }
 
@@ -93,33 +49,21 @@ pub struct AdUnitCreateMessage {
 
 /// 创建计划
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct LocationBidCreateMessageList {
+pub struct AdImageVoList {
     
-    /// 资源位定向类型。可取值参考接口：pdd.ad.api.unit.bid.query.available.location
-    #[serde(rename = "bidReferenceId")]
-    pub bid_reference_id: Option<i64>,
-    
-    /// 出价，万分比
-    #[serde(rename = "bidValue")]
-    pub bid_value: Option<i64>,
+    /// 图片链接，可用图片参考以下接口返回：pdd.ad.api.goods.query.gallery.images（轮播图），pdd.ad.api.goods.query.long.images（长图）
+    #[serde(rename = "imageUrl")]
+    pub image_url: Option<String>,
     
 }
 
 /// 创建计划
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdPlanCreateMessage {
+pub struct PlanDiscount {
     
-    /// 单日消耗
-    #[serde(rename = "maxCost")]
-    pub max_cost: Option<i64>,
-    
-    /// 分时折扣
-    #[serde(rename = "planDiscount")]
-    pub plan_discount: Option<PlanDiscount>,
-    
-    /// 计划名称
-    #[serde(rename = "planName")]
-    pub plan_name: Option<String>,
+    /// 分时折扣配置
+    #[serde(rename = "discounts")]
+    pub discounts: Option<Vec<Discounts>>,
     
 }
 
@@ -130,100 +74,6 @@ pub struct AdProductCreateMessage {
     /// 商品Id
     #[serde(rename = "goodsId")]
     pub goods_id: Option<i64>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdTargetingSet {
-    
-    /// 地域定向
-    #[serde(rename = "areaStruct")]
-    pub area_struct: Option<AreaStruct>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Discounts {
-    
-    /// 小时。0-23分别表示第1个小时到第24个小时。
-    #[serde(rename = "index")]
-    pub index: Option<i32>,
-    
-    /// 折扣比例。千分比（即rate等于1000表示比例100%）。
-    #[serde(rename = "rate")]
-    pub rate: Option<i32>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddAdApiPlanCreate {
-    
-    /// 计划创建信息
-    #[serde(rename = "adPlanCreateMessage")]
-    pub ad_plan_create_message: Option<AdPlanCreateMessage>,
-    
-    /// 单元创建信息列表
-    #[serde(rename = "adUnitCreateComplexMessageList")]
-    pub ad_unit_create_complex_message_list: Option<Vec<AdUnitCreateComplexMessageList>>,
-    
-    /// 推广策略。1：自定义推广，3：展示ocpc智能推广。不传时表示自定义推广
-    #[serde(rename = "planStrategy")]
-    pub plan_strategy: Option<i32>,
-    
-    /// 场景类型。0表示搜索，2表示展示。
-    #[serde(rename = "scenesType")]
-    pub scenes_type: Option<i32>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdTextVoList {
-    
-    /// 标题
-    #[serde(rename = "text")]
-    pub text: Option<String>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdKeywordSetMessage {
-    
-    /// 词包出价。出价需在[0.10, 99.00]之间。
-    #[serde(rename = "keywordSetBid")]
-    pub keyword_set_bid: Option<i64>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AreaStruct {
-    
-    /// 地域Id列表。具体地域Id编码参见接口返回：pdd.ad.api.unit.bid.query.targeting.tag.list
-    #[serde(rename = "areaIds")]
-    pub area_ids: Option<Vec<i32>>,
-    
-}
-
-/// 创建计划
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdCreativeCreateMessagesList {
-    
-    /// 创意图片列表
-    #[serde(rename = "adImageVOList")]
-    pub ad_image_vo_list: Option<Vec<AdImageVoList>>,
-    
-    /// 创意标题列表
-    #[serde(rename = "adTextVOList")]
-    pub ad_text_vo_list: Option<Vec<AdTextVoList>>,
-    
-    /// 创意规格，6：商品轮播图，7：商品长图，其余规格暂不支持
-    #[serde(rename = "creativeSpecificationId")]
-    pub creative_specification_id: Option<i64>,
     
 }
 
@@ -267,27 +117,127 @@ pub struct AdUnitCreateComplexMessageList {
 
 /// 创建计划
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct OptimizationMessage {
+pub struct AdTextVoList {
     
-    /// 数据积累期出价。当使用OCPX时对该字段赋值。
-    #[serde(rename = "accumulationBid")]
-    pub accumulation_bid: Option<i64>,
+    /// 标题
+    #[serde(rename = "text")]
+    pub text: Option<String>,
     
-    /// 智能投放期出价。当使用OCPX时对该字段赋值。
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct OptionalOptimizationBidMessageList {
+    
+    /// 可选优化出价价格
     #[serde(rename = "optimizationBid")]
     pub optimization_bid: Option<i64>,
     
-    /// 优化目标。0表示不优化。1表示优化ROI，2表示优化转化成本.自定义单元时，该值必传0；当单元使用展示自动调价功能(ECPC)时，该值必须传1；当单元使用展示OCPC功能（plan_strategy=3）时，该值必须传2。
+    /// 可选优化出价目标。3表示优化店铺关注，4表示优化商品收藏，5表示优化询单
     #[serde(rename = "optimizationGoal")]
     pub optimization_goal: Option<i32>,
     
-    /// 优化方式。0表示不优化，1表示ECPC，2表示OCPC。当单元使用ECPC时，该值必须传1；当使用OCPC时，该值必须传2。
-    #[serde(rename = "optimizationMethod")]
-    pub optimization_method: Option<i32>,
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdTargetingCreateMessage {
     
-    /// 可选优化出价列表。当使用OCPX时对该字段赋值。
-    #[serde(rename = "optionalOptimizationBidMessageList")]
-    pub optional_optimization_bid_message_list: Option<Vec<OptionalOptimizationBidMessageList>>,
+    /// 定向集合
+    #[serde(rename = "adTargetingSet")]
+    pub ad_targeting_set: Option<AdTargetingSet>,
+    
+    /// 定向名称
+    #[serde(rename = "targetingName")]
+    pub targeting_name: Option<String>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdKeywordSetMessage {
+    
+    /// 词包出价。出价需在[0.10, 99.00]之间。
+    #[serde(rename = "keywordSetBid")]
+    pub keyword_set_bid: Option<i64>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct SmartCreativeCreateMessage {
+    
+    /// 智能创意流量分配比例
+    #[serde(rename = "creativeFlowRate")]
+    pub creative_flow_rate: Option<i32>,
+    
+    /// 是否启用智能创意标识
+    #[serde(rename = "enableSmartCreative")]
+    pub enable_smart_creative: Option<i32>,
+    
+    /// 智能创意标题
+    #[serde(rename = "smartCreativeTitle")]
+    pub smart_creative_title: Option<String>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdCreativeCreateMessagesList {
+    
+    /// 创意图片列表
+    #[serde(rename = "adImageVOList")]
+    pub ad_image_vo_list: Option<Vec<AdImageVoList>>,
+    
+    /// 创意标题列表
+    #[serde(rename = "adTextVOList")]
+    pub ad_text_vo_list: Option<Vec<AdTextVoList>>,
+    
+    /// 创意规格，6：商品轮播图，7：商品长图，其余规格暂不支持
+    #[serde(rename = "creativeSpecificationId")]
+    pub creative_specification_id: Option<i64>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Discounts {
+    
+    /// 小时。0-23分别表示第1个小时到第24个小时。
+    #[serde(rename = "index")]
+    pub index: Option<i32>,
+    
+    /// 折扣比例。千分比（即rate等于1000表示比例100%）。
+    #[serde(rename = "rate")]
+    pub rate: Option<i32>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AreaStruct {
+    
+    /// 地域Id列表。具体地域Id编码参见接口返回：pdd.ad.api.unit.bid.query.targeting.tag.list
+    #[serde(rename = "areaIds")]
+    pub area_ids: Option<Vec<i32>>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdKeywordCreateMessageList {
+    
+    /// 关键词出价
+    #[serde(rename = "bid")]
+    pub bid: Option<i64>,
+    
+    /// 关键词溢价比例。万分比
+    #[serde(rename = "premiumRate")]
+    pub premium_rate: Option<i64>,
+    
+    /// 关键词
+    #[serde(rename = "word")]
+    pub word: Option<String>,
     
 }
 
@@ -315,19 +265,70 @@ pub struct AudienceBidCreateMessageList {
 
 /// 创建计划
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdTargetingCreateMessage {
+pub struct PddAdApiPlanCreate {
     
-    /// 定向集合
-    #[serde(rename = "adTargetingSet")]
-    pub ad_targeting_set: Option<AdTargetingSet>,
+    /// 计划创建信息
+    #[serde(rename = "adPlanCreateMessage")]
+    pub ad_plan_create_message: Option<AdPlanCreateMessage>,
     
-    /// 定向名称
-    #[serde(rename = "targetingName")]
-    pub targeting_name: Option<String>,
+    /// 单元创建信息列表
+    #[serde(rename = "adUnitCreateComplexMessageList")]
+    pub ad_unit_create_complex_message_list: Option<Vec<AdUnitCreateComplexMessageList>>,
+    
+    /// 推广策略。1：自定义推广，3：展示ocpc智能推广。不传时表示自定义推广
+    #[serde(rename = "planStrategy")]
+    pub plan_strategy: Option<i32>,
+    
+    /// 场景类型。0表示搜索，2表示展示。
+    #[serde(rename = "scenesType")]
+    pub scenes_type: Option<i32>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdTargetingSet {
+    
+    /// 地域定向
+    #[serde(rename = "areaStruct")]
+    pub area_struct: Option<AreaStruct>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct LocationBidCreateMessageList {
+    
+    /// 资源位定向类型。可取值参考接口：pdd.ad.api.unit.bid.query.available.location
+    #[serde(rename = "bidReferenceId")]
+    pub bid_reference_id: Option<i64>,
+    
+    /// 出价，万分比
+    #[serde(rename = "bidValue")]
+    pub bid_value: Option<i64>,
+    
+}
+
+/// 创建计划
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdPlanCreateMessage {
+    
+    /// 单日消耗
+    #[serde(rename = "maxCost")]
+    pub max_cost: Option<i64>,
+    
+    /// 分时折扣
+    #[serde(rename = "planDiscount")]
+    pub plan_discount: Option<PlanDiscount>,
+    
+    /// 计划名称
+    #[serde(rename = "planName")]
+    pub plan_name: Option<String>,
     
 }
 
 
+/// 创建计划
 impl Request for PddAdApiPlanCreate {
     fn get_type() -> String {
         "pdd.ad.api.plan.create".to_string()

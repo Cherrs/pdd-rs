@@ -22,6 +22,7 @@ pub struct PddDdkOauthGoodsPidGenerate {
 }
 
 
+/// 创建多多进宝推广位
 impl Request for PddDdkOauthGoodsPidGenerate {
     fn get_type() -> String {
         "pdd.ddk.oauth.goods.pid.generate".to_string()

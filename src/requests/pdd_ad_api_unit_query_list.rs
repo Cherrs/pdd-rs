@@ -34,6 +34,7 @@ pub struct PddAdApiUnitQueryList {
 }
 
 
+/// 查询单元列表页
 impl Request for PddAdApiUnitQueryList {
     fn get_type() -> String {
         "pdd.ad.api.unit.query.list".to_string()

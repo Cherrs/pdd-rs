@@ -10,6 +10,7 @@ pub struct PddLogisticsCompaniesGet {
 }
 
 
+/// 获取快递公司名称
 impl Request for PddLogisticsCompaniesGet {
     fn get_type() -> String {
         "pdd.logistics.companies.get".to_string()

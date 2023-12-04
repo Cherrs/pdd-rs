@@ -46,6 +46,7 @@ pub struct PddDdkOauthCmsPromUrlGenerate {
 }
 
 
+/// 生成商城推广链接接口
 impl Request for PddDdkOauthCmsPromUrlGenerate {
     fn get_type() -> String {
         "pdd.ddk.oauth.cms.prom.url.generate".to_string()

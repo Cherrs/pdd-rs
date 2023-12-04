@@ -28,6 +28,7 @@ pub struct PddCloudPrinterStatusQuery {
 }
 
 
+/// 查询云打印机状态
 impl Request for PddCloudPrinterStatusQuery {
     fn get_type() -> String {
         "pdd.cloud.printer.status.query".to_string()

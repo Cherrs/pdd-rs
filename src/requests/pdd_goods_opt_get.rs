@@ -14,6 +14,7 @@ pub struct PddGoodsOptGet {
 }
 
 
+/// 获得拼多多商品标签列表（非商品类目cat，当前仅开放给多多客使用）
 impl Request for PddGoodsOptGet {
     fn get_type() -> String {
         "pdd.goods.opt.get".to_string()

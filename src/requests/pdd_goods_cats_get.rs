@@ -14,6 +14,7 @@ pub struct PddGoodsCatsGet {
 }
 
 
+/// 获取拼多多标准商品类目信息（请使用pdd.goods.authorization.cats接口获取商家可发布类目）
 impl Request for PddGoodsCatsGet {
     fn get_type() -> String {
         "pdd.goods.cats.get".to_string()

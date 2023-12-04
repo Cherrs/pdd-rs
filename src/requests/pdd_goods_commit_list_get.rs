@@ -26,6 +26,7 @@ pub struct PddGoodsCommitListGet {
 }
 
 
+/// 查询店铺的商品草稿列表
 impl Request for PddGoodsCommitListGet {
     fn get_type() -> String {
         "pdd.goods.commit.list.get".to_string()

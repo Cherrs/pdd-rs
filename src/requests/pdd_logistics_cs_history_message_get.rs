@@ -14,6 +14,7 @@ pub struct PddLogisticsCsHistoryMessageGet {
 }
 
 
+/// 该接口用于获取客户与机器人的聊天记录。
 impl Request for PddLogisticsCsHistoryMessageGet {
     fn get_type() -> String {
         "pdd.logistics.cs.history.message.get".to_string()

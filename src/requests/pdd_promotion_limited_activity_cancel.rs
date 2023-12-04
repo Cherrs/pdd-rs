@@ -18,6 +18,7 @@ pub struct PddPromotionLimitedActivityCancel {
 }
 
 
+/// 结束已创建的限时限量购活动
 impl Request for PddPromotionLimitedActivityCancel {
     fn get_type() -> String {
         "pdd.promotion.limited.activity.cancel".to_string()

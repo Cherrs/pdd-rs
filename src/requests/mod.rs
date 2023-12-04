@@ -2,18 +2,6 @@
 mod pdd_erp_order_sync;
 pub use pdd_erp_order_sync::PddErpOrderSync;
 
-mod pdd_fulfillment_information_get;
-pub use pdd_fulfillment_information_get::PddFulfillmentInformationGet;
-
-mod pdd_fulfillment_list_get;
-pub use pdd_fulfillment_list_get::PddFulfillmentListGet;
-
-mod pdd_fulfillment_list_increment_get;
-pub use pdd_fulfillment_list_increment_get::PddFulfillmentListIncrementGet;
-
-mod pdd_order_basic_list_get;
-pub use pdd_order_basic_list_get::PddOrderBasicListGet;
-
 mod pdd_order_information_get;
 pub use pdd_order_information_get::PddOrderInformationGet;
 
@@ -71,6 +59,9 @@ pub use pdd_refund_returngoods_agree::PddRefundReturngoodsAgree;
 mod pdd_refund_status_check;
 pub use pdd_refund_status_check::PddRefundStatusCheck;
 
+mod pdd_heavygoods_back_express_callback;
+pub use pdd_heavygoods_back_express_callback::PddHeavygoodsBackExpressCallback;
+
 mod pdd_logistics_address_get;
 pub use pdd_logistics_address_get::PddLogisticsAddressGet;
 
@@ -80,9 +71,6 @@ pub use pdd_logistics_available_company_recommend::PddLogisticsAvailableCompanyR
 mod pdd_logistics_companies_get;
 pub use pdd_logistics_companies_get::PddLogisticsCompaniesGet;
 
-mod pdd_logistics_fulfillment_send;
-pub use pdd_logistics_fulfillment_send::PddLogisticsFulfillmentSend;
-
 mod pdd_logistics_isv_trace_notify_sub;
 pub use pdd_logistics_isv_trace_notify_sub::PddLogisticsIsvTraceNotifySub;
 
@@ -91,6 +79,9 @@ pub use pdd_logistics_online_send::PddLogisticsOnlineSend;
 
 mod pdd_logistics_ordertrace_get;
 pub use pdd_logistics_ordertrace_get::PddLogisticsOrdertraceGet;
+
+mod pdd_tail_express_trace_sync;
+pub use pdd_tail_express_trace_sync::PddTailExpressTraceSync;
 
 mod pdd_virtual_game_server_query;
 pub use pdd_virtual_game_server_query::PddVirtualGameServerQuery;
@@ -140,17 +131,8 @@ pub use pdd_goods_country_get::PddGoodsCountryGet;
 mod pdd_goods_cps_mall_unit_change;
 pub use pdd_goods_cps_mall_unit_change::PddGoodsCpsMallUnitChange;
 
-mod pdd_goods_cps_mall_unit_create;
-pub use pdd_goods_cps_mall_unit_create::PddGoodsCpsMallUnitCreate;
-
-mod pdd_goods_cps_mall_unit_pause;
-pub use pdd_goods_cps_mall_unit_pause::PddGoodsCpsMallUnitPause;
-
 mod pdd_goods_cps_mall_unit_query;
 pub use pdd_goods_cps_mall_unit_query::PddGoodsCpsMallUnitQuery;
-
-mod pdd_goods_cps_mall_unit_resume;
-pub use pdd_goods_cps_mall_unit_resume::PddGoodsCpsMallUnitResume;
 
 mod pdd_goods_cps_unit_change;
 pub use pdd_goods_cps_unit_change::PddGoodsCpsUnitChange;
@@ -293,14 +275,14 @@ pub use pdd_goods_submit_goods_commit::PddGoodsSubmitGoodsCommit;
 mod pdd_goods_template_property_value_search;
 pub use pdd_goods_template_property_value_search::PddGoodsTemplatePropertyValueSearch;
 
+mod pdd_goods_video_upload;
+pub use pdd_goods_video_upload::PddGoodsVideoUpload;
+
 mod pdd_gooods_sku_measurement_list;
 pub use pdd_gooods_sku_measurement_list::PddGooodsSkuMeasurementList;
 
 mod pdd_one_express_cost_template;
 pub use pdd_one_express_cost_template::PddOneExpressCostTemplate;
-
-mod pdd_select_goods_label_code;
-pub use pdd_select_goods_label_code::PddSelectGoodsLabelCode;
 
 mod pdd_ddk_goods_pid_generate;
 pub use pdd_ddk_goods_pid_generate::PddDdkGoodsPidGenerate;
@@ -338,15 +320,6 @@ pub use pdd_ddk_tmc_activity_list::PddDdkTmcActivityList;
 mod pdd_ddk_cms_prom_url_generate;
 pub use pdd_ddk_cms_prom_url_generate::PddDdkCmsPromUrlGenerate;
 
-mod pdd_ddk_order_list_range_get;
-pub use pdd_ddk_order_list_range_get::PddDdkOrderListRangeGet;
-
-mod pdd_ddk_order_detail_get;
-pub use pdd_ddk_order_detail_get::PddDdkOrderDetailGet;
-
-mod pdd_ddk_order_list_increment_get;
-pub use pdd_ddk_order_list_increment_get::PddDdkOrderListIncrementGet;
-
 mod pdd_ddk_report_video_upload_part_complete;
 pub use pdd_ddk_report_video_upload_part_complete::PddDdkReportVideoUploadPartComplete;
 
@@ -365,29 +338,38 @@ pub use pdd_ddk_report_img_upload::PddDdkReportImgUpload;
 mod pdd_ddk_goods_promotion_right_auth;
 pub use pdd_ddk_goods_promotion_right_auth::PddDdkGoodsPromotionRightAuth;
 
-mod pdd_ddk_promotion_goods_query;
-pub use pdd_ddk_promotion_goods_query::PddDdkPromotionGoodsQuery;
-
-mod pdd_ddk_goods_recommend_get;
-pub use pdd_ddk_goods_recommend_get::PddDdkGoodsRecommendGet;
-
-mod pdd_ddk_goods_search;
-pub use pdd_ddk_goods_search::PddDdkGoodsSearch;
-
-mod pdd_ddk_goods_detail;
-pub use pdd_ddk_goods_detail::PddDdkGoodsDetail;
-
-mod pdd_ddk_goods_promotion_url_generate;
-pub use pdd_ddk_goods_promotion_url_generate::PddDdkGoodsPromotionUrlGenerate;
-
-mod pdd_ddk_goods_zs_unit_url_gen;
-pub use pdd_ddk_goods_zs_unit_url_gen::PddDdkGoodsZsUnitUrlGen;
-
 mod pdd_ddk_url_short_parse;
 pub use pdd_ddk_url_short_parse::PddDdkUrlShortParse;
 
 mod pdd_ddk_rp_prom_url_generate;
 pub use pdd_ddk_rp_prom_url_generate::PddDdkRpPromUrlGenerate;
+
+mod pdd_ddk_promotion_goods_query;
+pub use pdd_ddk_promotion_goods_query::PddDdkPromotionGoodsQuery;
+
+mod pdd_ddk_goods_detail;
+pub use pdd_ddk_goods_detail::PddDdkGoodsDetail;
+
+mod pdd_ddk_goods_search;
+pub use pdd_ddk_goods_search::PddDdkGoodsSearch;
+
+mod pdd_ddk_goods_recommend_get;
+pub use pdd_ddk_goods_recommend_get::PddDdkGoodsRecommendGet;
+
+mod pdd_ddk_order_list_increment_get;
+pub use pdd_ddk_order_list_increment_get::PddDdkOrderListIncrementGet;
+
+mod pdd_ddk_order_list_range_get;
+pub use pdd_ddk_order_list_range_get::PddDdkOrderListRangeGet;
+
+mod pdd_ddk_order_detail_get;
+pub use pdd_ddk_order_detail_get::PddDdkOrderDetailGet;
+
+mod pdd_ddk_goods_zs_unit_url_gen;
+pub use pdd_ddk_goods_zs_unit_url_gen::PddDdkGoodsZsUnitUrlGen;
+
+mod pdd_ddk_goods_promotion_url_generate;
+pub use pdd_ddk_goods_promotion_url_generate::PddDdkGoodsPromotionUrlGenerate;
 
 mod pdd_ddk_all_order_list_increment_get;
 pub use pdd_ddk_all_order_list_increment_get::PddDdkAllOrderListIncrementGet;
@@ -466,6 +448,9 @@ pub use pdd_logistics_ticket_problem_type_get::PddLogisticsTicketProblemTypeGet;
 
 mod pdd_service_mail_bizaction_notify;
 pub use pdd_service_mail_bizaction_notify::PddServiceMailBizactionNotify;
+
+mod pdd_service_mail_check_weight_info;
+pub use pdd_service_mail_check_weight_info::PddServiceMailCheckWeightInfo;
 
 mod pdd_logistics_co_track_sub;
 pub use pdd_logistics_co_track_sub::PddLogisticsCoTrackSub;

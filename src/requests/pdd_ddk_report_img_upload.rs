@@ -14,6 +14,7 @@ pub struct PddDdkReportImgUpload {
 }
 
 
+/// 多多客信息流投放备案图片上传
 impl Request for PddDdkReportImgUpload {
     fn get_type() -> String {
         "pdd.ddk.report.img.upload".to_string()

@@ -14,6 +14,7 @@ pub struct PddGoodsSizespecTemplateDelete {
 }
 
 
+/// 管理尺码表模板时需要删除自定义尺码表模板
 impl Request for PddGoodsSizespecTemplateDelete {
     fn get_type() -> String {
         "pdd.goods.sizespec.template.delete".to_string()

@@ -18,6 +18,7 @@ pub struct PddOverseaDeclarationFailNotify {
 }
 
 
+/// 用于服务商向平台同步海淘订单申报失败和具体原因
 impl Request for PddOverseaDeclarationFailNotify {
     fn get_type() -> String {
         "pdd.oversea.declaration.fail.notify".to_string()

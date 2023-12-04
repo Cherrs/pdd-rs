@@ -10,6 +10,7 @@ pub struct PddAdApiAdvertiserQueryAccountBalance {
 }
 
 
+/// 查询广告主账户余额
 impl Request for PddAdApiAdvertiserQueryAccountBalance {
     fn get_type() -> String {
         "pdd.ad.api.advertiser.query.account.balance".to_string()

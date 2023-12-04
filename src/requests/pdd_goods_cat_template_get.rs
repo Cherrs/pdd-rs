@@ -14,6 +14,7 @@ pub struct PddGoodsCatTemplateGet {
 }
 
 
+/// 商品发布前，需要查询该类目的商品发布需要的属性，获取商品发布需要的模板-属性-属性值。已废弃，建议使用pdd.goods.cat.rule.get代替
 impl Request for PddGoodsCatTemplateGet {
     fn get_type() -> String {
         "pdd.goods.cat.template.get".to_string()

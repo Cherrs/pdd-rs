@@ -14,6 +14,7 @@ pub struct PddCloudprintStdtemplatesGet {
 }
 
 
+/// 获取所有标准电子面单模板
 impl Request for PddCloudprintStdtemplatesGet {
     fn get_type() -> String {
         "pdd.cloudprint.stdtemplates.get".to_string()

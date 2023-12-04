@@ -18,6 +18,7 @@ pub struct PddDdkOauthOrderDetailGet {
 }
 
 
+/// 查询订单详情
 impl Request for PddDdkOauthOrderDetailGet {
     fn get_type() -> String {
         "pdd.ddk.oauth.order.detail.get".to_string()

@@ -14,6 +14,7 @@ pub struct PddServicemarketContractSearch {
 }
 
 
+/// 用于查询指定商家在服务市场订单执行履约的排序
 impl Request for PddServicemarketContractSearch {
     fn get_type() -> String {
         "pdd.servicemarket.contract.search".to_string()

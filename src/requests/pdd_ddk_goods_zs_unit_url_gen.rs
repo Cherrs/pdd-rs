@@ -26,6 +26,7 @@ pub struct PddDdkGoodsZsUnitUrlGen {
 }
 
 
+/// 本功能适用于采集群等场景。将其他推广者的推广链接转换成自己的；通过此api，可以将他人的招商推广链接，转换成自己的招商推广链接。
 impl Request for PddDdkGoodsZsUnitUrlGen {
     fn get_type() -> String {
         "pdd.ddk.goods.zs.unit.url.gen".to_string()

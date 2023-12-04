@@ -70,6 +70,7 @@ pub struct Skus {
 }
 
 
+/// 日历库存类商品编辑或新增价格日历接口
 impl Request for PddGoodsChildSkuEdit {
     fn get_type() -> String {
         "pdd.goods.child.sku.edit".to_string()

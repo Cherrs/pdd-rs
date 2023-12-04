@@ -18,6 +18,7 @@ pub struct PddDdkCashgiftStatusUpdate {
 }
 
 
+/// 多多客暂停或恢复多多礼金推广
 impl Request for PddDdkCashgiftStatusUpdate {
     fn get_type() -> String {
         "pdd.ddk.cashgift.status.update".to_string()

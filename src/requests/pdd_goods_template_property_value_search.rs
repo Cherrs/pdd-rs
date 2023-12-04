@@ -38,6 +38,7 @@ pub struct PddGoodsTemplatePropertyValueSearch {
 }
 
 
+/// 商品发布过程中，填写商品属性时，用于模糊搜索属性模板上可填属性值
 impl Request for PddGoodsTemplatePropertyValueSearch {
     fn get_type() -> String {
         "pdd.goods.template.property.value.search".to_string()

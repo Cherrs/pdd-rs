@@ -10,6 +10,7 @@ pub struct PddMallCpsProtocolStatusQuery {
 }
 
 
+/// 查询店铺是否签署多多进宝协议接口
 impl Request for PddMallCpsProtocolStatusQuery {
     fn get_type() -> String {
         "pdd.mall.cps.protocol.status.query".to_string()

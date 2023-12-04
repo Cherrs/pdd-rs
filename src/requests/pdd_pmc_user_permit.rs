@@ -14,6 +14,7 @@ pub struct PddPmcUserPermit {
 }
 
 
+/// 为已授权的用户开通消息服务
 impl Request for PddPmcUserPermit {
     fn get_type() -> String {
         "pdd.pmc.user.permit".to_string()

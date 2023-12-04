@@ -5,20 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 批量创建关键词
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddAdApiKeywordCreate {
-    
-    /// 广告单元Id
-    #[serde(rename = "adId")]
-    pub ad_id: Option<i64>,
-    
-    /// 关键词创建信息列表
-    #[serde(rename = "keywordList")]
-    pub keyword_list: Option<Vec<KeywordList>>,
-    
-}
-
-/// 批量创建关键词
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct KeywordList {
     
     /// 关键词出价
@@ -35,7 +21,22 @@ pub struct KeywordList {
     
 }
 
+/// 批量创建关键词
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddAdApiKeywordCreate {
+    
+    /// 广告单元Id
+    #[serde(rename = "adId")]
+    pub ad_id: Option<i64>,
+    
+    /// 关键词创建信息列表
+    #[serde(rename = "keywordList")]
+    pub keyword_list: Option<Vec<KeywordList>>,
+    
+}
 
+
+/// 批量创建关键词
 impl Request for PddAdApiKeywordCreate {
     fn get_type() -> String {
         "pdd.ad.api.keyword.create".to_string()

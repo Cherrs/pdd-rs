@@ -38,6 +38,7 @@ pub struct PddPromotionGoodsCouponCreate {
 }
 
 
+/// 创建无门槛商品劵批次接口
 impl Request for PddPromotionGoodsCouponCreate {
     fn get_type() -> String {
         "pdd.promotion.goods.coupon.create".to_string()

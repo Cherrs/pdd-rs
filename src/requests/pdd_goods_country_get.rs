@@ -10,6 +10,7 @@ pub struct PddGoodsCountryGet {
 }
 
 
+/// 获取指定国家或地区信息
 impl Request for PddGoodsCountryGet {
     fn get_type() -> String {
         "pdd.goods.country.get".to_string()

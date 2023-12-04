@@ -44,6 +44,7 @@ pub struct PddNextoneLogisticsWarehouseUpdateRequest {
 }
 
 
+/// 退货入库通知拼多多确认入库成功
 impl Request for PddNextoneLogisticsWarehouseUpdate {
     fn get_type() -> String {
         "pdd.nextone.logistics.warehouse.update".to_string()

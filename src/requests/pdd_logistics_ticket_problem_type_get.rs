@@ -10,6 +10,7 @@ pub struct PddLogisticsTicketProblemTypeGet {
 }
 
 
+/// 快递公司通过此接口同步多多所有物流工单问题类型
 impl Request for PddLogisticsTicketProblemTypeGet {
     fn get_type() -> String {
         "pdd.logistics.ticket.problem.type.get".to_string()

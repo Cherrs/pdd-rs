@@ -30,6 +30,7 @@ pub struct PddOpenMsgServiceQueryMsgRecord {
 }
 
 
+/// 查询短信发送记录
 impl Request for PddOpenMsgServiceQueryMsgRecord {
     fn get_type() -> String {
         "pdd.open.msg.service.query.msg.record".to_string()

@@ -18,6 +18,7 @@ pub struct PddDeleteDraftCommit {
 }
 
 
+/// 删除草稿接口
 impl Request for PddDeleteDraftCommit {
     fn get_type() -> String {
         "pdd.delete.draft.commit".to_string()

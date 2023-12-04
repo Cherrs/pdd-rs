@@ -48,6 +48,7 @@ pub struct TemplateParamJson {
 }
 
 
+/// 短信批量发送接口
 impl Request for PddOpenMsgServiceSendBatchMsg {
     fn get_type() -> String {
         "pdd.open.msg.service.send.batch.msg".to_string()

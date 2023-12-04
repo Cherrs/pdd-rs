@@ -64,6 +64,7 @@ pub struct ChargeCerti {
 }
 
 
+/// 虚拟类目发货的接口【仅供话费/流量直冲商家自研对接进行话费流量发货使用】
 impl Request for PddVirtualMobileChargeNotify {
     fn get_type() -> String {
         "pdd.virtual.mobile.charge.notify".to_string()

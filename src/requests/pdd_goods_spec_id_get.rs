@@ -18,6 +18,7 @@ pub struct PddGoodsSpecIdGet {
 }
 
 
+/// 生成商家自定义的规格
 impl Request for PddGoodsSpecIdGet {
     fn get_type() -> String {
         "pdd.goods.spec.id.get".to_string()

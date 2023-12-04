@@ -5,20 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 根据溯源码ID获取溯源商品信息
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddTraceSourceQueryGoodsInfo {
-    
-    /// 请求方法
-    #[serde(rename = "httpMethod")]
-    pub http_method: Option<String>,
-    
-    /// 请求参数
-    #[serde(rename = "params")]
-    pub params: Option<Params>,
-    
-}
-
-/// 根据溯源码ID获取溯源商品信息
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Params {
     
     /// 接口调用账号（由平台分配）
@@ -39,7 +25,22 @@ pub struct Params {
     
 }
 
+/// 根据溯源码ID获取溯源商品信息
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddTraceSourceQueryGoodsInfo {
+    
+    /// 请求方法
+    #[serde(rename = "httpMethod")]
+    pub http_method: Option<String>,
+    
+    /// 请求参数
+    #[serde(rename = "params")]
+    pub params: Option<Params>,
+    
+}
 
+
+/// 根据溯源码ID获取溯源商品信息
 impl Request for PddTraceSourceQueryGoodsInfo {
     fn get_type() -> String {
         "pdd.trace.source.query.goods.info".to_string()

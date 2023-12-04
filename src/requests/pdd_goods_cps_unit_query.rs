@@ -14,6 +14,7 @@ pub struct PddGoodsCpsUnitQuery {
 }
 
 
+/// 查询商品推广API
 impl Request for PddGoodsCpsUnitQuery {
     fn get_type() -> String {
         "pdd.goods.cps.unit.query".to_string()

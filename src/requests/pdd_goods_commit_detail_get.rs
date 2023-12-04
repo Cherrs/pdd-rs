@@ -18,6 +18,7 @@ pub struct PddGoodsCommitDetailGet {
 }
 
 
+/// 商品编辑或者提交之后，可以通过此接口查询提交后的编辑信息
 impl Request for PddGoodsCommitDetailGet {
     fn get_type() -> String {
         "pdd.goods.commit.detail.get".to_string()

@@ -14,6 +14,7 @@ pub struct PddGoodsMaterialDelete {
 }
 
 
+/// 删除素材
 impl Request for PddGoodsMaterialDelete {
     fn get_type() -> String {
         "pdd.goods.material.delete".to_string()

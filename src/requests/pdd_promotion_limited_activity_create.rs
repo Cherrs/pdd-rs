@@ -70,6 +70,7 @@ pub struct PddPromotionLimitedActivityCreateRequest {
 }
 
 
+/// 创建限时限量购活动（包括限时折扣和限量折扣）
 impl Request for PddPromotionLimitedActivityCreate {
     fn get_type() -> String {
         "pdd.promotion.limited.activity.create".to_string()

@@ -78,6 +78,7 @@ pub struct PddAdApiReportEntityReportQuery {
 }
 
 
+/// 用于查询广告主报表某个实体下子级实体报表数据，返回的结果按查询的子实体维度分组，每条记录为子实体一段时间的汇总数据，例如查询广告主（查询实体）下所有计划（子实体）某一时段的报表信息，返回的记录按计划分组，每条记录为每个计划这段时间的汇总报表数据。
 impl Request for PddAdApiReportEntityReportQuery {
     fn get_type() -> String {
         "pdd.ad.api.report.entity.report.query".to_string()

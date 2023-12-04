@@ -32,6 +32,7 @@ pub struct PddStockWareWarehouseQueryRequest {
 }
 
 
+/// 通过货品编码查询货品和库存信息
 impl Request for PddStockWareWarehouseQuery {
     fn get_type() -> String {
         "pdd.stock.ware.warehouse.query".to_string()

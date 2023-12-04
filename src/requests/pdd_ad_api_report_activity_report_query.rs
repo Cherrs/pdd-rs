@@ -22,6 +22,7 @@ pub struct PddAdApiReportActivityReportQuery {
 }
 
 
+/// 查询活动报表信息
 impl Request for PddAdApiReportActivityReportQuery {
     fn get_type() -> String {
         "pdd.ad.api.report.activity.report.query".to_string()

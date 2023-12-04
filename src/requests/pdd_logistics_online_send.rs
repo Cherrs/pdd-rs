@@ -34,6 +34,7 @@ pub struct PddLogisticsOnlineSend {
 }
 
 
+/// 订单发货通知
 impl Request for PddLogisticsOnlineSend {
     fn get_type() -> String {
         "pdd.logistics.online.send".to_string()

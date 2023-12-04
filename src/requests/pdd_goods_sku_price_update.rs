@@ -60,6 +60,7 @@ pub struct SkuPriceList {
 }
 
 
+/// 修改商品sku价格
 impl Request for PddGoodsSkuPriceUpdate {
     fn get_type() -> String {
         "pdd.goods.sku.price.update".to_string()

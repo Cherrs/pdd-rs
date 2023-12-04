@@ -38,6 +38,7 @@ pub struct PddPromotionLimitedDiscountListGet {
 }
 
 
+/// 查询已创建的限时限量购活动列表
 impl Request for PddPromotionLimitedDiscountListGet {
     fn get_type() -> String {
         "pdd.promotion.limited.discount.list.get".to_string()

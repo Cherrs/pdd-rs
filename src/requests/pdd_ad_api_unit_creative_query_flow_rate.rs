@@ -14,6 +14,7 @@ pub struct PddAdApiUnitCreativeQueryFlowRate {
 }
 
 
+/// 查询智能创意流量分配比例,万分比
 impl Request for PddAdApiUnitCreativeQueryFlowRate {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.query.flow.rate".to_string()

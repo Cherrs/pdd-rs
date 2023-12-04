@@ -82,6 +82,7 @@ pub struct PddDdkGoodsPromotionUrlGenerate {
 }
 
 
+/// 生成普通商品推广链接
 impl Request for PddDdkGoodsPromotionUrlGenerate {
     fn get_type() -> String {
         "pdd.ddk.goods.promotion.url.generate".to_string()

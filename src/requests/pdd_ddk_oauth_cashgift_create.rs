@@ -94,6 +94,7 @@ pub struct PddDdkOauthCashgiftCreate {
 }
 
 
+/// 创建多多礼金
 impl Request for PddDdkOauthCashgiftCreate {
     fn get_type() -> String {
         "pdd.ddk.oauth.cashgift.create".to_string()

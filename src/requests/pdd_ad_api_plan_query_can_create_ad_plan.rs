@@ -18,6 +18,7 @@ pub struct PddAdApiPlanQueryCanCreateAdPlan {
 }
 
 
+/// 校验是否能创建计划
 impl Request for PddAdApiPlanQueryCanCreateAdPlan {
     fn get_type() -> String {
         "pdd.ad.api.plan.query.can.create.ad.plan".to_string()

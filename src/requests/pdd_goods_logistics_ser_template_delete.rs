@@ -14,6 +14,7 @@ pub struct PddGoodsLogisticsSerTemplateDelete {
 }
 
 
+/// 商品送装服务模版删除
 impl Request for PddGoodsLogisticsSerTemplateDelete {
     fn get_type() -> String {
         "pdd.goods.logistics.ser.template.delete".to_string()

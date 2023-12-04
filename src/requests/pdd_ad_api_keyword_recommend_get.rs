@@ -14,6 +14,7 @@ pub struct PddAdApiKeywordRecommendGet {
 }
 
 
+/// 获取推荐关键词
 impl Request for PddAdApiKeywordRecommendGet {
     fn get_type() -> String {
         "pdd.ad.api.keyword.recommend.get".to_string()

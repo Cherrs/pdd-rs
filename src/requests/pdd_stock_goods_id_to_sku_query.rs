@@ -22,6 +22,7 @@ pub struct PddStockGoodsIdToSkuQuery {
 }
 
 
+/// 家电分仓库存-根据商品id查询sku信息
 impl Request for PddStockGoodsIdToSkuQuery {
     fn get_type() -> String {
         "pdd.stock.goods.id.to.sku.query".to_string()

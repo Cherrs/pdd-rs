@@ -22,6 +22,7 @@ pub struct PddGoodsOutPropertyMappingGet {
 }
 
 
+/// 开平侧商家在搬家，根据入参类目+站外属性/站外属性值返回启用的站内外属性映射中的站内属性/站内属性值
 impl Request for PddGoodsOutPropertyMappingGet {
     fn get_type() -> String {
         "pdd.goods.out.property.mapping.get".to_string()

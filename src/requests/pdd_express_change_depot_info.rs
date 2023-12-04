@@ -54,6 +54,7 @@ pub struct PddExpressChangeDepotInfo {
 }
 
 
+/// 修改仓库信息
 impl Request for PddExpressChangeDepotInfo {
     fn get_type() -> String {
         "pdd.express.change.depot.info".to_string()

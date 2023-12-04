@@ -22,6 +22,7 @@ pub struct PddAdApiPlanUpdateDataOperateStatus {
 }
 
 
+/// 启动或暂停计划
 impl Request for PddAdApiPlanUpdateDataOperateStatus {
     fn get_type() -> String {
         "pdd.ad.api.plan.update.data.operate.status".to_string()

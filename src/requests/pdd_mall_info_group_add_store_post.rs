@@ -18,6 +18,7 @@ pub struct PddMallInfoGroupAddStorePost {
 }
 
 
+/// 门店组添加门店
 impl Request for PddMallInfoGroupAddStorePost {
     fn get_type() -> String {
         "pdd.mall.info.group.add.store.post".to_string()

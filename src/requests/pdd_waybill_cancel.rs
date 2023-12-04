@@ -18,6 +18,7 @@ pub struct PddWaybillCancel {
 }
 
 
+/// 商家取消获取的电子面单号
 impl Request for PddWaybillCancel {
     fn get_type() -> String {
         "pdd.waybill.cancel".to_string()

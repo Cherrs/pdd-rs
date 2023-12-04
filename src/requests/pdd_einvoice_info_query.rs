@@ -30,6 +30,7 @@ pub struct PddEinvoiceInfoQuery {
 }
 
 
+/// 商家使用自动开票系统对订单进行开票，可通过此接口获取30天内已开发票对应的发票和订单信息
 impl Request for PddEinvoiceInfoQuery {
     fn get_type() -> String {
         "pdd.einvoice.info.query".to_string()

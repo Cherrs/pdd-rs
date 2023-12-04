@@ -18,6 +18,7 @@ pub struct PddLogisticsOrdertraceGet {
 }
 
 
+/// 查询单个运单详情
 impl Request for PddLogisticsOrdertraceGet {
     fn get_type() -> String {
         "pdd.logistics.ordertrace.get".to_string()

@@ -54,6 +54,7 @@ pub struct PddDdkOauthGoodsRecommendGet {
 }
 
 
+/// 运营频道商品查询
 impl Request for PddDdkOauthGoodsRecommendGet {
     fn get_type() -> String {
         "pdd.ddk.oauth.goods.recommend.get".to_string()

@@ -14,6 +14,7 @@ pub struct PddVirtualGameServerQuery {
 }
 
 
+/// 虚拟游戏类区服列表
 impl Request for PddVirtualGameServerQuery {
     fn get_type() -> String {
         "pdd.virtual.game.server.query".to_string()

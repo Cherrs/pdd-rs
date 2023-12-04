@@ -32,6 +32,7 @@ pub struct PddWaybillQueryByWaybillcode {
 }
 
 
+/// 通过面单号查询面单信息
 impl Request for PddWaybillQueryByWaybillcode {
     fn get_type() -> String {
         "pdd.waybill.query.by.waybillcode".to_string()

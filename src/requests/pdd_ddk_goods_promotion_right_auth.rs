@@ -42,6 +42,7 @@ pub struct PddDdkGoodsPromotionRightAuth {
 }
 
 
+/// 多多进宝信息流渠道备案授权素材上传使用
 impl Request for PddDdkGoodsPromotionRightAuth {
     fn get_type() -> String {
         "pdd.ddk.goods.promotion.right.auth".to_string()

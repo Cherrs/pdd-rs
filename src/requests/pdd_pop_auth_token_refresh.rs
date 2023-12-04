@@ -14,6 +14,7 @@ pub struct PddPopAuthTokenRefresh {
 }
 
 
+/// 根据refresh_token重新生成token
 impl Request for PddPopAuthTokenRefresh {
     fn get_type() -> String {
         "pdd.pop.auth.token.refresh".to_string()

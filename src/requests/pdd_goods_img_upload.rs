@@ -14,6 +14,7 @@ pub struct PddGoodsImgUpload {
 }
 
 
+/// 商品图片上传
 impl Request for PddGoodsImgUpload {
     fn get_type() -> String {
         "pdd.goods.img.upload".to_string()

@@ -5,6 +5,26 @@ use serde::{Deserialize, Serialize};
 
 /// 同步定向/资源位
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AreaStruct {
+    
+    /// 地域Id列表。具体地域Id编码参见接口返回：pdd.ad.api.unit.bid.query.targeting.tag.list
+    #[serde(rename = "areaIds")]
+    pub area_ids: Option<Vec<i32>>,
+    
+}
+
+/// 同步定向/资源位
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct AdTargetingSet {
+    
+    /// 地域定向
+    #[serde(rename = "areaStruct")]
+    pub area_struct: Option<AreaStruct>,
+    
+}
+
+/// 同步定向/资源位
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct AdUnitBids {
     
     /// 定向信息。仅支持地域定向。
@@ -57,27 +77,8 @@ pub struct PddAdApiUnitBidSync {
     
 }
 
-/// 同步定向/资源位
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AdTargetingSet {
-    
-    /// 地域定向
-    #[serde(rename = "areaStruct")]
-    pub area_struct: Option<AreaStruct>,
-    
-}
 
 /// 同步定向/资源位
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct AreaStruct {
-    
-    /// 地域Id列表。具体地域Id编码参见接口返回：pdd.ad.api.unit.bid.query.targeting.tag.list
-    #[serde(rename = "areaIds")]
-    pub area_ids: Option<Vec<i32>>,
-    
-}
-
-
 impl Request for PddAdApiUnitBidSync {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.sync".to_string()

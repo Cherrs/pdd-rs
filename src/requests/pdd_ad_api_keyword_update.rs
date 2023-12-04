@@ -36,6 +36,7 @@ pub struct PddAdApiKeywordUpdate {
 }
 
 
+/// 批量修改关键词
 impl Request for PddAdApiKeywordUpdate {
     fn get_type() -> String {
         "pdd.ad.api.keyword.update".to_string()

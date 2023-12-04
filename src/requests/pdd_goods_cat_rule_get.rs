@@ -18,6 +18,7 @@ pub struct PddGoodsCatRuleGet {
 }
 
 
+/// 通过叶子类目id获取该类目的发布规则，目前返回标品、商品服务、属性等规则。
 impl Request for PddGoodsCatRuleGet {
     fn get_type() -> String {
         "pdd.goods.cat.rule.get".to_string()

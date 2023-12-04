@@ -14,6 +14,7 @@ pub struct PddRefundStatusCheck {
 }
 
 
+/// 校验售后单
 impl Request for PddRefundStatusCheck {
     fn get_type() -> String {
         "pdd.refund.status.check".to_string()

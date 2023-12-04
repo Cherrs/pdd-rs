@@ -58,6 +58,7 @@ pub struct OptionalOptimizationBidMessageList {
 }
 
 
+/// 更新优化信息
 impl Request for PddAdApiUnitUpdateOptimizationMessage {
     fn get_type() -> String {
         "pdd.ad.api.unit.update.optimization.message".to_string()

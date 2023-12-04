@@ -10,6 +10,7 @@ pub struct PddTimeGet {
 }
 
 
+/// 获取拼多多系统时间
 impl Request for PddTimeGet {
     fn get_type() -> String {
         "pdd.time.get".to_string()

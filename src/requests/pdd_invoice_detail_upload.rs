@@ -144,6 +144,7 @@ pub struct InvoiceItemList {
 }
 
 
+/// 第三方ERP在外部开票系统开完发票之后可以调用此接口回传开票结果
 impl Request for PddInvoiceDetailUpload {
     fn get_type() -> String {
         "pdd.invoice.detail.upload".to_string()

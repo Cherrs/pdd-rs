@@ -32,6 +32,7 @@ pub struct PddCloudPrinterSettingRequest {
 }
 
 
+/// 设置云打印机
 impl Request for PddCloudPrinterSetting {
     fn get_type() -> String {
         "pdd.cloud.printer.setting".to_string()

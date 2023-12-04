@@ -74,6 +74,7 @@ pub struct PddMallInfoStoreUpdatePost {
 }
 
 
+/// 修改店铺门店
 impl Request for PddMallInfoStoreUpdatePost {
     fn get_type() -> String {
         "pdd.mall.info.store.update.post".to_string()

@@ -18,6 +18,7 @@ pub struct PddGoodsSaleStatusSet {
 }
 
 
+/// 修改商品上下架状态
 impl Request for PddGoodsSaleStatusSet {
     fn get_type() -> String {
         "pdd.goods.sale.status.set".to_string()

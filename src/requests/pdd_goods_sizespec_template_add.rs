@@ -5,29 +5,11 @@ use serde::{Deserialize, Serialize};
 
 /// 管理尺码表模板时需要新增自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Values {
+pub struct PddGoodsSizespecTemplateAdd {
     
-    /// 尺码组和尺码表元素的id
-    #[serde(rename = "$key")]
-    pub key: Option<i32>,
-    
-    /// 尺码组和尺码表元素的值
-    #[serde(rename = "$value")]
-    pub value: Option<String>,
-    
-}
-
-/// 管理尺码表模板时需要新增自定义尺码表模版
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Groups {
-    
-    /// 尺码元数据id
-    #[serde(rename = "id")]
-    pub id: Option<i32>,
-    
-    /// 尺码元数据名称
-    #[serde(rename = "name")]
-    pub name: Option<String>,
+    /// 尺码表
+    #[serde(rename = "size_spec_dto")]
+    pub size_spec_dto: Option<SizeSpecDto>,
     
 }
 
@@ -51,25 +33,43 @@ pub struct SizeSpecDto {
 
 /// 管理尺码表模板时需要新增自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Meta {
+pub struct Content {
     
-    /// 尺码元素
-    #[serde(rename = "elements")]
-    pub elements: Option<Vec<Elements>>,
+    /// 尺码表元数据（表头），pdd.goods.sizespec.meta.get得到
+    #[serde(rename = "meta")]
+    pub meta: Option<Meta>,
     
-    /// 尺码组
-    #[serde(rename = "groups")]
-    pub groups: Option<Vec<Groups>>,
+    /// 尺码表行数据
+    #[serde(rename = "records")]
+    pub records: Option<Vec<Records>>,
     
 }
 
 /// 管理尺码表模板时需要新增自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddGoodsSizespecTemplateAdd {
+pub struct Groups {
     
-    /// 尺码表
-    #[serde(rename = "size_spec_dto")]
-    pub size_spec_dto: Option<SizeSpecDto>,
+    /// 尺码元数据id
+    #[serde(rename = "id")]
+    pub id: Option<i32>,
+    
+    /// 尺码元数据名称
+    #[serde(rename = "name")]
+    pub name: Option<String>,
+    
+}
+
+/// 管理尺码表模板时需要新增自定义尺码表模版
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Values {
+    
+    /// 尺码组和尺码表元素的id
+    #[serde(rename = "$key")]
+    pub key: Option<i32>,
+    
+    /// 尺码组和尺码表元素的值
+    #[serde(rename = "$value")]
+    pub value: Option<String>,
     
 }
 
@@ -89,6 +89,20 @@ pub struct Elements {
 
 /// 管理尺码表模板时需要新增自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Meta {
+    
+    /// 尺码元素
+    #[serde(rename = "elements")]
+    pub elements: Option<Vec<Elements>>,
+    
+    /// 尺码组
+    #[serde(rename = "groups")]
+    pub groups: Option<Vec<Groups>>,
+    
+}
+
+/// 管理尺码表模板时需要新增自定义尺码表模版
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Records {
     
     /// 尺码组和尺码表元素的值
@@ -97,21 +111,8 @@ pub struct Records {
     
 }
 
+
 /// 管理尺码表模板时需要新增自定义尺码表模版
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Content {
-    
-    /// 尺码表元数据（表头），pdd.goods.sizespec.meta.get得到
-    #[serde(rename = "meta")]
-    pub meta: Option<Meta>,
-    
-    /// 尺码表行数据
-    #[serde(rename = "records")]
-    pub records: Option<Vec<Records>>,
-    
-}
-
-
 impl Request for PddGoodsSizespecTemplateAdd {
     fn get_type() -> String {
         "pdd.goods.sizespec.template.add".to_string()

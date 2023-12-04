@@ -5,6 +5,16 @@ use serde::{Deserialize, Serialize};
 
 /// 查询平台生成卡密对应的卡券信息、商品信息和订单信息
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddVoucherOtaCardPrepareVerification {
+    
+    /// 请求体
+    #[serde(rename = "request")]
+    pub request: Option<PddVoucherOtaCardPrepareVerificationRequest>,
+    
+}
+
+/// 查询平台生成卡密对应的卡券信息、商品信息和订单信息
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddVoucherOtaCardPrepareVerificationRequest {
     
     /// 卡密
@@ -17,17 +27,8 @@ pub struct PddVoucherOtaCardPrepareVerificationRequest {
     
 }
 
+
 /// 查询平台生成卡密对应的卡券信息、商品信息和订单信息
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddVoucherOtaCardPrepareVerification {
-    
-    /// 请求体
-    #[serde(rename = "request")]
-    pub request: Option<PddVoucherOtaCardPrepareVerificationRequest>,
-    
-}
-
-
 impl Request for PddVoucherOtaCardPrepareVerification {
     fn get_type() -> String {
         "pdd.voucher.ota.card.prepare.verification".to_string()

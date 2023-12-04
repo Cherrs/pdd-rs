@@ -26,6 +26,7 @@ pub struct PddAdApiReportHourlyReportQuery {
 }
 
 
+/// 查询推广报表各维度（广告主，计划，单元）的小时报表数据
 impl Request for PddAdApiReportHourlyReportQuery {
     fn get_type() -> String {
         "pdd.ad.api.report.hourly.report.query".to_string()

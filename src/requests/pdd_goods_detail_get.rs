@@ -14,6 +14,7 @@ pub struct PddGoodsDetailGet {
 }
 
 
+/// 新增商品或者修改商品的时候
 impl Request for PddGoodsDetailGet {
     fn get_type() -> String {
         "pdd.goods.detail.get".to_string()

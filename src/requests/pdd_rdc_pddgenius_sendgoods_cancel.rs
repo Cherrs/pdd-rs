@@ -5,16 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 用于未发货仅退款服务商通知拼多多PG取消成功
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddRdcPddgeniusSendgoodsCancel {
-    
-    /// param
-    #[serde(rename = "param")]
-    pub param: Option<Param>,
-    
-}
-
-/// 用于未发货仅退款服务商通知拼多多PG取消成功
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Param {
     
     /// 错误码：1001 错误场景：该订单未同步，无法取消发货 实际含义：订单未同步到isv; 错误码：1002 错误场景：该订单已发货，无法取消发货 实际含义：订单已经发货; 错误码：1003 错误场景：该订单已发货，无法取消发货 实际含义：订单已打印电子面单
@@ -47,7 +37,18 @@ pub struct Param {
     
 }
 
+/// 用于未发货仅退款服务商通知拼多多PG取消成功
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddRdcPddgeniusSendgoodsCancel {
+    
+    /// param
+    #[serde(rename = "param")]
+    pub param: Option<Param>,
+    
+}
 
+
+/// 用于未发货仅退款服务商通知拼多多PG取消成功
 impl Request for PddRdcPddgeniusSendgoodsCancel {
     fn get_type() -> String {
         "pdd.rdc.pddgenius.sendgoods.cancel".to_string()

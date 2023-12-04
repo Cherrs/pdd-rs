@@ -18,6 +18,7 @@ pub struct PddAdApiUnitCreativeUpdateDataOperateStatus {
 }
 
 
+/// 批量启动或暂停创意
 impl Request for PddAdApiUnitCreativeUpdateDataOperateStatus {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.update.data.operate.status".to_string()

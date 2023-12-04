@@ -18,6 +18,7 @@ pub struct PddRefundInformationGet {
 }
 
 
+/// 查询单个售后单详情
 impl Request for PddRefundInformationGet {
     fn get_type() -> String {
         "pdd.refund.information.get".to_string()

@@ -38,6 +38,7 @@ pub struct PddInvoiceApplicationQuery {
 }
 
 
+/// 当消费者在拼多多平台申请开票之后，第三方ERP通过此接口获取开票申请信息
 impl Request for PddInvoiceApplicationQuery {
     fn get_type() -> String {
         "pdd.invoice.application.query".to_string()

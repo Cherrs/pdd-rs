@@ -18,6 +18,7 @@ pub struct PddAdApiPlanUpdatePlanName {
 }
 
 
+/// 更新计划名称
 impl Request for PddAdApiPlanUpdatePlanName {
     fn get_type() -> String {
         "pdd.ad.api.plan.update.plan.name".to_string()

@@ -18,6 +18,7 @@ pub struct PddExpressDepotListGet {
 }
 
 
+/// 仓库列表
 impl Request for PddExpressDepotListGet {
     fn get_type() -> String {
         "pdd.express.depot.list.get".to_string()

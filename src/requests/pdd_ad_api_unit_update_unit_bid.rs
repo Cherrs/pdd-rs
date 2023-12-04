@@ -18,6 +18,7 @@ pub struct PddAdApiUnitUpdateUnitBid {
 }
 
 
+/// 更新单元出价
 impl Request for PddAdApiUnitUpdateUnitBid {
     fn get_type() -> String {
         "pdd.ad.api.unit.update.unit.bid".to_string()

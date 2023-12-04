@@ -40,6 +40,7 @@ pub struct PriorityList {
 }
 
 
+/// 批量更新仓库优先级
 impl Request for PddStockDepotPriorityUpdate {
     fn get_type() -> String {
         "pdd.stock.depot.priority.update".to_string()

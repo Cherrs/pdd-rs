@@ -14,6 +14,7 @@ pub struct PddMallNotificationTypeShowCheck {
 }
 
 
+/// 判断是否对商家展示某个通知
 impl Request for PddMallNotificationTypeShowCheck {
     fn get_type() -> String {
         "pdd.mall.notification.type.show.check".to_string()

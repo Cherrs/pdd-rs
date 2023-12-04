@@ -10,6 +10,7 @@ pub struct PddAdApiAdvertiserQueryAccountInfo {
 }
 
 
+/// 查询广告开户信息
 impl Request for PddAdApiAdvertiserQueryAccountInfo {
     fn get_type() -> String {
         "pdd.ad.api.advertiser.query.account.info".to_string()

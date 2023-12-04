@@ -5,45 +5,11 @@ use serde::{Deserialize, Serialize};
 
 /// 创建物流模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct CostProvinceList {
+pub struct FreeProvinceList {
     
     /// 省份ID
     #[serde(rename = "province_id")]
     pub province_id: Option<i32>,
-    
-}
-
-/// 创建物流模版
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddGoodsLogisticsTemplateCreate {
-    
-    /// 非包邮模版列表
-    #[serde(rename = "cost_template_list")]
-    pub cost_template_list: Option<Vec<CostTemplateList>>,
-    
-    /// 包邮地区
-    #[serde(rename = "free_province_list")]
-    pub free_province_list: Option<Vec<FreeProvinceList>>,
-    
-    /// 计费方式，0-按件计费，1-按重量计费
-    #[serde(rename = "cost_type")]
-    pub cost_type: Option<i32>,
-    
-    /// 运费模板名称
-    #[serde(rename = "template_name")]
-    pub template_name: Option<String>,
-    
-    /// 发货地省份id
-    #[serde(rename = "province_id")]
-    pub province_id: Option<i32>,
-    
-    /// 发货地城市id
-    #[serde(rename = "city_id")]
-    pub city_id: Option<i32>,
-    
-    /// 发货地区id
-    #[serde(rename = "district_id")]
-    pub district_id: Option<i32>,
     
 }
 
@@ -91,7 +57,7 @@ pub struct CostTemplateList {
 
 /// 创建物流模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct FreeProvinceList {
+pub struct CostProvinceList {
     
     /// 省份ID
     #[serde(rename = "province_id")]
@@ -99,7 +65,42 @@ pub struct FreeProvinceList {
     
 }
 
+/// 创建物流模版
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddGoodsLogisticsTemplateCreate {
+    
+    /// 非包邮模版列表
+    #[serde(rename = "cost_template_list")]
+    pub cost_template_list: Option<Vec<CostTemplateList>>,
+    
+    /// 包邮地区
+    #[serde(rename = "free_province_list")]
+    pub free_province_list: Option<Vec<FreeProvinceList>>,
+    
+    /// 计费方式，0-按件计费，1-按重量计费
+    #[serde(rename = "cost_type")]
+    pub cost_type: Option<i32>,
+    
+    /// 运费模板名称
+    #[serde(rename = "template_name")]
+    pub template_name: Option<String>,
+    
+    /// 发货地省份id
+    #[serde(rename = "province_id")]
+    pub province_id: Option<i32>,
+    
+    /// 发货地城市id
+    #[serde(rename = "city_id")]
+    pub city_id: Option<i32>,
+    
+    /// 发货地区id
+    #[serde(rename = "district_id")]
+    pub district_id: Option<i32>,
+    
+}
 
+
+/// 创建物流模版
 impl Request for PddGoodsLogisticsTemplateCreate {
     fn get_type() -> String {
         "pdd.goods.logistics.template.create".to_string()

@@ -18,6 +18,7 @@ pub struct PddLogisticsCoTrackSub {
 }
 
 
+/// 拼多多向物流公司订阅指定运单号的物流轨迹详情
 impl Request for PddLogisticsCoTrackSub {
     fn get_type() -> String {
         "pdd.logistics.co.track.sub".to_string()

@@ -10,6 +10,7 @@ pub struct PddRefundAddressListGet {
 }
 
 
+/// 获取商家退货地址库
 impl Request for PddRefundAddressListGet {
     fn get_type() -> String {
         "pdd.refund.address.list.get".to_string()

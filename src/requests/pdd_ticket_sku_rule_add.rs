@@ -5,6 +5,60 @@ use serde::{Deserialize, Serialize};
 
 /// 供应商新增商品规则
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct TravelerInfoLimitation {
+    
+    /// 游玩人证件
+    #[serde(rename = "credential")]
+    pub credential: Option<i32>,
+    
+    /// 游玩人名字
+    #[serde(rename = "name")]
+    pub name: Option<i32>,
+    
+    /// 出游人信息设置
+    #[serde(rename = "traveler_required")]
+    pub traveler_required: Option<i32>,
+    
+}
+
+/// 供应商新增商品规则
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ProviderContactInfo {
+    
+    /// 服务时间
+    #[serde(rename = "provider_business_hour")]
+    pub provider_business_hour: Option<Vec<ProviderBusinessHour>>,
+    
+    /// 服务商名称
+    #[serde(rename = "provider_name")]
+    pub provider_name: Option<String>,
+    
+    /// 服务商联系电话
+    #[serde(rename = "provider_telephone")]
+    pub provider_telephone: Option<String>,
+    
+}
+
+/// 供应商新增商品规则
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct TicketTime {
+    
+    /// 备注
+    #[serde(rename = "comment")]
+    pub comment: Option<String>,
+    
+    /// 换票结束时间
+    #[serde(rename = "end_at")]
+    pub end_at: Option<String>,
+    
+    /// 换票开始时间
+    #[serde(rename = "start_at")]
+    pub start_at: Option<String>,
+    
+}
+
+/// 供应商新增商品规则
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct RefundRules {
     
     /// 游玩日 0 点提前 或之后分钟数
@@ -22,28 +76,6 @@ pub struct RefundRules {
     /// 规则类型
     #[serde(rename = "type")]
     pub type_: Option<i32>,
-    
-}
-
-/// 供应商新增商品规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ValidLimitation {
-    
-    /// 天数内有效
-    #[serde(rename = "days_time")]
-    pub days_time: Option<i32>,
-    
-    /// 结束时间
-    #[serde(rename = "end_time")]
-    pub end_time: Option<i64>,
-    
-    /// 开始时间
-    #[serde(rename = "start_time")]
-    pub start_time: Option<i64>,
-    
-    /// 有效期时间类型
-    #[serde(rename = "time_type")]
-    pub time_type: Option<i32>,
     
 }
 
@@ -91,6 +123,38 @@ pub struct PddTicketSkuRuleAdd {
 
 /// 供应商新增商品规则
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct BookerInfoLimitation {
+    
+    /// 需要下单人信息
+    #[serde(rename = "booker_required")]
+    pub booker_required: Option<i32>,
+    
+    /// 下单人手机
+    #[serde(rename = "mobile")]
+    pub mobile: Option<i32>,
+    
+}
+
+/// 供应商新增商品规则
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct EnterTime {
+    
+    /// 备注
+    #[serde(rename = "comment")]
+    pub comment: Option<String>,
+    
+    /// 入园结束时间
+    #[serde(rename = "end_at")]
+    pub end_at: Option<String>,
+    
+    /// 入园开始时间
+    #[serde(rename = "start_at")]
+    pub start_at: Option<String>,
+    
+}
+
+/// 供应商新增商品规则
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct OrderLimitation {
     
     /// 周期长度
@@ -108,38 +172,6 @@ pub struct OrderLimitation {
     /// 限购数量
     #[serde(rename = "limit_num")]
     pub limit_num: Option<i32>,
-    
-}
-
-/// 供应商新增商品规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ProviderContactInfo {
-    
-    /// 服务时间
-    #[serde(rename = "provider_business_hour")]
-    pub provider_business_hour: Option<Vec<ProviderBusinessHour>>,
-    
-    /// 服务商名称
-    #[serde(rename = "provider_name")]
-    pub provider_name: Option<String>,
-    
-    /// 服务商联系电话
-    #[serde(rename = "provider_telephone")]
-    pub provider_telephone: Option<String>,
-    
-}
-
-/// 供应商新增商品规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct BookerInfoLimitation {
-    
-    /// 需要下单人信息
-    #[serde(rename = "booker_required")]
-    pub booker_required: Option<i32>,
-    
-    /// 下单人手机
-    #[serde(rename = "mobile")]
-    pub mobile: Option<i32>,
     
 }
 
@@ -205,55 +237,23 @@ pub struct RefundLimitations {
 
 /// 供应商新增商品规则
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct TravelerInfoLimitation {
+pub struct ValidLimitation {
     
-    /// 游玩人证件
-    #[serde(rename = "credential")]
-    pub credential: Option<i32>,
+    /// 天数内有效
+    #[serde(rename = "days_time")]
+    pub days_time: Option<i32>,
     
-    /// 游玩人名字
-    #[serde(rename = "name")]
-    pub name: Option<i32>,
+    /// 结束时间
+    #[serde(rename = "end_time")]
+    pub end_time: Option<i64>,
     
-    /// 出游人信息设置
-    #[serde(rename = "traveler_required")]
-    pub traveler_required: Option<i32>,
+    /// 开始时间
+    #[serde(rename = "start_time")]
+    pub start_time: Option<i64>,
     
-}
-
-/// 供应商新增商品规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct TicketTime {
-    
-    /// 备注
-    #[serde(rename = "comment")]
-    pub comment: Option<String>,
-    
-    /// 换票结束时间
-    #[serde(rename = "end_at")]
-    pub end_at: Option<String>,
-    
-    /// 换票开始时间
-    #[serde(rename = "start_at")]
-    pub start_at: Option<String>,
-    
-}
-
-/// 供应商新增商品规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct EnterTime {
-    
-    /// 备注
-    #[serde(rename = "comment")]
-    pub comment: Option<String>,
-    
-    /// 入园结束时间
-    #[serde(rename = "end_at")]
-    pub end_at: Option<String>,
-    
-    /// 入园开始时间
-    #[serde(rename = "start_at")]
-    pub start_at: Option<String>,
+    /// 有效期时间类型
+    #[serde(rename = "time_type")]
+    pub time_type: Option<i32>,
     
 }
 
@@ -276,6 +276,7 @@ pub struct ProviderBusinessHour {
 }
 
 
+/// 供应商新增商品规则
 impl Request for PddTicketSkuRuleAdd {
     fn get_type() -> String {
         "pdd.ticket.sku.rule.add".to_string()

@@ -30,6 +30,7 @@ pub struct PddDdkCashgiftDataQuery {
 }
 
 
+/// 查询多多礼金效果数据
 impl Request for PddDdkCashgiftDataQuery {
     fn get_type() -> String {
         "pdd.ddk.cashgift.data.query".to_string()

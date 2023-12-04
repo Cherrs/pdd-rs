@@ -22,6 +22,7 @@ pub struct PddAdApiReportTrDailyReportQuery {
 }
 
 
+/// 查询全站推广分天报表数据
 impl Request for PddAdApiReportTrDailyReportQuery {
     fn get_type() -> String {
         "pdd.ad.api.report.tr.daily.report.query".to_string()

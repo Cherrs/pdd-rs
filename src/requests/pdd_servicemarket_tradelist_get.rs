@@ -34,6 +34,7 @@ pub struct PddServicemarketTradelistGet {
 }
 
 
+/// 用于ISV查询自己名下的服务的交易明细单
 impl Request for PddServicemarketTradelistGet {
     fn get_type() -> String {
         "pdd.servicemarket.tradelist.get".to_string()

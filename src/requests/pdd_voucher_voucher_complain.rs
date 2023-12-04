@@ -56,6 +56,7 @@ pub struct VoucherList {
 }
 
 
+/// 卡券投诉接口
 impl Request for PddVoucherVoucherComplain {
     fn get_type() -> String {
         "pdd.voucher.voucher.complain".to_string()

@@ -14,6 +14,7 @@ pub struct PddAdApiUnitTrListGoodsBidPrivilege {
 }
 
 
+/// 查询商品全站推广建议出价权限信息
 impl Request for PddAdApiUnitTrListGoodsBidPrivilege {
     fn get_type() -> String {
         "pdd.ad.api.unit.tr.list.goods.bid.privilege".to_string()

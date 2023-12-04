@@ -30,6 +30,7 @@ pub struct PddGoodsQuantityUpdate {
 }
 
 
+/// 修改商品sku库存，在资源位上的商品不能减少库存
 impl Request for PddGoodsQuantityUpdate {
     fn get_type() -> String {
         "pdd.goods.quantity.update".to_string()

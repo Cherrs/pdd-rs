@@ -14,6 +14,7 @@ pub struct PddOverseaClearanceGet {
 }
 
 
+/// 获取多多国际清关材料（按订单维度获取）
 impl Request for PddOverseaClearanceGet {
     fn get_type() -> String {
         "pdd.oversea.clearance.get".to_string()

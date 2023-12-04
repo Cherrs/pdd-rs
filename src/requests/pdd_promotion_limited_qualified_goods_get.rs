@@ -26,6 +26,7 @@ pub struct PddPromotionLimitedQualifiedGoodsGet {
 }
 
 
+/// 查询可参与限时限量购活动的商品
 impl Request for PddPromotionLimitedQualifiedGoodsGet {
     fn get_type() -> String {
         "pdd.promotion.limited.qualified.goods.get".to_string()

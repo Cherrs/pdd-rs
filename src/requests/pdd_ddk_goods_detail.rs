@@ -38,6 +38,7 @@ pub struct PddDdkGoodsDetail {
 }
 
 
+/// 查询多多进宝商品详情
 impl Request for PddDdkGoodsDetail {
     fn get_type() -> String {
         "pdd.ddk.goods.detail".to_string()

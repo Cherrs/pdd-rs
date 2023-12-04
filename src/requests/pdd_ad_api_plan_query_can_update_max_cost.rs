@@ -14,6 +14,7 @@ pub struct PddAdApiPlanQueryCanUpdateMaxCost {
 }
 
 
+/// 当天是否允许计划的推广预算
 impl Request for PddAdApiPlanQueryCanUpdateMaxCost {
     fn get_type() -> String {
         "pdd.ad.api.plan.query.can.update.max.cost".to_string()

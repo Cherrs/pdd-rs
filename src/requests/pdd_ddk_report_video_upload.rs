@@ -14,6 +14,7 @@ pub struct PddDdkReportVideoUpload {
 }
 
 
+/// 多多客信息流投放备案视频上传,上传视频大小有限制,单个文件超过20M需要走分片上传
 impl Request for PddDdkReportVideoUpload {
     fn get_type() -> String {
         "pdd.ddk.report.video.upload".to_string()

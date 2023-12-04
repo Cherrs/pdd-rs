@@ -18,6 +18,7 @@ pub struct PddDdkPidMediaidBind {
 }
 
 
+/// 批量对pid与媒体id进行绑定
 impl Request for PddDdkPidMediaidBind {
     fn get_type() -> String {
         "pdd.ddk.pid.mediaid.bind".to_string()

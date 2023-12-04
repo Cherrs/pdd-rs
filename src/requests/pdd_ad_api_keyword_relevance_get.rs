@@ -18,6 +18,7 @@ pub struct PddAdApiKeywordRelevanceGet {
 }
 
 
+/// 关键词相关性查询
 impl Request for PddAdApiKeywordRelevanceGet {
     fn get_type() -> String {
         "pdd.ad.api.keyword.relevance.get".to_string()

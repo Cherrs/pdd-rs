@@ -5,6 +5,16 @@ use serde::{Deserialize, Serialize};
 
 /// 用户使用券码时，商家需要实时给PDD侧回传券码核销结果
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddVoucherRealtimeVerifySync {
+    
+    /// 请求入参
+    #[serde(rename = "request")]
+    pub request: Option<PddVoucherRealtimeVerifySyncRequest>,
+    
+}
+
+/// 用户使用券码时，商家需要实时给PDD侧回传券码核销结果
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddVoucherRealtimeVerifySyncRequest {
     
     /// 订单号
@@ -37,17 +47,8 @@ pub struct PddVoucherRealtimeVerifySyncRequest {
     
 }
 
+
 /// 用户使用券码时，商家需要实时给PDD侧回传券码核销结果
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddVoucherRealtimeVerifySync {
-    
-    /// 请求入参
-    #[serde(rename = "request")]
-    pub request: Option<PddVoucherRealtimeVerifySyncRequest>,
-    
-}
-
-
 impl Request for PddVoucherRealtimeVerifySync {
     fn get_type() -> String {
         "pdd.voucher.realtime.verify.sync".to_string()

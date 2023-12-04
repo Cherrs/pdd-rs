@@ -34,6 +34,7 @@ pub struct PddStockWareList {
 }
 
 
+/// 家电分仓库存-列表查询货品
 impl Request for PddStockWareList {
     fn get_type() -> String {
         "pdd.stock.ware.list".to_string()

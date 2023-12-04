@@ -22,6 +22,7 @@ pub struct PddOpenVirtualNumberCheck {
 }
 
 
+/// 检查入参号码是否订单所绑定的虚拟号
 impl Request for PddOpenVirtualNumberCheck {
     fn get_type() -> String {
         "pdd.open.virtual.number.check".to_string()

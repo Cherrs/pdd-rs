@@ -5,20 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 获取丰巢开平的access_token
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddServiceMailOrderFcAuth {
-    
-    /// 拼接到url的参数
-    #[serde(rename = "urlParams")]
-    pub url_params: Option<UrlParams>,
-    
-    /// 请求方法
-    #[serde(rename = "httpMethod")]
-    pub http_method: Option<String>,
-    
-}
-
-/// 获取丰巢开平的access_token
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct UrlParams {
     
     /// 丰巢开平app_key
@@ -31,7 +17,22 @@ pub struct UrlParams {
     
 }
 
+/// 获取丰巢开平的access_token
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddServiceMailOrderFcAuth {
+    
+    /// 拼接到url的参数
+    #[serde(rename = "urlParams")]
+    pub url_params: Option<UrlParams>,
+    
+    /// 请求方法
+    #[serde(rename = "httpMethod")]
+    pub http_method: Option<String>,
+    
+}
 
+
+/// 获取丰巢开平的access_token
 impl Request for PddServiceMailOrderFcAuth {
     fn get_type() -> String {
         "pdd.service.mail.order.fc.auth".to_string()

@@ -34,6 +34,7 @@ pub struct PddPopMallBindRelationReport {
 }
 
 
+/// ISV上报存量店铺关联关系
 impl Request for PddPopMallBindRelationReport {
     fn get_type() -> String {
         "pdd.pop.mall.bind.relation.report".to_string()

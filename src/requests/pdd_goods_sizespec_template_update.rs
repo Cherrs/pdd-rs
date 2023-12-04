@@ -5,39 +5,15 @@ use serde::{Deserialize, Serialize};
 
 /// 管理尺码表模板时需要更新自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Content {
+pub struct Elements {
     
-    /// 尺码表元数据（表头），pdd.goods.sizespec.meta.get得到
-    #[serde(rename = "meta")]
-    pub meta: Option<Meta>,
+    /// 尺码元数据id
+    #[serde(rename = "id")]
+    pub id: Option<i32>,
     
-    /// 尺码表行数据
-    #[serde(rename = "records")]
-    pub records: Option<Vec<Records>>,
-    
-}
-
-/// 管理尺码表模板时需要更新自定义尺码表模版
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Values {
-    
-    /// 尺码组和尺码表元素的id
-    #[serde(rename = "$key")]
-    pub key: Option<i32>,
-    
-    /// 尺码组和尺码表元素的值
-    #[serde(rename = "$value")]
-    pub value: Option<String>,
-    
-}
-
-/// 管理尺码表模板时需要更新自定义尺码表模版
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Records {
-    
-    /// 尺码组和尺码表元素的值
-    #[serde(rename = "values")]
-    pub values: Option<Values>,
+    /// 尺码元数据名称
+    #[serde(rename = "name")]
+    pub name: Option<String>,
     
 }
 
@@ -57,11 +33,11 @@ pub struct Groups {
 
 /// 管理尺码表模板时需要更新自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddGoodsSizespecTemplateUpdate {
+pub struct Records {
     
-    /// 尺码表
-    #[serde(rename = "size_spec_dto")]
-    pub size_spec_dto: Option<SizeSpecDto>,
+    /// 尺码组和尺码表元素的值
+    #[serde(rename = "values")]
+    pub values: Option<Values>,
     
 }
 
@@ -89,6 +65,16 @@ pub struct SizeSpecDto {
 
 /// 管理尺码表模板时需要更新自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddGoodsSizespecTemplateUpdate {
+    
+    /// 尺码表
+    #[serde(rename = "size_spec_dto")]
+    pub size_spec_dto: Option<SizeSpecDto>,
+    
+}
+
+/// 管理尺码表模板时需要更新自定义尺码表模版
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Meta {
     
     /// 尺码元素
@@ -103,19 +89,34 @@ pub struct Meta {
 
 /// 管理尺码表模板时需要更新自定义尺码表模版
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Elements {
+pub struct Values {
     
-    /// 尺码元数据id
-    #[serde(rename = "id")]
-    pub id: Option<i32>,
+    /// 尺码组和尺码表元素的id
+    #[serde(rename = "$key")]
+    pub key: Option<i32>,
     
-    /// 尺码元数据名称
-    #[serde(rename = "name")]
-    pub name: Option<String>,
+    /// 尺码组和尺码表元素的值
+    #[serde(rename = "$value")]
+    pub value: Option<String>,
+    
+}
+
+/// 管理尺码表模板时需要更新自定义尺码表模版
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Content {
+    
+    /// 尺码表元数据（表头），pdd.goods.sizespec.meta.get得到
+    #[serde(rename = "meta")]
+    pub meta: Option<Meta>,
+    
+    /// 尺码表行数据
+    #[serde(rename = "records")]
+    pub records: Option<Vec<Records>>,
     
 }
 
 
+/// 管理尺码表模板时需要更新自定义尺码表模版
 impl Request for PddGoodsSizespecTemplateUpdate {
     fn get_type() -> String {
         "pdd.goods.sizespec.template.update".to_string()

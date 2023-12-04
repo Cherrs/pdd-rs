@@ -40,6 +40,7 @@ pub struct PddVoucherVirtualCardVerification {
 }
 
 
+/// 卡券（电子）核销接口
 impl Request for PddVoucherVirtualCardVerification {
     fn get_type() -> String {
         "pdd.voucher.virtual.card.verification".to_string()

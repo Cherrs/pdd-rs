@@ -64,6 +64,7 @@ pub struct VoucherList {
 }
 
 
+/// 第三方ISV将商家发货（实物）信息同步给平台
 impl Request for PddVoucherPhysicalGoodsSend {
     fn get_type() -> String {
         "pdd.voucher.physical.goods.send".to_string()

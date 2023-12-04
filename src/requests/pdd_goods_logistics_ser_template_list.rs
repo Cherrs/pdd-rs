@@ -26,6 +26,7 @@ pub struct PddGoodsLogisticsSerTemplateList {
 }
 
 
+/// 商品送装服务模版列表
 impl Request for PddGoodsLogisticsSerTemplateList {
     fn get_type() -> String {
         "pdd.goods.logistics.ser.template.list".to_string()

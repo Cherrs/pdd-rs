@@ -14,6 +14,7 @@ pub struct PddWaybillSearch {
 }
 
 
+/// 查询面单服务订购及面单使用情况
 impl Request for PddWaybillSearch {
     fn get_type() -> String {
         "pdd.waybill.search".to_string()

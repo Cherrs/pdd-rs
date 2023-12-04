@@ -54,6 +54,7 @@ pub struct PddLogisticsCsSessionStart {
 }
 
 
+/// 该接口用于物流客服系统创建以及同步会话状态。
 impl Request for PddLogisticsCsSessionStart {
     fn get_type() -> String {
         "pdd.logistics.cs.session.start".to_string()

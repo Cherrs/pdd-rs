@@ -14,6 +14,7 @@ pub struct PddGoodsLatestCommitStatusGet {
 }
 
 
+/// 批量goodsId查询最新的审核状态
 impl Request for PddGoodsLatestCommitStatusGet {
     fn get_type() -> String {
         "pdd.goods.latest.commit.status.get".to_string()

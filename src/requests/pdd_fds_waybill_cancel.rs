@@ -36,6 +36,7 @@ pub struct PddFdsWaybillCancel {
 }
 
 
+/// 厂家回传完电子面单，需要删除之前上传的电子面单，可以使用该接口取消回传
 impl Request for PddFdsWaybillCancel {
     fn get_type() -> String {
         "pdd.fds.waybill.cancel".to_string()

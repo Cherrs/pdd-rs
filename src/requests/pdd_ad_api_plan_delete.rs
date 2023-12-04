@@ -18,6 +18,7 @@ pub struct PddAdApiPlanDelete {
 }
 
 
+/// 删除计划
 impl Request for PddAdApiPlanDelete {
     fn get_type() -> String {
         "pdd.ad.api.plan.delete".to_string()

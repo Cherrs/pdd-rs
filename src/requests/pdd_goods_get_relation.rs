@@ -14,6 +14,7 @@ pub struct PddGoodsGetRelation {
 }
 
 
+/// 商品映射查询接口
 impl Request for PddGoodsGetRelation {
     fn get_type() -> String {
         "pdd.goods.get.relation".to_string()

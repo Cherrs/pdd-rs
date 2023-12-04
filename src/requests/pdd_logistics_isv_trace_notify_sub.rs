@@ -22,6 +22,7 @@ pub struct PddLogisticsIsvTraceNotifySub {
 }
 
 
+/// 商家在ISV发货成功之后，ISV通过调用订阅接口订阅轨迹推送消息
 impl Request for PddLogisticsIsvTraceNotifySub {
     fn get_type() -> String {
         "pdd.logistics.isv.trace.notify.sub".to_string()

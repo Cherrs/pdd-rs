@@ -5,6 +5,16 @@ use serde::{Deserialize, Serialize};
 
 /// 云打印任务查询
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddCloudPrintTaskQuery {
+    
+    /// 云打印任务查询请求
+    #[serde(rename = "cloud_print_task_query")]
+    pub cloud_print_task_query: Option<CloudPrintTaskQuery>,
+    
+}
+
+/// 云打印任务查询
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct CloudPrintTaskQuery {
     
     /// 打印序号，非必填，填了则只查询列表内的任务
@@ -25,17 +35,8 @@ pub struct CloudPrintTaskQuery {
     
 }
 
+
 /// 云打印任务查询
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddCloudPrintTaskQuery {
-    
-    /// 云打印任务查询请求
-    #[serde(rename = "cloud_print_task_query")]
-    pub cloud_print_task_query: Option<CloudPrintTaskQuery>,
-    
-}
-
-
 impl Request for PddCloudPrintTaskQuery {
     fn get_type() -> String {
         "pdd.cloud.print.task.query".to_string()

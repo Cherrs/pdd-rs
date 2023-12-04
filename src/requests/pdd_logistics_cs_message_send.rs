@@ -38,6 +38,7 @@ pub struct PddLogisticsCsMessageSend {
 }
 
 
+/// 该接口用于客服给客户发消息，发消息的前提是有客服分配。
 impl Request for PddLogisticsCsMessageSend {
     fn get_type() -> String {
         "pdd.logistics.cs.message.send".to_string()

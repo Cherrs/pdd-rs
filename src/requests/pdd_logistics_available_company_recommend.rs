@@ -14,6 +14,7 @@ pub struct PddLogisticsAvailableCompanyRecommend {
 }
 
 
+/// 给商家提供可发货的快递公司，此数据仅作参考，如返回为空不代表不可发货
 impl Request for PddLogisticsAvailableCompanyRecommend {
     fn get_type() -> String {
         "pdd.logistics.available.company.recommend".to_string()

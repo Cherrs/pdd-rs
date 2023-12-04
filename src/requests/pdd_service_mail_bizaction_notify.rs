@@ -5,7 +5,7 @@ use serde::{Deserialize, Serialize};
 
 /// 寄件实操回告
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ConfirmSenderInfo {
+pub struct ModifyReceiverInfo {
     
     /// 详细地址
     #[serde(rename = "addrDetail")]
@@ -181,44 +181,6 @@ pub struct PddServiceMailBizactionNotifyRequest {
 
 /// 寄件实操回告
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ModifyReceiverInfo {
-    
-    /// 详细地址
-    #[serde(rename = "addrDetail")]
-    pub addr_detail: Option<String>,
-    
-    /// 区名称
-    #[serde(rename = "areaName")]
-    pub area_name: Option<String>,
-    
-    /// 市名称
-    #[serde(rename = "cityName")]
-    pub city_name: Option<String>,
-    
-    /// 联系人姓名
-    #[serde(rename = "contactName")]
-    pub contact_name: Option<String>,
-    
-    /// 联系人手机号
-    #[serde(rename = "mobile")]
-    pub mobile: Option<String>,
-    
-    /// 省名称
-    #[serde(rename = "provName")]
-    pub prov_name: Option<String>,
-    
-    /// 街道名称
-    #[serde(rename = "streetName")]
-    pub street_name: Option<String>,
-    
-    /// 联系人电话号码
-    #[serde(rename = "telephone")]
-    pub telephone: Option<String>,
-    
-}
-
-/// 寄件实操回告
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct ConfirmReceiverInfo {
     
     /// 详细地址
@@ -265,7 +227,46 @@ pub struct PddServiceMailBizactionNotify {
     
 }
 
+/// 寄件实操回告
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ConfirmSenderInfo {
+    
+    /// 详细地址
+    #[serde(rename = "addrDetail")]
+    pub addr_detail: Option<String>,
+    
+    /// 区名称
+    #[serde(rename = "areaName")]
+    pub area_name: Option<String>,
+    
+    /// 市名称
+    #[serde(rename = "cityName")]
+    pub city_name: Option<String>,
+    
+    /// 联系人姓名
+    #[serde(rename = "contactName")]
+    pub contact_name: Option<String>,
+    
+    /// 联系人手机号
+    #[serde(rename = "mobile")]
+    pub mobile: Option<String>,
+    
+    /// 省名称
+    #[serde(rename = "provName")]
+    pub prov_name: Option<String>,
+    
+    /// 街道名称
+    #[serde(rename = "streetName")]
+    pub street_name: Option<String>,
+    
+    /// 联系人电话号码
+    #[serde(rename = "telephone")]
+    pub telephone: Option<String>,
+    
+}
 
+
+/// 寄件实操回告
 impl Request for PddServiceMailBizactionNotify {
     fn get_type() -> String {
         "pdd.service.mail.bizaction.notify".to_string()

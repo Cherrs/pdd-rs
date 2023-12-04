@@ -46,6 +46,7 @@ pub struct PddGoodsListGet {
 }
 
 
+/// 商品列表查询
 impl Request for PddGoodsListGet {
     fn get_type() -> String {
         "pdd.goods.list.get".to_string()

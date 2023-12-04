@@ -5,6 +5,20 @@ use serde::{Deserialize, Serialize};
 
 /// 开平短信服务发送短信接口
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct TemplateParam {
+    
+    /// 模板变量名
+    #[serde(rename = "$key")]
+    pub key: Option<String>,
+    
+    /// 模板变量值
+    #[serde(rename = "$value")]
+    pub value: Option<String>,
+    
+}
+
+/// 开平短信服务发送短信接口
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddOpenMsgServiceSendMsg {
     
     /// 业务请求唯一标识
@@ -33,21 +47,8 @@ pub struct PddOpenMsgServiceSendMsg {
     
 }
 
+
 /// 开平短信服务发送短信接口
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct TemplateParam {
-    
-    /// 模板变量名
-    #[serde(rename = "$key")]
-    pub key: Option<String>,
-    
-    /// 模板变量值
-    #[serde(rename = "$value")]
-    pub value: Option<String>,
-    
-}
-
-
 impl Request for PddOpenMsgServiceSendMsg {
     fn get_type() -> String {
         "pdd.open.msg.service.send.msg".to_string()

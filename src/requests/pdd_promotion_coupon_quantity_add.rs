@@ -18,6 +18,7 @@ pub struct PddPromotionCouponQuantityAdd {
 }
 
 
+/// 增加优惠券发行数量接口
 impl Request for PddPromotionCouponQuantityAdd {
     fn get_type() -> String {
         "pdd.promotion.coupon.quantity.add".to_string()

@@ -28,6 +28,7 @@ pub struct InputList {
 }
 
 
+/// 获取搜索索引
 impl Request for PddOpenKmsSearchBatch {
     fn get_type() -> String {
         "pdd.open.kms.search.batch".to_string()

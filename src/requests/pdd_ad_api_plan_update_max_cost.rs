@@ -18,6 +18,7 @@ pub struct PddAdApiPlanUpdateMaxCost {
 }
 
 
+/// 更新日消耗上限
 impl Request for PddAdApiPlanUpdateMaxCost {
     fn get_type() -> String {
         "pdd.ad.api.plan.update.max.cost".to_string()

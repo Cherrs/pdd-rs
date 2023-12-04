@@ -14,6 +14,7 @@ pub struct PddAdApiUnitTrListGoodsBidSuggest {
 }
 
 
+/// 查询商品全站推广建议出价
 impl Request for PddAdApiUnitTrListGoodsBidSuggest {
     fn get_type() -> String {
         "pdd.ad.api.unit.tr.list.goods.bid.suggest".to_string()

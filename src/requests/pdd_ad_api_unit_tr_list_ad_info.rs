@@ -38,6 +38,7 @@ pub struct PddAdApiUnitTrListAdInfo {
 }
 
 
+/// 查询全站推广广告信息
 impl Request for PddAdApiUnitTrListAdInfo {
     fn get_type() -> String {
         "pdd.ad.api.unit.tr.list.ad.info".to_string()

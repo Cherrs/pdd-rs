@@ -5,61 +5,59 @@ use serde::{Deserialize, Serialize};
 
 /// 修改商品的履约规则
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct BookingNotice {
+pub struct TravelerInfoLimitation {
     
-    /// 入园地址
-    #[serde(rename = "enter_address")]
-    pub enter_address: Option<String>,
+    /// 游玩人证件
+    #[serde(rename = "credential")]
+    pub credential: Option<i32>,
     
-    /// 入园时间
-    #[serde(rename = "enter_time")]
-    pub enter_time: Option<Vec<EnterTime>>,
+    /// 游玩人名字
+    #[serde(rename = "name")]
+    pub name: Option<i32>,
     
-    /// 入园方式
-    #[serde(rename = "enter_ways")]
-    pub enter_ways: Option<String>,
-    
-    /// 补充说明
-    #[serde(rename = "extra_desc")]
-    pub extra_desc: Option<String>,
-    
-    /// 费用包含
-    #[serde(rename = "fee_include")]
-    pub fee_include: Option<String>,
-    
-    /// 费用不包含
-    #[serde(rename = "fee_not_include")]
-    pub fee_not_include: Option<String>,
-    
-    /// 重要提示
-    #[serde(rename = "important_notice")]
-    pub important_notice: Option<String>,
-    
-    /// 通关限制时间
-    #[serde(rename = "pass_time_limit")]
-    pub pass_time_limit: Option<i32>,
-    
-    /// 换票地址
-    #[serde(rename = "ticket_place")]
-    pub ticket_place: Option<String>,
-    
-    /// 换票时间
-    #[serde(rename = "ticket_time")]
-    pub ticket_time: Option<Vec<TicketTime>>,
+    /// 出游人信息设置
+    #[serde(rename = "traveler_required")]
+    pub traveler_required: Option<i32>,
     
 }
 
 /// 修改商品的履约规则
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct BookerInfoLimitation {
+pub struct TicketTime {
     
-    /// 需要下单人信息
-    #[serde(rename = "booker_required")]
-    pub booker_required: Option<i32>,
+    /// 备注
+    #[serde(rename = "comment")]
+    pub comment: Option<String>,
     
-    /// 下单人手机
-    #[serde(rename = "mobile")]
-    pub mobile: Option<i32>,
+    /// 换票结束时间
+    #[serde(rename = "end_at")]
+    pub end_at: Option<String>,
+    
+    /// 换票开始时间
+    #[serde(rename = "start_at")]
+    pub start_at: Option<String>,
+    
+}
+
+/// 修改商品的履约规则
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct OrderLimitation {
+    
+    /// 周期长度
+    #[serde(rename = "cycle_length")]
+    pub cycle_length: Option<i32>,
+    
+    /// 限制类型
+    #[serde(rename = "limitation_type")]
+    pub limitation_type: Option<i32>,
+    
+    /// 周期类型
+    #[serde(rename = "limit_cycle")]
+    pub limit_cycle: Option<i32>,
+    
+    /// 限购数量
+    #[serde(rename = "limit_num")]
+    pub limit_num: Option<i32>,
     
 }
 
@@ -119,19 +117,55 @@ pub struct RefundRules {
 
 /// 修改商品的履约规则
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct EnterTime {
+pub struct BookerInfoLimitation {
     
-    /// 备注
-    #[serde(rename = "comment")]
-    pub comment: Option<String>,
+    /// 需要下单人信息
+    #[serde(rename = "booker_required")]
+    pub booker_required: Option<i32>,
     
-    /// 入园结束时间
-    #[serde(rename = "end_at")]
-    pub end_at: Option<String>,
+    /// 下单人手机
+    #[serde(rename = "mobile")]
+    pub mobile: Option<i32>,
     
-    /// 入园开始时间
-    #[serde(rename = "start_at")]
-    pub start_at: Option<String>,
+}
+
+/// 修改商品的履约规则
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ProviderBusinessHour {
+    
+    /// 结束时间
+    #[serde(rename = "close_at")]
+    pub close_at: Option<String>,
+    
+    /// 开始时间
+    #[serde(rename = "open_at")]
+    pub open_at: Option<String>,
+    
+    /// 描述
+    #[serde(rename = "time_info")]
+    pub time_info: Option<String>,
+    
+}
+
+/// 修改商品的履约规则
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ValidLimitation {
+    
+    /// 天数内有效
+    #[serde(rename = "days_time")]
+    pub days_time: Option<i32>,
+    
+    /// 结束时间
+    #[serde(rename = "end_time")]
+    pub end_time: Option<i64>,
+    
+    /// 开始时间
+    #[serde(rename = "start_time")]
+    pub start_time: Option<i64>,
+    
+    /// 有效期时间类型
+    #[serde(rename = "time_type")]
+    pub time_type: Option<i32>,
     
 }
 
@@ -187,103 +221,70 @@ pub struct PddTicketSkuRuleEdit {
 
 /// 修改商品的履约规则
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct OrderLimitation {
+pub struct BookingNotice {
     
-    /// 周期长度
-    #[serde(rename = "cycle_length")]
-    pub cycle_length: Option<i32>,
+    /// 入园地址
+    #[serde(rename = "enter_address")]
+    pub enter_address: Option<String>,
     
-    /// 限制类型
-    #[serde(rename = "limitation_type")]
-    pub limitation_type: Option<i32>,
+    /// 入园时间
+    #[serde(rename = "enter_time")]
+    pub enter_time: Option<Vec<EnterTime>>,
     
-    /// 周期类型
-    #[serde(rename = "limit_cycle")]
-    pub limit_cycle: Option<i32>,
+    /// 入园方式
+    #[serde(rename = "enter_ways")]
+    pub enter_ways: Option<String>,
     
-    /// 限购数量
-    #[serde(rename = "limit_num")]
-    pub limit_num: Option<i32>,
+    /// 补充说明
+    #[serde(rename = "extra_desc")]
+    pub extra_desc: Option<String>,
     
-}
-
-/// 修改商品的履约规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ProviderBusinessHour {
+    /// 费用包含
+    #[serde(rename = "fee_include")]
+    pub fee_include: Option<String>,
     
-    /// 结束时间
-    #[serde(rename = "close_at")]
-    pub close_at: Option<String>,
+    /// 费用不包含
+    #[serde(rename = "fee_not_include")]
+    pub fee_not_include: Option<String>,
     
-    /// 开始时间
-    #[serde(rename = "open_at")]
-    pub open_at: Option<String>,
+    /// 重要提示
+    #[serde(rename = "important_notice")]
+    pub important_notice: Option<String>,
     
-    /// 描述
-    #[serde(rename = "time_info")]
-    pub time_info: Option<String>,
+    /// 通关限制时间
+    #[serde(rename = "pass_time_limit")]
+    pub pass_time_limit: Option<i32>,
     
-}
-
-/// 修改商品的履约规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct TravelerInfoLimitation {
+    /// 换票地址
+    #[serde(rename = "ticket_place")]
+    pub ticket_place: Option<String>,
     
-    /// 游玩人证件
-    #[serde(rename = "credential")]
-    pub credential: Option<i32>,
-    
-    /// 游玩人名字
-    #[serde(rename = "name")]
-    pub name: Option<i32>,
-    
-    /// 出游人信息设置
-    #[serde(rename = "traveler_required")]
-    pub traveler_required: Option<i32>,
+    /// 换票时间
+    #[serde(rename = "ticket_time")]
+    pub ticket_time: Option<Vec<TicketTime>>,
     
 }
 
 /// 修改商品的履约规则
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct TicketTime {
+pub struct EnterTime {
     
     /// 备注
     #[serde(rename = "comment")]
     pub comment: Option<String>,
     
-    /// 换票结束时间
+    /// 入园结束时间
     #[serde(rename = "end_at")]
     pub end_at: Option<String>,
     
-    /// 换票开始时间
+    /// 入园开始时间
     #[serde(rename = "start_at")]
     pub start_at: Option<String>,
     
 }
 
+
 /// 修改商品的履约规则
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ValidLimitation {
-    
-    /// 天数内有效
-    #[serde(rename = "days_time")]
-    pub days_time: Option<i32>,
-    
-    /// 结束时间
-    #[serde(rename = "end_time")]
-    pub end_time: Option<i64>,
-    
-    /// 开始时间
-    #[serde(rename = "start_time")]
-    pub start_time: Option<i64>,
-    
-    /// 有效期时间类型
-    #[serde(rename = "time_type")]
-    pub time_type: Option<i32>,
-    
-}
-
-
 impl Request for PddTicketSkuRuleEdit {
     fn get_type() -> String {
         "pdd.ticket.sku.rule.edit".to_string()

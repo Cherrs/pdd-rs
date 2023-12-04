@@ -14,6 +14,7 @@ pub struct PddFinanceBalanceDailyBillUrlGet {
 }
 
 
+/// 获取商家货款日账单下载链接
 impl Request for PddFinanceBalanceDailyBillUrlGet {
     fn get_type() -> String {
         "pdd.finance.balance.daily.bill.url.get".to_string()

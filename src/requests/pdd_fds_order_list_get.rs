@@ -36,6 +36,7 @@ pub struct ParamFdsOrderListGetRequest {
 }
 
 
+/// 厂家首次接入ISV时，同步商家分配给厂家历史订单列表，最多支持同步近一个月数据
 impl Request for PddFdsOrderListGet {
     fn get_type() -> String {
         "pdd.fds.order.list.get".to_string()

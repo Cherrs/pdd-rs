@@ -14,6 +14,7 @@ pub struct PddStockWareDetailQuery {
 }
 
 
+/// 家电分仓库存-查看货品详情
 impl Request for PddStockWareDetailQuery {
     fn get_type() -> String {
         "pdd.stock.ware.detail.query".to_string()

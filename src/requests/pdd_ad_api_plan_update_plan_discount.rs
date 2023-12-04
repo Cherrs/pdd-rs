@@ -5,16 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 更新分时折扣
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PlanDiscount {
-    
-    /// 分时折扣配置列表
-    #[serde(rename = "discounts")]
-    pub discounts: Option<Vec<Discounts>>,
-    
-}
-
-/// 更新分时折扣
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct Discounts {
     
     /// 小时。0-23分别表示第1个小时到第24个小时。
@@ -41,7 +31,18 @@ pub struct PddAdApiPlanUpdatePlanDiscount {
     
 }
 
+/// 更新分时折扣
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PlanDiscount {
+    
+    /// 分时折扣配置列表
+    #[serde(rename = "discounts")]
+    pub discounts: Option<Vec<Discounts>>,
+    
+}
 
+
+/// 更新分时折扣
 impl Request for PddAdApiPlanUpdatePlanDiscount {
     fn get_type() -> String {
         "pdd.ad.api.plan.update.plan.discount".to_string()

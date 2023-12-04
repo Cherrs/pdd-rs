@@ -28,6 +28,7 @@ pub struct ParamFdsOrderGetRequest {
 }
 
 
+/// 收到分配，更新地址消息，使用该接口拉取订单详情
 impl Request for PddFdsOrderGet {
     fn get_type() -> String {
         "pdd.fds.order.get".to_string()

@@ -14,6 +14,7 @@ pub struct PddInvoiceDetailInvalid {
 }
 
 
+/// 根据订单号冲红发票
 impl Request for PddInvoiceDetailInvalid {
     fn get_type() -> String {
         "pdd.invoice.detail.invalid".to_string()

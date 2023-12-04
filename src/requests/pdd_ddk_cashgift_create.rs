@@ -94,6 +94,7 @@ pub struct PddDdkCashgiftCreate {
 }
 
 
+/// 创建多多礼金
 impl Request for PddDdkCashgiftCreate {
     fn get_type() -> String {
         "pdd.ddk.cashgift.create".to_string()

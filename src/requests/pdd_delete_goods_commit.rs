@@ -14,6 +14,7 @@ pub struct PddDeleteGoodsCommit {
 }
 
 
+/// 删除商品接口,只能删除下架的商品
 impl Request for PddDeleteGoodsCommit {
     fn get_type() -> String {
         "pdd.delete.goods.commit".to_string()

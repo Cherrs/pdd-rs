@@ -10,6 +10,7 @@ pub struct PddAdApiAdvertiserOpenAccount {
 }
 
 
+/// 广告主开户
 impl Request for PddAdApiAdvertiserOpenAccount {
     fn get_type() -> String {
         "pdd.ad.api.advertiser.open.account".to_string()

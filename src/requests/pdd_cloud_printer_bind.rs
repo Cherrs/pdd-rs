@@ -28,6 +28,7 @@ pub struct PddCloudPrinterBind {
 }
 
 
+/// 云打印机绑定
 impl Request for PddCloudPrinterBind {
     fn get_type() -> String {
         "pdd.cloud.printer.bind".to_string()

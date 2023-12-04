@@ -14,6 +14,7 @@ pub struct PddGoodsInformationGet {
 }
 
 
+/// 商品详情（此接口后续不再维护，请使用pdd.goods.detail.get接口）
 impl Request for PddGoodsInformationGet {
     fn get_type() -> String {
         "pdd.goods.information.get".to_string()

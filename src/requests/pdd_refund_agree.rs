@@ -5,16 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 商家同意退款
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddRefundAgree {
-    
-    /// request
-    #[serde(rename = "request")]
-    pub request: Option<PddRefundAgreeRequest>,
-    
-}
-
-/// 商家同意退款
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddRefundAgreeRequest {
     
     /// 售后id
@@ -31,7 +21,18 @@ pub struct PddRefundAgreeRequest {
     
 }
 
+/// 商家同意退款
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddRefundAgree {
+    
+    /// request
+    #[serde(rename = "request")]
+    pub request: Option<PddRefundAgreeRequest>,
+    
+}
 
+
+/// 商家同意退款
 impl Request for PddRefundAgree {
     fn get_type() -> String {
         "pdd.refund.agree".to_string()

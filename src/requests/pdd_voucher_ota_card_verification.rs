@@ -26,6 +26,7 @@ pub struct PddVoucherOtaCardVerification {
 }
 
 
+/// 平台生成卡密类卡券核销
 impl Request for PddVoucherOtaCardVerification {
     fn get_type() -> String {
         "pdd.voucher.ota.card.verification".to_string()

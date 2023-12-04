@@ -42,6 +42,7 @@ pub struct PddMallInfoStoreGet {
 }
 
 
+/// 开放平台根据条件查询门店信息
 impl Request for PddMallInfoStoreGet {
     fn get_type() -> String {
         "pdd.mall.info.store.get".to_string()

@@ -26,6 +26,7 @@ pub struct PddAdApiGoodsQueryPage {
 }
 
 
+/// 查询可用商品列表（分页）
 impl Request for PddAdApiGoodsQueryPage {
     fn get_type() -> String {
         "pdd.ad.api.goods.query.page".to_string()

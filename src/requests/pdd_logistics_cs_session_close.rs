@@ -22,6 +22,7 @@ pub struct PddLogisticsCsSessionClose {
 }
 
 
+/// 该接口用于客服关闭会话
 impl Request for PddLogisticsCsSessionClose {
     fn get_type() -> String {
         "pdd.logistics.cs.session.close".to_string()

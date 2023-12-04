@@ -34,6 +34,7 @@ pub struct PddAdApiUnitBidQueryList {
 }
 
 
+/// 查询定向/资源位列表
 impl Request for PddAdApiUnitBidQueryList {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.query.list".to_string()

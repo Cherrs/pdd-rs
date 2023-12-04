@@ -144,6 +144,7 @@ pub struct Goods {
 }
 
 
+/// 溯源服务商上传正品溯源粘贴计划, 用于正品溯源功能
 impl Request for PddTraceSourceUploadPlanInfo {
     fn get_type() -> String {
         "pdd.trace.source.upload.plan.info".to_string()

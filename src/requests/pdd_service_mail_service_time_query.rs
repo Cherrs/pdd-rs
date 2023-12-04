@@ -5,6 +5,16 @@ use serde::{Deserialize, Serialize};
 
 /// 服务时间查询
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddServiceMailServiceTimeQuery {
+    
+    /// 请求参数
+    #[serde(rename = "request")]
+    pub request: Option<PddServiceMailServiceTimeQueryRequest>,
+    
+}
+
+/// 服务时间查询
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddServiceMailServiceTimeQueryRequest {
     
     /// 省名称
@@ -53,17 +63,8 @@ pub struct PddServiceMailServiceTimeQueryRequest {
     
 }
 
+
 /// 服务时间查询
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddServiceMailServiceTimeQuery {
-    
-    /// 请求参数
-    #[serde(rename = "request")]
-    pub request: Option<PddServiceMailServiceTimeQueryRequest>,
-    
-}
-
-
 impl Request for PddServiceMailServiceTimeQuery {
     fn get_type() -> String {
         "pdd.service.mail.service.time.query".to_string()

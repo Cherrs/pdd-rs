@@ -28,6 +28,7 @@ pub struct PddGoodsAdvicePriceGetRequest {
 }
 
 
+/// 商家可通过此接口查询店铺内所有上架商品的建议价格
 impl Request for PddGoodsAdvicePriceGet {
     fn get_type() -> String {
         "pdd.goods.advice.price.get".to_string()

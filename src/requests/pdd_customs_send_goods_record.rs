@@ -5,26 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 海淘服务商上传商品备案信息
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddCustomsSendGoodsRecordRequest {
-    
-    /// 备案商品列表
-    #[serde(rename = "goods_list")]
-    pub goods_list: Option<Vec<GoodsList>>,
-    
-}
-
-/// 海淘服务商上传商品备案信息
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct PddCustomsSendGoodsRecord {
-    
-    /// 上传备案商品请求
-    #[serde(rename = "request")]
-    pub request: Option<PddCustomsSendGoodsRecordRequest>,
-    
-}
-
-/// 海淘服务商上传商品备案信息
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct GoodsList {
     
     /// 条形码
@@ -197,7 +177,28 @@ pub struct GoodsList {
     
 }
 
+/// 海淘服务商上传商品备案信息
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddCustomsSendGoodsRecordRequest {
+    
+    /// 备案商品列表
+    #[serde(rename = "goods_list")]
+    pub goods_list: Option<Vec<GoodsList>>,
+    
+}
 
+/// 海淘服务商上传商品备案信息
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct PddCustomsSendGoodsRecord {
+    
+    /// 上传备案商品请求
+    #[serde(rename = "request")]
+    pub request: Option<PddCustomsSendGoodsRecordRequest>,
+    
+}
+
+
+/// 海淘服务商上传商品备案信息
 impl Request for PddCustomsSendGoodsRecord {
     fn get_type() -> String {
         "pdd.customs.send.goods.record".to_string()

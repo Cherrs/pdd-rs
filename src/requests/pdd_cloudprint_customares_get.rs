@@ -14,6 +14,7 @@ pub struct PddCloudprintCustomaresGet {
 }
 
 
+/// 供isv使用，获取商家的自定义区的模板信息
 impl Request for PddCloudprintCustomaresGet {
     fn get_type() -> String {
         "pdd.cloudprint.customares.get".to_string()

@@ -10,6 +10,7 @@ pub struct PddExpressMallDepotSimpleGet {
 }
 
 
+/// 商家全部仓库的简要信息列表(无业务入参)
 impl Request for PddExpressMallDepotSimpleGet {
     fn get_type() -> String {
         "pdd.express.mall.depot.simple.get".to_string()

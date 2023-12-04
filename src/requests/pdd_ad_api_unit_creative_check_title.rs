@@ -18,6 +18,7 @@ pub struct PddAdApiUnitCreativeCheckTitle {
 }
 
 
+/// 检查创意标题是否合法
 impl Request for PddAdApiUnitCreativeCheckTitle {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.check.title".to_string()

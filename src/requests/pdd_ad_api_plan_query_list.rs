@@ -30,6 +30,7 @@ pub struct PddAdApiPlanQueryList {
 }
 
 
+/// 查询计划列表页
 impl Request for PddAdApiPlanQueryList {
     fn get_type() -> String {
         "pdd.ad.api.plan.query.list".to_string()

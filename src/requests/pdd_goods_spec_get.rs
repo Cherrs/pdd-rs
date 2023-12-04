@@ -14,6 +14,7 @@ pub struct PddGoodsSpecGet {
 }
 
 
+/// 获取商品规格信息
 impl Request for PddGoodsSpecGet {
     fn get_type() -> String {
         "pdd.goods.spec.get".to_string()

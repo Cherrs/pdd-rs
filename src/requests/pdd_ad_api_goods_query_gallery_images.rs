@@ -14,6 +14,7 @@ pub struct PddAdApiGoodsQueryGalleryImages {
 }
 
 
+/// 查询商品轮播图
 impl Request for PddAdApiGoodsQueryGalleryImages {
     fn get_type() -> String {
         "pdd.ad.api.goods.query.gallery.images".to_string()

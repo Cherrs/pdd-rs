@@ -18,6 +18,7 @@ pub struct PddAdApiUnitBidDelete {
 }
 
 
+/// 删除定向/资源位
 impl Request for PddAdApiUnitBidDelete {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.delete".to_string()

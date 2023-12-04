@@ -18,6 +18,7 @@ pub struct PddAdApiUnitUpdateUnitName {
 }
 
 
+/// 更新单元名称
 impl Request for PddAdApiUnitUpdateUnitName {
     fn get_type() -> String {
         "pdd.ad.api.unit.update.unit.name".to_string()

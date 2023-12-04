@@ -26,6 +26,7 @@ pub struct PddOrderNoteUpdate {
 }
 
 
+/// 编辑商家订单备注信息
 impl Request for PddOrderNoteUpdate {
     fn get_type() -> String {
         "pdd.order.note.update".to_string()

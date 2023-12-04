@@ -14,6 +14,7 @@ pub struct PddOrderPromiseInfoGet {
 }
 
 
+/// 查询订单承诺信息，用于打单等场景下的承诺信息展示
 impl Request for PddOrderPromiseInfoGet {
     fn get_type() -> String {
         "pdd.order.promise.info.get".to_string()

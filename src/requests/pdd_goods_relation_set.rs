@@ -42,6 +42,7 @@ pub struct PddGoodsRelationSet {
 }
 
 
+/// 商品关联信息设置
 impl Request for PddGoodsRelationSet {
     fn get_type() -> String {
         "pdd.goods.relation.set".to_string()

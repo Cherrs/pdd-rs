@@ -14,6 +14,7 @@ pub struct PddGoodsCpsUnitDelete {
 }
 
 
+/// 删除单品计划功能
 impl Request for PddGoodsCpsUnitDelete {
     fn get_type() -> String {
         "pdd.goods.cps.unit.delete".to_string()

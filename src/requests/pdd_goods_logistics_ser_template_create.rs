@@ -5,24 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 商品送装服务模版新增
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct Content {
-    
-    /// 属性区间大值，-1表示"其他"示例：要配置区间"100-200"的费用，则maxPro输入"200"要配置区间"其他"的费用，则maxPro输入"-1"备注：表示长度时单位为：mm
-    #[serde(rename = "max_pro")]
-    pub max_pro: Option<i64>,
-    
-    /// 属性区间小值，-1表示"其他"示例：要配置区间"100-200"的费用，则minPro输入"100"要配置区间"其他"的费用，则minPro输入"-1"备注：表示长度时单位为：mm
-    #[serde(rename = "min_pro")]
-    pub min_pro: Option<i64>,
-    
-    /// 价格。单位：分
-    #[serde(rename = "price")]
-    pub price: Option<i64>,
-    
-}
-
-/// 商品送装服务模版新增
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct List {
     
     /// 按属性收取费用时配置的内容：按属性限价时设置；按件限价时不用传，value和content必须设置一个
@@ -105,7 +87,26 @@ pub struct CatList {
     
 }
 
+/// 商品送装服务模版新增
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct Content {
+    
+    /// 属性区间大值，-1表示"其他"示例：要配置区间"100-200"的费用，则maxPro输入"200"要配置区间"其他"的费用，则maxPro输入"-1"备注：表示长度时单位为：mm
+    #[serde(rename = "max_pro")]
+    pub max_pro: Option<i64>,
+    
+    /// 属性区间小值，-1表示"其他"示例：要配置区间"100-200"的费用，则minPro输入"100"要配置区间"其他"的费用，则minPro输入"-1"备注：表示长度时单位为：mm
+    #[serde(rename = "min_pro")]
+    pub min_pro: Option<i64>,
+    
+    /// 价格。单位：分
+    #[serde(rename = "price")]
+    pub price: Option<i64>,
+    
+}
 
+
+/// 商品送装服务模版新增
 impl Request for PddGoodsLogisticsSerTemplateCreate {
     fn get_type() -> String {
         "pdd.goods.logistics.ser.template.create".to_string()

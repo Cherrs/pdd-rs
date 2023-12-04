@@ -14,6 +14,7 @@ pub struct PddDdkReportVideoUploadPartComplete {
 }
 
 
+/// 多多客信息流投放备案视频上传分片完成
 impl Request for PddDdkReportVideoUploadPartComplete {
     fn get_type() -> String {
         "pdd.ddk.report.video.upload.part.complete".to_string()

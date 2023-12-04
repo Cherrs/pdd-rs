@@ -5,6 +5,20 @@ use serde::{Deserialize, Serialize};
 
 /// 快递派送过程中根据物流编号发送短信通知
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct TemplateParamJson {
+    
+    /// 模板变量key
+    #[serde(rename = "$key")]
+    pub key: Option<String>,
+    
+    /// 模板变量value
+    #[serde(rename = "$value")]
+    pub value: Option<String>,
+    
+}
+
+/// 快递派送过程中根据物流编号发送短信通知
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddOpenMsgServiceSendExpressMsg {
     
     /// 业务请求唯一标识
@@ -37,21 +51,8 @@ pub struct PddOpenMsgServiceSendExpressMsg {
     
 }
 
+
 /// 快递派送过程中根据物流编号发送短信通知
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct TemplateParamJson {
-    
-    /// 模板变量key
-    #[serde(rename = "$key")]
-    pub key: Option<String>,
-    
-    /// 模板变量value
-    #[serde(rename = "$value")]
-    pub value: Option<String>,
-    
-}
-
-
 impl Request for PddOpenMsgServiceSendExpressMsg {
     fn get_type() -> String {
         "pdd.open.msg.service.send.express.msg".to_string()

@@ -10,6 +10,7 @@ pub struct PddGooodsSkuMeasurementList {
 }
 
 
+/// 商品sku计量单位枚举
 impl Request for PddGooodsSkuMeasurementList {
     fn get_type() -> String {
         "pdd.gooods.sku.measurement.list".to_string()

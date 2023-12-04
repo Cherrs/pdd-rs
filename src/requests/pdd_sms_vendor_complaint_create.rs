@@ -42,6 +42,7 @@ pub struct PddSmsVendorComplaintCreate {
 }
 
 
+/// 短信供应商投诉号码上传
 impl Request for PddSmsVendorComplaintCreate {
     fn get_type() -> String {
         "pdd.sms.vendor.complaint.create".to_string()

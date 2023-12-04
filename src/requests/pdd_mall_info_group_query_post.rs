@@ -18,6 +18,7 @@ pub struct PddMallInfoGroupQueryPost {
 }
 
 
+/// 查询店铺下门店组列表
 impl Request for PddMallInfoGroupQueryPost {
     fn get_type() -> String {
         "pdd.mall.info.group.query.post".to_string()

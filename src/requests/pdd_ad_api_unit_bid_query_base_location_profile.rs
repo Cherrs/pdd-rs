@@ -10,6 +10,7 @@ pub struct PddAdApiUnitBidQueryBaseLocationProfile {
 }
 
 
+/// 获取可用资源位
 impl Request for PddAdApiUnitBidQueryBaseLocationProfile {
     fn get_type() -> String {
         "pdd.ad.api.unit.bid.query.base.location.profile".to_string()

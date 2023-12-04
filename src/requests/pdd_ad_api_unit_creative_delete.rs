@@ -14,6 +14,7 @@ pub struct PddAdApiUnitCreativeDelete {
 }
 
 
+/// 删除创意
 impl Request for PddAdApiUnitCreativeDelete {
     fn get_type() -> String {
         "pdd.ad.api.unit.creative.delete".to_string()

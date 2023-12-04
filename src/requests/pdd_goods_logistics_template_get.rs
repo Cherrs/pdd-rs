@@ -22,6 +22,7 @@ pub struct PddGoodsLogisticsTemplateGet {
 }
 
 
+/// 获取拼多多商家的物流运费模板信息
 impl Request for PddGoodsLogisticsTemplateGet {
     fn get_type() -> String {
         "pdd.goods.logistics.template.get".to_string()

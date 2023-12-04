@@ -18,6 +18,7 @@ pub struct PddGoodsSkusGet {
 }
 
 
+/// 库存同步、改价等场景
 impl Request for PddGoodsSkusGet {
     fn get_type() -> String {
         "pdd.goods.skus.get".to_string()

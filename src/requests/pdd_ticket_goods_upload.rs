@@ -5,72 +5,6 @@ use serde::{Deserialize, Serialize};
 
 /// 门票商品新建及更新
 #[derive(Serialize, Deserialize, Debug, Default)]
-pub struct CarouselVideo {
-    
-    /// 轮播视频id
-    #[serde(rename = "file_id")]
-    pub file_id: Option<i64>,
-    
-    /// 轮播视频url
-    #[serde(rename = "video_url")]
-    pub video_url: Option<String>,
-    
-}
-
-/// 门票商品新建及更新
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct GoodsProperties {
-    
-    /// 父规格id，仅对于销售属性入参
-    #[serde(rename = "parent_spec_id")]
-    pub parent_spec_id: Option<i64>,
-    
-    /// 引用属性id
-    #[serde(rename = "ref_pid")]
-    pub ref_pid: Option<i64>,
-    
-    /// 规格id，仅对于销售属性入参，和sku中的spec对应
-    #[serde(rename = "spec_id")]
-    pub spec_id: Option<i64>,
-    
-    /// 属性值
-    #[serde(rename = "value")]
-    pub value: Option<String>,
-    
-    /// 属性值单位
-    #[serde(rename = "value_unit")]
-    pub value_unit: Option<String>,
-    
-    /// 属性值id
-    #[serde(rename = "vid")]
-    pub vid: Option<i64>,
-    
-}
-
-/// 门票商品新建及更新
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ChildSkus {
-    
-    /// 日期。格式：2020-06-01。每个sku最多支持180天。
-    #[serde(rename = "date")]
-    pub date: Option<String>,
-    
-    /// 拼团价，单位为分。
-    #[serde(rename = "group_price")]
-    pub group_price: Option<i64>,
-    
-    /// 库存增减。比如传-10表示将对应的sku库存减10。
-    #[serde(rename = "quantity_delta")]
-    pub quantity_delta: Option<i64>,
-    
-    /// 单买价，单位为分。
-    #[serde(rename = "single_price")]
-    pub single_price: Option<i64>,
-    
-}
-
-/// 门票商品新建及更新
-#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct SkuList {
     
     /// 仅当sku_type为日历库存时入参。若父sku多于10个，需要通过pdd.goods.child.sku.edit接口分批维护。
@@ -193,7 +127,74 @@ pub struct PddTicketGoodsUpload {
     
 }
 
+/// 门票商品新建及更新
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct GoodsProperties {
+    
+    /// 父规格id，仅对于销售属性入参
+    #[serde(rename = "parent_spec_id")]
+    pub parent_spec_id: Option<i64>,
+    
+    /// 引用属性id
+    #[serde(rename = "ref_pid")]
+    pub ref_pid: Option<i64>,
+    
+    /// 规格id，仅对于销售属性入参，和sku中的spec对应
+    #[serde(rename = "spec_id")]
+    pub spec_id: Option<i64>,
+    
+    /// 属性值
+    #[serde(rename = "value")]
+    pub value: Option<String>,
+    
+    /// 属性值单位
+    #[serde(rename = "value_unit")]
+    pub value_unit: Option<String>,
+    
+    /// 属性值id
+    #[serde(rename = "vid")]
+    pub vid: Option<i64>,
+    
+}
 
+/// 门票商品新建及更新
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct CarouselVideo {
+    
+    /// 轮播视频id
+    #[serde(rename = "file_id")]
+    pub file_id: Option<i64>,
+    
+    /// 轮播视频url
+    #[serde(rename = "video_url")]
+    pub video_url: Option<String>,
+    
+}
+
+/// 门票商品新建及更新
+#[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ChildSkus {
+    
+    /// 日期。格式：2020-06-01。每个sku最多支持180天。
+    #[serde(rename = "date")]
+    pub date: Option<String>,
+    
+    /// 拼团价，单位为分。
+    #[serde(rename = "group_price")]
+    pub group_price: Option<i64>,
+    
+    /// 库存增减。比如传-10表示将对应的sku库存减10。
+    #[serde(rename = "quantity_delta")]
+    pub quantity_delta: Option<i64>,
+    
+    /// 单买价，单位为分。
+    #[serde(rename = "single_price")]
+    pub single_price: Option<i64>,
+    
+}
+
+
+/// 门票商品新建及更新
 impl Request for PddTicketGoodsUpload {
     fn get_type() -> String {
         "pdd.ticket.goods.upload".to_string()

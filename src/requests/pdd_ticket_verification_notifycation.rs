@@ -18,6 +18,7 @@ pub struct PddTicketVerificationNotifycation {
 }
 
 
+/// 供应商向拼多多发送订单核销通知
 impl Request for PddTicketVerificationNotifycation {
     fn get_type() -> String {
         "pdd.ticket.verification.notifycation".to_string()

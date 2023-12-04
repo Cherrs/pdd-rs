@@ -10,6 +10,7 @@ pub struct PddGoodsCpsMallUnitQuery {
 }
 
 
+/// 查询全店推广计划
 impl Request for PddGoodsCpsMallUnitQuery {
     fn get_type() -> String {
         "pdd.goods.cps.mall.unit.query".to_string()

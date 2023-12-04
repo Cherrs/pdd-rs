@@ -5,6 +5,20 @@ use serde::{Deserialize, Serialize};
 
 /// 查询广告主的各维度的分天报表，当前支持广告主，计划，单元，创意，关键词，定向，资源位等维度，当前仅支持单实体的查询，不支持批量实体的查询，返回的结果按天分组
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct ExternalParamMap {
+    
+    /// key
+    #[serde(rename = "$key")]
+    pub key: Option<String>,
+    
+    /// value
+    #[serde(rename = "$value")]
+    pub value: Option<String>,
+    
+}
+
+/// 查询广告主的各维度的分天报表，当前支持广告主，计划，单元，创意，关键词，定向，资源位等维度，当前仅支持单实体的查询，不支持批量实体的查询，返回的结果按天分组
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddAdApiReportDailyReportQuery {
     
     /// 结束日期的字符串，格式类似'2020-02-02'，当前支持查询90天内数据
@@ -33,21 +47,8 @@ pub struct PddAdApiReportDailyReportQuery {
     
 }
 
+
 /// 查询广告主的各维度的分天报表，当前支持广告主，计划，单元，创意，关键词，定向，资源位等维度，当前仅支持单实体的查询，不支持批量实体的查询，返回的结果按天分组
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct ExternalParamMap {
-    
-    /// key
-    #[serde(rename = "$key")]
-    pub key: Option<String>,
-    
-    /// value
-    #[serde(rename = "$value")]
-    pub value: Option<String>,
-    
-}
-
-
 impl Request for PddAdApiReportDailyReportQuery {
     fn get_type() -> String {
         "pdd.ad.api.report.daily.report.query".to_string()

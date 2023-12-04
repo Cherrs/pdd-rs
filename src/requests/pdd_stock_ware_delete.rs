@@ -14,6 +14,7 @@ pub struct PddStockWareDelete {
 }
 
 
+/// 家电分仓库存-删除货品
 impl Request for PddStockWareDelete {
     fn get_type() -> String {
         "pdd.stock.ware.delete".to_string()

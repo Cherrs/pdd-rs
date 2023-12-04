@@ -14,6 +14,7 @@ pub struct PddPmcUserGet {
 }
 
 
+/// 获取用户已开通消息
 impl Request for PddPmcUserGet {
     fn get_type() -> String {
         "pdd.pmc.user.get".to_string()

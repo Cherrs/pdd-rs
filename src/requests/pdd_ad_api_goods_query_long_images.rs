@@ -14,6 +14,7 @@ pub struct PddAdApiGoodsQueryLongImages {
 }
 
 
+/// 查询商品长图
 impl Request for PddAdApiGoodsQueryLongImages {
     fn get_type() -> String {
         "pdd.ad.api.goods.query.long.images".to_string()

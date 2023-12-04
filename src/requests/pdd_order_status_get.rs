@@ -14,6 +14,7 @@ pub struct PddOrderStatusGet {
 }
 
 
+/// 获取订单的状态
 impl Request for PddOrderStatusGet {
     fn get_type() -> String {
         "pdd.order.status.get".to_string()

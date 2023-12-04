@@ -66,6 +66,7 @@ pub struct PddMallInfoStoreCreatePost {
 }
 
 
+/// 创建店铺门店
 impl Request for PddMallInfoStoreCreatePost {
     fn get_type() -> String {
         "pdd.mall.info.store.create.post".to_string()

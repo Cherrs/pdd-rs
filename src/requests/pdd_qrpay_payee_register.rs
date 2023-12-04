@@ -24,6 +24,7 @@ pub struct PayeeList {
 }
 
 
+/// 交易二维码订单同店铺下需要记录订单来源的业务场景，可以将参数定义为门店、柜员、店员等
 impl Request for PddQrpayPayeeRegister {
     fn get_type() -> String {
         "pdd.qrpay.payee.register".to_string()

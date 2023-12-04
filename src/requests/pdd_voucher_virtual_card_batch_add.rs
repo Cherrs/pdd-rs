@@ -5,6 +5,20 @@ use serde::{Deserialize, Serialize};
 
 /// 供应商批量添加卡券
 #[derive(Serialize, Deserialize, Debug, Default)]
+pub struct DataList {
+    
+    /// 卡密卡号，商家卡密必填
+    #[serde(rename = "cardNo")]
+    pub card_no: Option<String>,
+    
+    /// 用户核销卡密加密串，加密所使用public key向对接小二获取（加密算法"RSA"，填充方式"RSA/ECB/PKCS1Padding"）
+    #[serde(rename = "encryptPassword")]
+    pub encrypt_password: Option<String>,
+    
+}
+
+/// 供应商批量添加卡券
+#[derive(Serialize, Deserialize, Debug, Default)]
 pub struct PddVoucherVirtualCardBatchAdd {
     
     /// 业务数据
@@ -35,21 +49,8 @@ pub struct Data {
     
 }
 
+
 /// 供应商批量添加卡券
-#[derive(Serialize, Deserialize, Debug, Default)]
-pub struct DataList {
-    
-    /// 卡密卡号，商家卡密必填
-    #[serde(rename = "cardNo")]
-    pub card_no: Option<String>,
-    
-    /// 用户核销卡密加密串，加密所使用public key向对接小二获取（加密算法"RSA"，填充方式"RSA/ECB/PKCS1Padding"）
-    #[serde(rename = "encryptPassword")]
-    pub encrypt_password: Option<String>,
-    
-}
-
-
 impl Request for PddVoucherVirtualCardBatchAdd {
     fn get_type() -> String {
         "pdd.voucher.virtual.card.batch.add".to_string()

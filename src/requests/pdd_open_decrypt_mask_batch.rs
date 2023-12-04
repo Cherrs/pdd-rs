@@ -28,6 +28,7 @@ pub struct DataList {
 }
 
 
+/// 批量数据解密脱敏
 impl Request for PddOpenDecryptMaskBatch {
     fn get_type() -> String {
         "pdd.open.decrypt.mask.batch".to_string()

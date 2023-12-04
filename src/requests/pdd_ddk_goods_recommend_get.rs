@@ -50,6 +50,7 @@ pub struct PddDdkGoodsRecommendGet {
 }
 
 
+/// 多多进宝商品推荐API
 impl Request for PddDdkGoodsRecommendGet {
     fn get_type() -> String {
         "pdd.ddk.goods.recommend.get".to_string()

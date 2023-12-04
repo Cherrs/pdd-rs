@@ -22,6 +22,7 @@ pub struct PddMallInfoGroupListStoreGet {
 }
 
 
+/// 查询门店组下门店
 impl Request for PddMallInfoGroupListStoreGet {
     fn get_type() -> String {
         "pdd.mall.info.group.list.store.get".to_string()
