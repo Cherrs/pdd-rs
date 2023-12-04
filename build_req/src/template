@@ -14,6 +14,7 @@ pub struct {value.struct_name} \{
 }
 {{ endfor }}
 
+/// {usage_scenarios}
 impl Request for {name} \{
     fn get_type() -> String \{
         "{scope_name}".to_string()
