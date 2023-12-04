@@ -1,8 +1,16 @@
+//! # 拼多多开放平台Rust SDK
+//!
+//! 基于tokio开发的拼多多开发平台sdk，支持消息推送
+//!
+//! 所有请求可以在[`requests`]里找到
+//!
+//! 使用消息推送需要开启features `pmc-native-tls`
+//!
+//! 更多例子看[`examples`](https://github.com/Cherrs/pdd-rs/tree/main/examples)
 use std::{borrow::Cow, env};
 
 use file::FileUploadRequest;
 use md5::{Digest, Md5};
-use public_parameters::PublicParameters;
 use reqwest::{
     header::CONTENT_TYPE,
     multipart::{Form, Part},
@@ -16,21 +24,24 @@ mod file;
 pub use file::PddFile;
 use tracing::trace;
 
-pub mod public_parameters;
+mod public_parameters;
+pub use public_parameters::PublicParameters;
 pub mod requests;
 
 #[cfg(feature = "pmc-native-tls")]
 pub mod pmc;
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
+/// PDD的授权信息，[参考](https://open.pinduoduo.com/application/document/browse?idStr=8EC06C399636041E)
 pub struct Config {
+    /// client_id
     pub client_id: String,
+    /// client_secret
     pub client_secret: String,
+    /// 拼多多的api请求地址
     pub url: String,
+    /// 文件上传的请求地址
     pub upload_url: String,
+    /// 获取到的access_token
     pub access_token: Option<String>,
 }
 
@@ -81,11 +92,13 @@ impl Config {
     }
 }
 
+/// 拼多多开放平台客户端
 pub struct Client {
     pub config: Config,
     pub reqwest: reqwest::Client,
 }
 
+/// 所有请求的trait
 pub trait Request {
     fn get_type() -> String;
 
@@ -93,20 +106,30 @@ pub trait Request {
 }
 
 impl Client {
+    /// 根据[`Config`]创建[`Client`]
     pub fn new(config: Config) -> Self {
         Client {
             config,
             reqwest: reqwest::Client::new(),
         }
     }
-
+    /// 从环境变量创建[`Client`]，参考[`Config::from_env()`]
     pub fn from_env() -> Result<Self, Error> {
         Ok(Client {
             config: Config::from_env()?,
             reqwest: reqwest::Client::new(),
         })
     }
-
+    /// 文件上传
+    ///
+    /// Examples
+    /// ```
+    /// let client = Client::from_env()?;
+    /// let req = PddGoodsFilespaceImageUpload {
+    /// file: Some(PddFile::from_file("examples/1.jpg").await?),
+    /// };
+    /// let rsp = client.file_upload(req).await?;
+    /// ```
     pub async fn file_upload<T>(self, req: T) -> Result<Value, Error>
     where
         T: Request + FileUploadRequest + Serialize,
@@ -122,8 +145,7 @@ impl Client {
         let req_value = serde_json::to_value(&req)?;
 
         // 获取文件数据
-        let Some((name, data)) = req.get_file()
-        else{
+        let Some((name, data)) = req.get_file() else {
             return Err(Error::FileNotFoundError);
         };
 
@@ -168,6 +190,7 @@ impl Client {
         Ok(serde_json::from_str(&result)?)
     }
 
+    /// 发送请求
     pub async fn send<T: Request + Serialize>(self, req: T) -> Result<Value, Error> {
         let pub_par = init_public_parameters(
             self.config.access_token,
@@ -211,7 +234,7 @@ fn init_public_parameters(
     }
 }
 
-pub fn add_sign(client_secret: &str, mut pub_parameters: Value, mut parameters: Value) -> Value {
+fn add_sign(client_secret: &str, mut pub_parameters: Value, mut parameters: Value) -> Value {
     let parameters_map = parameters.as_object_mut().unwrap();
     parameters_map.append(pub_parameters.as_object_mut().unwrap());
 

@@ -1,5 +1,6 @@
 use serde::{Deserialize, Serialize};
 
+/// 公共请求参数
 #[derive(Serialize, Deserialize, Debug)]
 pub struct PublicParameters {
     #[serde(rename = "type")]
