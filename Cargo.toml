@@ -10,12 +10,12 @@ repository = "https://github.com/Cherrs/pdd-rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-strum = "0.25"
-strum_macros = "0.25"
+strum = "0.26"
+strum_macros = "0.26"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 md-5 = "0.10"
-reqwest = { version = "0.11", features = ["json", "multipart"] }
+reqwest = { version = "0.12", features = ["json", "multipart"] }
 tokio = { version = "1", default-features = false, features = [
     "macros",
     "fs",
@@ -24,9 +24,9 @@ tokio = { version = "1", default-features = false, features = [
 time = { version = "0.3", features = ["macros"] }
 tracing = "0.1"
 thiserror = "1"
-base64 = { version = "0.21" }
+base64 = { version = "0.22" }
 
-tokio-tungstenite = { version = "0.20.0", features = [
+tokio-tungstenite = { version = "0.24", features = [
     "native-tls",
 ], optional = true }
 futures-util = { version = "0.3", optional = true }

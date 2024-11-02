@@ -4,7 +4,6 @@ use base64::{engine::general_purpose, Engine};
 use futures_util::{lock::Mutex, SinkExt, StreamExt};
 use md5::{Digest, Md5};
 use pdd::Config;
-use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use serde_with::skip_serializing_none;
 
@@ -32,7 +31,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         config.client_id, time, sign
     );
 
-    let socket = connect_async(Url::parse(&wss_path).unwrap()).await;
+    let socket = connect_async(&wss_path).await;
     let (socket, rsp) = match socket {
         Ok(s) => s,
         Err(e) => match e {
@@ -110,7 +109,7 @@ struct MessagePacket {
 
 impl From<tokio_tungstenite::tungstenite::Message> for MessagePacket {
     fn from(value: tokio_tungstenite::tungstenite::Message) -> Self {
-        let tokio_tungstenite::tungstenite::Message::Text(t) = value else{
+        let tokio_tungstenite::tungstenite::Message::Text(t) = value else {
             panic!("e");
         };
         serde_json::from_str(&t).unwrap()

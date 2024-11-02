@@ -11,7 +11,6 @@ use futures_util::{
     SinkExt, Stream, StreamExt,
 };
 use md5::{Digest, Md5};
-use reqwest::Url;
 use serde::{Deserialize, Serialize};
 use serde_with::skip_serializing_none;
 use tokio::{net::TcpStream, sync::Mutex};
@@ -137,7 +136,7 @@ impl PmcClient {
             "wss://message-api.pinduoduo.com/message/{}/{}/{}",
             self.config.client_id, time, sign
         );
-        if let Ok(s) = connect_async(Url::parse(&wss_path).unwrap()).await {
+        if let Ok(s) = connect_async(&wss_path).await {
             let (w, r) = s.0.split();
 
             let send = Arc::new(Mutex::new(w));
